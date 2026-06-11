@@ -41,7 +41,7 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
           <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
           {homestay.location}
         </div>
-        <h3 className="mt-1 text-lg font-bold text-slate-900">{homestay.name}</h3>
+        <h3 className="mt-1 font-jost text-xl lg:text-[22px] font-semibold text-slate-900 leading-snug">{homestay.name}</h3>
 
         <div className="mt-3 flex flex-wrap gap-3 text-sm text-slate-500">
           <span className="inline-flex items-center gap-1">
@@ -62,7 +62,7 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
           {homestay.priceFrom && (
             <p className="text-sm text-slate-500">
               From{" "}
-              <span className="text-xl font-bold text-slate-900">
+              <span className="text-xl font-bold text-slate-900 font-jost">
                 RM{homestay.priceFrom}
               </span>
               /night
@@ -71,7 +71,7 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
 
           <Link
             to={`/homestay/${homestay.slug}`}
-            className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-jost font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             View Details
           </Link>

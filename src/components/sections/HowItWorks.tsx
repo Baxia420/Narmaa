@@ -41,6 +41,7 @@ export default function HowItWorks() {
     >
       <Container>
         <SectionHeader
+          accent="Your Journey Begins"
           title="How It Works"
           subtitle="Getting started is easy. Here's how we help you plan your trip."
         />

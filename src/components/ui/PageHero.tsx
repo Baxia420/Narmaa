@@ -5,6 +5,7 @@ type PageHeroProps = {
   subtitle?: string;
   backgroundImage?: string;
   className?: string;
+  accent?: string;
 };
 
 export default function PageHero({
@@ -12,6 +13,7 @@ export default function PageHero({
   subtitle,
   backgroundImage,
   className,
+  accent,
 }: PageHeroProps) {
   return (
     <section
@@ -38,11 +40,16 @@ export default function PageHero({
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+        {accent && (
+          <span className="mb-2 block font-satisfy text-2xl md:text-3xl text-blue-300 font-medium">
+            {accent}
+          </span>
+        )}
+        <h1 className="font-jost text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-[48px] lg:text-[56px] leading-tight">
           {title}
         </h1>
         {subtitle && (
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
+          <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-white/85 leading-relaxed font-sans">
             {subtitle}
           </p>
         )}

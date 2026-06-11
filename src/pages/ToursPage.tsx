@@ -44,6 +44,7 @@ export default function ToursPage() {
       <SEO {...pageSEO.tours} />
 
       <PageHero
+        accent="Unforgettable Journeys"
         title="Private Chauffeur Tours in Malaysia"
         subtitle="Explore Malaysia with private transport, flexible routes, and local travel support arranged around your schedule."
         backgroundImage="/images/general/tours-hero.webp"
@@ -53,6 +54,7 @@ export default function ToursPage() {
       <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
+            accent="Tailored Experience"
             title="Why Choose a Private Tour"
             subtitle="Skip the crowded buses and rigid schedules — travel Malaysia your way."
           />
@@ -81,6 +83,7 @@ export default function ToursPage() {
       <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
+            accent="Popular Itineraries"
             title="Our Tours & Day Trips"
             subtitle="Popular destinations with private transport from Kuala Lumpur."
           />
@@ -118,6 +121,7 @@ export default function ToursPage() {
         <section className="py-16 md:py-20 bg-slate-50">
           <Container>
             <SectionHeader
+              accent="Help & Details"
               title="Tour FAQ"
               subtitle="Common questions about our private tours and day trips."
             />

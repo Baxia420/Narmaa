@@ -12,6 +12,7 @@ export default function FeaturedFleet() {
     <section className="bg-white py-16 lg:py-20" aria-label="Featured fleet">
       <Container>
         <SectionHeader
+          accent="Drive in Comfort"
           title="Our Signature Fleet"
           subtitle="Handpicked vehicles for every need — from budget-friendly city cars to executive MPVs."
         />

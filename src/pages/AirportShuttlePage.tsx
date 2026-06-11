@@ -49,7 +49,7 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
         <p className="text-xs font-semibold uppercase tracking-wide text-blue-600">
           {shuttle.category}
         </p>
-        <h3 className="mt-1 text-lg font-bold text-slate-900">{shuttle.name}</h3>
+        <h3 className="mt-1 font-jost text-xl lg:text-[22px] font-semibold text-slate-900 leading-snug">{shuttle.name}</h3>
 
         {/* Capacity / Seats */}
         <div className="mt-3 flex items-center gap-1.5 text-sm text-slate-500">
@@ -132,6 +132,7 @@ export default function AirportShuttlePage() {
       />
 
       <PageHero
+        accent="Seamless Transfers"
         title="Airport Shuttle Service in Malaysia"
         subtitle="Reliable airport pickup and drop-off services with vehicle options for solo travelers, families, and groups — starting from RM120."
         backgroundImage="/images/general/hero-malaysia.webp"
@@ -141,6 +142,7 @@ export default function AirportShuttlePage() {
       <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
+            accent="Stress-Free Travel"
             title="Convenient Ground Transfers"
             subtitle="Let Narmaa Transport take care of the logistics between KLIA/KLIA2 and your hotel or homestay."
           />
@@ -165,6 +167,7 @@ export default function AirportShuttlePage() {
       <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
+            accent="Select Your Vehicle"
             title="Choose Your Shuttle Vehicle"
             subtitle="We offer options from budget hatchbacks to large executive passenger vans and minibuses."
           />
@@ -204,6 +207,7 @@ export default function AirportShuttlePage() {
         <section className="py-16 md:py-20 bg-slate-50">
           <Container>
             <SectionHeader
+              accent="Common Enquiries"
               title="Airport Shuttle FAQ"
               subtitle="Common questions about our shuttle services."
             />

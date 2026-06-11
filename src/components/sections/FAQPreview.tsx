@@ -12,6 +12,7 @@ export default function FAQPreview() {
     <section className="bg-slate-50 py-16 lg:py-20" aria-label="Frequently asked questions">
       <Container>
         <SectionHeader
+          accent="Have Questions?"
           title="Frequently Asked Questions"
           subtitle="Quick answers to common questions about our services."
         />

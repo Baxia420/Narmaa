@@ -44,6 +44,7 @@ export default function HomestayPage() {
       <SEO {...pageSEO.homestay} />
 
       <PageHero
+        accent="Your Home in Malaysia"
         title="Comfortable Homestays for Your Malaysia Trip"
         subtitle="Find practical and comfortable stays for families, groups, and travelers who want convenience during their visit."
         backgroundImage="/images/general/homestay-hero.webp"
@@ -53,6 +54,7 @@ export default function HomestayPage() {
       <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
+            accent="Cozy & Convenient"
             title="Why Stay With Narmaa Transport"
             subtitle="We help you find the right place to stay — so you can enjoy your trip without worry."
           />
@@ -81,6 +83,7 @@ export default function HomestayPage() {
       <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
+            accent="Select Your Stay"
             title="Our Homestays"
             subtitle="Browse our curated selection of comfortable stays in Kuala Lumpur."
           />
@@ -101,6 +104,7 @@ export default function HomestayPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <SectionHeader
+              accent="Prime Locations"
               title="Areas We Cover"
               subtitle="Our homestays and services are available in key locations across Malaysia."
             />
@@ -154,6 +158,7 @@ export default function HomestayPage() {
         <section className="py-16 md:py-20 bg-white">
           <Container>
             <SectionHeader
+              accent="Helpful Information"
               title="Homestay FAQ"
               subtitle="Common questions about our homestay offerings."
             />

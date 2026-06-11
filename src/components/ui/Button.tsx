@@ -83,7 +83,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
     } = props;
 
     const baseClasses = cn(
-      "inline-flex items-center justify-center font-medium rounded-lg transition-colors duration-200",
+      "inline-flex items-center justify-center font-jost font-semibold rounded-lg transition-colors duration-200",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
       "disabled:opacity-50 disabled:pointer-events-none",
       "select-none whitespace-nowrap",

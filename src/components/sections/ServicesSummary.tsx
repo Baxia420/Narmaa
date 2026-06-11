@@ -39,6 +39,7 @@ export default function ServicesSummary() {
     >
       <Container>
         <SectionHeader
+          accent="Customized Travel Options"
           title="Our Services"
           subtitle="Everything you need for a comfortable trip in Malaysia — all arranged by one team."
         />

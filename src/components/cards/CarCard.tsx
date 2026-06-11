@@ -45,7 +45,7 @@ export default function CarCard({ car, className }: CarCardProps) {
         <p className="text-xs font-medium uppercase tracking-wide text-blue-600">
           {car.category}
         </p>
-        <h3 className="mt-1 text-lg font-bold text-slate-900">{car.name}</h3>
+        <h3 className="mt-1 font-jost text-xl lg:text-[22px] font-semibold text-slate-900 leading-snug">{car.name}</h3>
 
         <div className="mt-3 flex flex-wrap gap-3 text-sm text-slate-500">
           <span className="inline-flex items-center gap-1">
@@ -66,7 +66,7 @@ export default function CarCard({ car, className }: CarCardProps) {
           {car.priceFrom && (
             <p className="text-sm text-slate-500">
               From{" "}
-              <span className="text-xl font-bold text-slate-900">
+              <span className="text-xl font-bold text-slate-900 font-jost">
                 RM{car.priceFrom}
               </span>
               /day
@@ -75,7 +75,7 @@ export default function CarCard({ car, className }: CarCardProps) {
 
           <Link
             to={`/car-rental/${car.slug}`}
-            className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-jost font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             View Details
           </Link>

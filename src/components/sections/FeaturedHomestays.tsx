@@ -15,6 +15,7 @@ export default function FeaturedHomestays() {
     >
       <Container>
         <SectionHeader
+          accent="Stay Comfortably"
           title="Featured Homestays"
           subtitle="Comfortable, well-located apartments in Kuala Lumpur for families and travellers."
         />

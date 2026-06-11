@@ -59,7 +59,7 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-600 ${
+                className={`font-jost text-[15px] font-semibold transition-colors hover:text-brand-600 tracking-wide ${
                   isActive ? "text-brand-600" : "text-slate-600"
                 }`}
               >
@@ -109,7 +109,7 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-lg font-semibold border-b border-slate-100 pb-3 transition-colors hover:text-brand-600 ${
+                  className={`font-jost text-lg font-semibold border-b border-slate-100 pb-3 transition-colors hover:text-brand-600 ${
                     isActive ? "text-brand-600" : "text-slate-700"
                   }`}
                 >

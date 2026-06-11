@@ -8,6 +8,7 @@ export default function Testimonials() {
     <section className="bg-white py-16 lg:py-20" aria-label="Testimonials">
       <Container>
         <SectionHeader
+          accent="Guest Experience"
           title="What Customers Can Expect"
           subtitle="These are example reviews to give you a sense of the service experience. Real customer reviews coming soon."
         />

@@ -44,6 +44,7 @@ export default function CarRentalPage() {
       <SEO {...pageSEO.carRental} />
 
       <PageHero
+        accent="Premium Rental Fleet"
         title="Car Rental in Malaysia"
         subtitle="Choose from comfortable, clean, and practical vehicles for city travel, airport pickup, family trips, and private journeys."
         backgroundImage="/images/general/car-rental-hero.webp"
@@ -53,6 +54,7 @@ export default function CarRentalPage() {
       <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
+            accent="The Premium Choice"
             title="Why Rent With Narmaa Transport"
             subtitle="We keep things simple, clean, and reliable — so you can focus on your trip."
           />
@@ -81,6 +83,7 @@ export default function CarRentalPage() {
       <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
+            accent="Select Your Ride"
             title="Our Fleet"
             subtitle="Browse our range of vehicles for every type of journey."
           />
@@ -126,6 +129,7 @@ export default function CarRentalPage() {
         <section className="py-16 md:py-20 bg-slate-50">
           <Container>
             <SectionHeader
+              accent="Help & Support"
               title="Car Rental FAQ"
               subtitle="Common questions about renting with Narmaa Transport."
             />

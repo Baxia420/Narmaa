@@ -12,6 +12,7 @@ export default function FeaturedTours() {
     <section className="bg-white py-16 lg:py-20" aria-label="Popular tours">
       <Container>
         <SectionHeader
+          accent="Explore Malaysia"
           title="Popular Tour Packages"
           subtitle="Private chauffeur day trips to Malaysia's most loved destinations — all starting from KL."
         />

@@ -28,11 +28,14 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <span className="mb-3 block font-satisfy text-[28px] md:text-[34px] text-blue-400 font-medium">
+            Your Journey Starts Here
+          </span>
+          <h1 className="font-jost text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[70px]">
             Explore Malaysia, Your Way.
           </h1>
 
-          <p className="mt-5 text-lg leading-relaxed text-slate-200 sm:text-xl">
+          <p className="mt-6 text-base md:text-lg leading-[1.8] text-slate-200 font-sans max-w-xl">
             Car rentals, private chauffeur tours, airport pickup, and comfortable
             homestays — arranged in one simple WhatsApp conversation.
           </p>
@@ -42,7 +45,7 @@ export default function Hero() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25d366] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-colors hover:bg-[#1fb855] focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-slate-900"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25d366] px-6 py-3.5 text-base font-jost font-semibold text-white shadow-lg transition-colors hover:bg-[#1fb855] focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-slate-900"
             >
               <MessageCircle className="h-5 w-5" aria-hidden="true" />
               Plan My Trip on WhatsApp
@@ -50,7 +53,7 @@ export default function Hero() {
 
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/80 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/80 px-6 py-3.5 text-base font-jost font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900"
             >
               View Services
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
