@@ -84,9 +84,13 @@ export default function HomestayPage() {
             title="Our Homestays"
             subtitle="Browse our curated selection of comfortable stays in Kuala Lumpur."
           />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6 md:gap-8 max-w-4xl mx-auto">
             {homestays.map((homestay) => (
-              <HomestayCard key={homestay.id} homestay={homestay} />
+              <HomestayCard 
+                key={homestay.id} 
+                homestay={homestay} 
+                className="w-full sm:w-[calc(50%-12px)] md:w-[calc(50%-16px)] max-w-md" 
+              />
             ))}
           </div>
         </Container>

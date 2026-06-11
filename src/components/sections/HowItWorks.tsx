@@ -45,25 +45,29 @@ export default function HowItWorks() {
           subtitle="Getting started is easy. Here's how we help you plan your trip."
         />
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
-              <div key={step.number} className="relative flex flex-col items-center text-center">
-                {/* Step number */}
-                <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
-                  {step.number}
+              <div
+                key={step.number}
+                className="group relative bg-white rounded-2xl p-6 border border-slate-200 shadow-sm transition-all duration-200 hover:shadow-md hover:border-slate-300 flex flex-col"
+              >
+                {/* Large Background Number */}
+                <span className="absolute top-4 right-6 text-5xl font-black text-slate-100 group-hover:text-blue-50 transition-colors duration-200 select-none pointer-events-none">
+                  {`0${step.number}`}
                 </span>
 
-                {/* Icon */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-blue-600 shadow-sm">
-                  <Icon className="h-7 w-7" aria-hidden="true" />
+                {/* Icon Container */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 mb-4 transition-colors duration-200 group-hover:bg-blue-600 group-hover:text-white">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
 
-                <h3 className="mt-4 text-base font-semibold text-slate-900">
+                {/* Text Content */}
+                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors duration-200">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {step.description}
                 </p>
               </div>

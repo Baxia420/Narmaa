@@ -19,9 +19,13 @@ export default function FeaturedHomestays() {
           subtitle="Comfortable, well-located apartments in Kuala Lumpur for families and travellers."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-4xl mx-auto">
           {featuredHomestays.map((homestay) => (
-            <HomestayCard key={homestay.id} homestay={homestay} />
+            <HomestayCard 
+              key={homestay.id} 
+              homestay={homestay} 
+              className="w-full sm:w-[calc(50%-12px)] max-w-md" 
+            />
           ))}
         </div>
 
