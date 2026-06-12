@@ -57,9 +57,10 @@ export default function FAQPage() {
 
           {/* Accordion Content */}
           <div className="mx-auto max-w-3xl bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-blue-600" />
-              {activeCategory} Questions
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
+              <span className="text-blue-600">{activeCategory}</span>
+              <span className="text-slate-700">Questions</span>
             </h2>
             {filteredFaqs.length > 0 ? (
               <FAQAccordion items={filteredFaqs} />
@@ -74,8 +75,9 @@ export default function FAQPage() {
       <section className="py-16 md:py-20 bg-white">
         <Container className="text-center max-w-3xl">
           <SectionHeader
-            title="Still Have Questions?"
+            title="Still have questions?"
             subtitle="Can't find the answer you're looking for? Message Narmaa Transport directly on WhatsApp. We typically respond within a few hours."
+            accent="We're here to help"
             centered
           />
           <div className="mt-8 flex justify-center">

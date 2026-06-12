@@ -35,8 +35,9 @@ export default function ContactPage() {
           {/* Left Column: Contact info */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-12">
             <div>
+              <span className="block font-satisfy text-xl text-blue-500 mb-1">We'd love to hear from you</span>
               <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-                Get in Touch
+                Get in touch
               </h2>
               <p className="mt-3 text-slate-600 leading-relaxed">
                 We are a local Malaysian hospitality team dedicated to providing stress-free ground transport and accommodation. Reach out via WhatsApp for the fastest reply, or use our enquiry form.
@@ -142,8 +143,9 @@ export default function ContactPage() {
 
           {/* Right Column: Lead Form */}
           <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-8 md:p-10 shadow-sm">
+            <span className="block font-satisfy text-lg text-blue-500 mb-1">Ready when you are</span>
             <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
-              Send an Enquiry Form
+              Send an enquiry
             </h3>
             <p className="mt-2 text-sm text-slate-600">
               Provide your details and we will review vehicle/stay availability for your dates.

@@ -13,8 +13,8 @@ export default function FeaturedTours() {
       <Container>
         <SectionHeader
           accent="Explore Malaysia"
-          title="Popular Tour Packages"
-          subtitle="Private chauffeur day trips to Malaysia's most loved destinations — all starting from KL."
+          title="Popular day trips"
+          subtitle="Private chauffeur tours to Malaysia's most loved destinations — starting from KL."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -26,9 +26,9 @@ export default function FeaturedTours() {
         <div className="mt-10 text-center">
           <Link
             to="/tours"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-6 py-3 text-sm font-jost font-semibold text-slate-700 transition-all hover:border-emerald-600 hover:text-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
           >
-            View All Tours
+            View all trips
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>

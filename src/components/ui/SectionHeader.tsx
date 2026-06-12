@@ -13,14 +13,14 @@ export default function SectionHeader({
   title,
   subtitle,
   badge,
-  centered = false,
+  centered = true,
   className,
   accent,
 }: SectionHeaderProps) {
   return (
     <div className={cn("mb-10", centered && "text-center", className)}>
       {accent && (
-        <span className="mb-2 block font-satisfy text-2xl md:text-3xl text-blue-600 font-medium">
+        <span className="mb-2 block font-satisfy text-xl md:text-2xl text-blue-500 font-medium">
           {accent}
         </span>
       )}
@@ -29,13 +29,13 @@ export default function SectionHeader({
           {badge}
         </span>
       )}
-      <h2 className="font-jost text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl md:text-[40px] leading-tight">
+      <h2 className="font-jost text-3xl font-bold tracking-tight text-slate-900 sm:text-[36px] md:text-[40px] leading-tight">
         {title}
       </h2>
       {subtitle && (
         <p
           className={cn(
-            "mt-4 max-w-2xl text-base md:text-lg text-slate-600 leading-relaxed font-sans",
+            "mt-3 max-w-xl text-base text-slate-500 leading-relaxed font-sans",
             centered && "mx-auto",
           )}
         >

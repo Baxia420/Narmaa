@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 import Container from "@/components/ui/Container";
 
@@ -7,28 +7,52 @@ export default function FinalCTA() {
 
   return (
     <section
-      className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-16 lg:py-20"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 py-16 lg:py-20"
       aria-label="Call to action"
     >
+      {/* Subtle background texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25% 50%, white 1px, transparent 1px), radial-gradient(circle at 75% 50%, white 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+        aria-hidden="true"
+      />
+
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Ready to plan your trip?
+          <span className="block font-satisfy text-[22px] text-blue-300 mb-2">
+            Whenever you're ready
+          </span>
+          <h2 className="font-jost text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Your trip. Your pace.
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-blue-100">
-            Tell us what you need and we'll help arrange the right car, stay, or
-            tour package.
+          <p className="mt-4 text-base leading-relaxed text-blue-200 max-w-lg mx-auto">
+            Browse what we offer, then message us when you're ready. No pressure — just simple travel planning.
           </p>
 
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#25d366] px-8 py-4 text-base font-semibold text-white shadow-lg transition-colors hover:bg-[#1fb855] focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-blue-900"
-          >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
-            Message Narmaa Transport on WhatsApp
-          </a>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              id="final-cta-whatsapp"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-7 py-3.5 text-base font-jost font-semibold text-white shadow-lg shadow-green-900/30 transition-all hover:bg-[#1fb855] hover:shadow-green-900/50 focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-slate-950"
+            >
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              Message us on WhatsApp
+            </a>
+
+            <a
+              href="#services"
+              id="final-cta-browse"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-7 py-3.5 text-base font-jost font-semibold text-white/80 transition-all hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-950"
+            >
+              Browse services
+              <ArrowRight className="h-5 w-5" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </Container>
     </section>

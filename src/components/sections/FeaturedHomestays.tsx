@@ -15,8 +15,8 @@ export default function FeaturedHomestays() {
     >
       <Container>
         <SectionHeader
-          accent="Stay Comfortably"
-          title="Featured Homestays"
+          accent="Stay comfortably"
+          title="Our homestays"
           subtitle="Comfortable, well-located apartments in Kuala Lumpur for families and travellers."
         />
 
@@ -33,9 +33,9 @@ export default function FeaturedHomestays() {
         <div className="mt-10 text-center">
           <Link
             to="/homestay"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-6 py-3 text-sm font-jost font-semibold text-slate-700 transition-all hover:border-indigo-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
-            View All Homestays
+            View all stays
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>

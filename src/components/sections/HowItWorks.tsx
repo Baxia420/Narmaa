@@ -6,74 +6,109 @@ const steps = [
   {
     number: 1,
     icon: Search,
-    title: "Choose Your Service",
-    description:
-      "Browse our cars, homestays, and tour packages to find what suits your trip.",
+    title: "Browse",
+    description: "Find a car, stay, or tour.",
+    color: "bg-blue-600",
+    lightColor: "bg-blue-50",
+    textColor: "text-blue-600",
   },
   {
     number: 2,
     icon: MessageCircle,
-    title: "Message Us",
-    description:
-      "Send us a message on WhatsApp or submit the enquiry form with your travel details.",
+    title: "Message",
+    description: "WhatsApp us your dates.",
+    color: "bg-[#25d366]",
+    lightColor: "bg-green-50",
+    textColor: "text-[#25d366]",
+    whatsappPreview: true,
   },
   {
     number: 3,
     icon: CheckCircle,
-    title: "Confirm Details",
-    description:
-      "We'll confirm availability, pricing, and all the details before you commit.",
+    title: "Confirm",
+    description: "We confirm price & details.",
+    color: "bg-indigo-600",
+    lightColor: "bg-indigo-50",
+    textColor: "text-indigo-600",
   },
   {
     number: 4,
     icon: Plane,
-    title: "Enjoy Your Trip",
-    description:
-      "Sit back and enjoy your trip in Malaysia — we've got the logistics covered.",
+    title: "Travel",
+    description: "We handle the logistics.",
+    color: "bg-violet-600",
+    lightColor: "bg-violet-50",
+    textColor: "text-violet-600",
   },
 ];
 
 export default function HowItWorks() {
   return (
     <section
-      className="bg-slate-50 py-16 lg:py-20"
+      className="bg-white py-16 lg:py-20"
       aria-label="How it works"
     >
       <Container>
         <SectionHeader
-          accent="Your Journey Begins"
-          title="How It Works"
-          subtitle="Getting started is easy. Here's how we help you plan your trip."
+          accent="Ready in 4 steps"
+          title="How it works"
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
-          {steps.map((step) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={step.number}
-                className="group relative bg-white rounded-2xl p-6 border border-slate-200 shadow-sm transition-all duration-200 hover:shadow-md hover:border-slate-300 flex flex-col"
-              >
-                {/* Large Background Number */}
-                <span className="absolute top-4 right-6 text-5xl font-black text-slate-100 group-hover:text-blue-50 transition-colors duration-200 select-none pointer-events-none">
-                  {`0${step.number}`}
-                </span>
+        {/* Steps grid */}
+        <div className="relative mt-10">
+          {/* Connector line — desktop only */}
+          <div
+            className="absolute top-[2.125rem] left-[calc(12.5%+1.5rem)] right-[calc(12.5%+1.5rem)] hidden h-px bg-gradient-to-r from-blue-200 via-green-200 to-violet-200 lg:block"
+            aria-hidden="true"
+          />
 
-                {/* Icon Container */}
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 mb-4 transition-colors duration-200 group-hover:bg-blue-600 group-hover:text-white">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.number}
+                  className="relative flex flex-col items-center text-center"
+                >
+                  {/* Step circle */}
+                  <div className={`relative flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-full ${step.color} text-white shadow-md ring-4 ring-white z-10`}>
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                    <span
+                      className="absolute -top-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-black text-slate-900 shadow-sm ring-1 ring-slate-200"
+                      aria-hidden="true"
+                    >
+                      {step.number}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-4 font-jost text-lg font-semibold text-slate-900">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-slate-500 leading-relaxed max-w-[10rem]">
+                    {step.description}
+                  </p>
+
+                  {/* WhatsApp chat preview — step 2 */}
+                  {step.whatsappPreview && (
+                    <div className="mt-3 w-full max-w-[180px] rounded-xl border border-green-100 bg-green-50 p-3 text-left shadow-sm">
+                      {/* Incoming message bubble */}
+                      <div className="flex justify-start mb-1.5">
+                        <span className="inline-block rounded-lg rounded-tl-none bg-white px-2.5 py-1.5 text-[10px] text-slate-700 shadow-sm max-w-[90%]">
+                          Hi, I need KLIA pickup on 15 July, 2 pax 🙂
+                        </span>
+                      </div>
+                      {/* Outgoing reply */}
+                      <div className="flex justify-end">
+                        <span className="inline-block rounded-lg rounded-tr-none bg-[#dcf8c6] px-2.5 py-1.5 text-[10px] text-slate-700 shadow-sm max-w-[90%]">
+                          Sure! I'll confirm the details now ✓✓
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
-
-                {/* Text Content */}
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors duration-200">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {step.description}
-                </p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>

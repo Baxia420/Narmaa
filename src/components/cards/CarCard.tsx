@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Users, Fuel, Cog, Car as CarIcon } from "lucide-react";
+import { Users, Fuel, Cog, Car as CarIcon, Luggage, ArrowRight } from "lucide-react";
 import type { Car } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -15,69 +15,89 @@ export default function CarCard({ car, className }: CarCardProps) {
   return (
     <article
       className={cn(
-        "group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md",
+        "group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
         className
       )}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 flex items-center justify-center">
+      {/* Image area — taller ratio */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
         {!imgError && car.image ? (
           <img
             src={car.image}
             alt={car.name}
             onError={() => setImgError(true)}
-            className="h-full w-full object-cover transition-transform duration-300 motion-safe:group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-105"
             loading="lazy"
           />
         ) : (
-          <div className="flex flex-col items-center justify-center text-slate-400 gap-1.5 p-4">
-            <CarIcon className="h-10 w-10 text-slate-300" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">No Image</span>
+          <div className="flex flex-col items-center justify-center gap-2 p-6">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm">
+              <CarIcon className="h-8 w-8 text-slate-300" />
+            </div>
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-slate-400">
+              Photo coming soon
+            </span>
           </div>
         )}
+
+        {/* Category badge — overlaid on image */}
+        <span className="absolute bottom-3 left-3 rounded-full bg-slate-900/70 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+          {car.category}
+        </span>
+
+        {/* Popular badge */}
         {car.popular && (
-          <span className="absolute top-3 left-3 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">
+          <span className="absolute top-3 left-3 flex items-center gap-1 rounded-full border border-blue-400/40 bg-blue-600/90 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-200" aria-hidden="true" />
             Popular
           </span>
         )}
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-medium uppercase tracking-wide text-blue-600">
-          {car.category}
-        </p>
-        <h3 className="mt-1 font-jost text-xl lg:text-[22px] font-semibold text-slate-900 leading-snug">{car.name}</h3>
+        <h3 className="font-jost text-[19px] font-semibold text-slate-900 leading-snug">
+          {car.name}
+        </h3>
 
-        <div className="mt-3 flex flex-wrap gap-3 text-sm text-slate-500">
-          <span className="inline-flex items-center gap-1">
-            <Users className="h-4 w-4" aria-hidden="true" />
+        {/* Specs row */}
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-500">
+          <span className="inline-flex items-center gap-1.5">
+            <Users className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
             {car.seats} seats
           </span>
-          <span className="inline-flex items-center gap-1">
-            <Cog className="h-4 w-4" aria-hidden="true" />
+          <span className="inline-flex items-center gap-1.5">
+            <Cog className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
             {car.transmission}
           </span>
-          <span className="inline-flex items-center gap-1">
-            <Fuel className="h-4 w-4" aria-hidden="true" />
+          <span className="inline-flex items-center gap-1.5">
+            <Fuel className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
             {car.fuel}
           </span>
+          {car.luggage && (
+            <span className="inline-flex items-center gap-1.5">
+              <Luggage className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
+              {car.luggage}
+            </span>
+          )}
         </div>
 
-        <div className="mt-auto pt-4">
+        <div className="mt-auto pt-4 flex items-center justify-between">
           {car.priceFrom && (
             <p className="text-sm text-slate-500">
               From{" "}
-              <span className="text-xl font-bold text-slate-900 font-jost">
+              <span className="text-[18px] font-bold text-slate-900 font-jost">
                 RM{car.priceFrom}
               </span>
-              /day
+              <span className="text-xs text-slate-400">/day</span>
             </p>
           )}
 
           <Link
             to={`/car-rental/${car.slug}`}
-            className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-jost font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="ml-auto inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-4 py-2 text-sm font-jost font-semibold text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            View Details
+            View car
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
       </div>
