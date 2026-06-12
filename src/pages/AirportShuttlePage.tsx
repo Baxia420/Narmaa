@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plane, Clock, ShieldCheck, User, CheckCircle, , HelpCircle, AlertCircle } from "lucide-react";
+import { Plane, Clock, ShieldCheck, User, CheckCircle, HelpCircle, AlertCircle } from "lucide-react";
 import { SEO, pageSEO } from "@/lib/seo";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
