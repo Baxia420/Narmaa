@@ -52,15 +52,17 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-1.5">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
             return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-jost text-[15px] font-semibold transition-colors hover:text-brand-600 tracking-wide ${
-                  isActive ? "text-brand-600" : "text-slate-600"
+                className={`px-3.5 py-2 rounded-full font-jost text-[15px] font-semibold transition-all duration-200 tracking-wide ${
+                  isActive
+                    ? "bg-brand-50 text-brand-700 shadow-sm ring-1 ring-brand-200/50"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                 }`}
               >
                 {link.name}
