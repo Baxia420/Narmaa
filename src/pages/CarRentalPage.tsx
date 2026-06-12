@@ -47,7 +47,7 @@ export default function CarRentalPage() {
         accent="Premium Rental Fleet"
         title="Car Rental in Malaysia"
         subtitle="Choose from comfortable, clean, and practical vehicles for city travel, airport pickup, family trips, and private journeys."
-        backgroundImage="/images/general/car-rental-hero.webp"
+        backgroundImage="/images/general/hero-malaysia.webp"
       />
 
       {/* Rental Benefits */}

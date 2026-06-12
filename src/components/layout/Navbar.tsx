@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
@@ -77,7 +77,7 @@ export default function Navbar() {
             external
             variant="whatsapp"
             size="md"
-            iconLeft={<MessageCircle className="h-4 w-4" />}
+            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-4 w-4" alt="" />}
           >
             WhatsApp Us
           </Button>
@@ -127,7 +127,7 @@ export default function Navbar() {
               variant="whatsapp"
               size="lg"
               className="w-full justify-center"
-              iconLeft={<MessageCircle className="h-5 w-5" />}
+              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5" alt="" />}
             >
               Message us on WhatsApp
             </Button>

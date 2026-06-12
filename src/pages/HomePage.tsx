@@ -1,7 +1,6 @@
 import { SEO, pageSEO } from "@/lib/seo";
 import Hero from "@/components/sections/Hero";
 import TrustSection from "@/components/sections/TrustSection";
-import ServicesSummary from "@/components/sections/ServicesSummary";
 import FeaturedFleet from "@/components/sections/FeaturedFleet";
 import FeaturedHomestays from "@/components/sections/FeaturedHomestays";
 import FeaturedTours from "@/components/sections/FeaturedTours";
@@ -51,7 +50,6 @@ export default function HomePage() {
 
       <Hero />
       <TrustSection />
-      <ServicesSummary />
       <FeaturedFleet />
       <FeaturedHomestays />
       <FeaturedTours />

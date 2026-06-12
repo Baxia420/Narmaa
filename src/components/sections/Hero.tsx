@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Plane, Car, Home } from "lucide-react";
+import { ArrowRight, Plane, Car, Home } from "lucide-react";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 import { Link } from "react-router-dom";
 
@@ -79,7 +79,7 @@ export default function Hero() {
                 id="hero-whatsapp-cta"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25d366] px-7 py-3.5 text-base font-jost font-semibold text-white shadow-lg shadow-green-900/30 transition-all hover:bg-[#1fb855] hover:shadow-green-900/50 focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-slate-950"
               >
-                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                <img src="/images/general/whatsapp-logo.svg" className="h-5 w-5" alt="WhatsApp" />
                 Check availability
               </a>
 
@@ -94,27 +94,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: floating stat mini-cards — visible on lg+ */}
-          <div className="hidden lg:flex flex-col gap-3 min-w-[220px]">
-            {statCards.map(({ icon: Icon, label, sub, href }) => (
-              <Link
-                key={label}
-                to={href}
-                className="group flex items-center gap-3.5 rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/30"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600/80 text-white group-hover:bg-blue-500 transition-colors">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <div>
-                  <p className="text-sm font-jost font-semibold text-white leading-none">
-                    {label}
-                  </p>
-                  <p className="mt-1 text-xs text-blue-200">{sub}</p>
-                </div>
-                <ArrowRight className="ml-auto h-4 w-4 text-white/40 group-hover:text-white/70 transition-colors" aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
+
         </div>
       </div>
     </section>

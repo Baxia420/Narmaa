@@ -19,11 +19,15 @@ export default function FAQPage() {
       <SEO {...pageSEO.faq} />
 
       {/* Header */}
-      <section className="bg-gradient-to-b from-brand-900 to-brand-950 text-white py-20 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]" aria-hidden="true" />
+      <section className="text-white py-20 text-center relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/general/hero-malaysia.webp" alt="" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 to-slate-900/80" aria-hidden="true" />
+        </div>
         <Container className="relative z-10">
           <HelpCircle className="mx-auto h-12 w-12 text-blue-400 mb-4" />
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="font-jost text-4xl font-bold tracking-tight text-white sm:text-5xl">
             How can we help?
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-brand-100 sm:text-xl">

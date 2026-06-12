@@ -47,7 +47,7 @@ export default function ToursPage() {
         accent="Unforgettable Journeys"
         title="Private Chauffeur Tours in Malaysia"
         subtitle="Explore Malaysia with private transport, flexible routes, and local travel support arranged around your schedule."
-        backgroundImage="/images/general/tours-hero.webp"
+        backgroundImage="/images/general/hero-malaysia.webp"
       />
 
       {/* Tour Benefits */}

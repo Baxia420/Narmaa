@@ -796,7 +796,7 @@ export const airportShuttles: AirportShuttle[] = [
     seats: 4,
     priceFrom: 120,
     suitableFor: ["Solo travelers", "Couples", "Light luggage", "Budget conscious"],
-    image: "/images/airport-shuttle/airport-shuttle-economy.webp",
+    image: "/images/fleet/perodua-myvi.webp",
     notes: ["Luggage capacity: 2 medium bags", "Professional local driver", "Tolls & basic fees included"],
     featured: true,
     description: "Reliable and budget-friendly airport transport service for small parties."
@@ -822,7 +822,7 @@ export const airportShuttles: AirportShuttle[] = [
     seats: 6,
     priceFrom: 250,
     suitableFor: ["Families", "Small groups", "Extra luggage"],
-    image: "/images/airport-shuttle/airport-shuttle-6-seater.webp",
+    image: "/images/fleet/toyota-avanza.webp",
     notes: ["Luggage capacity: 4 large bags", "Flexible seating configurations", "Excellent family convenience"],
     featured: true,
     description: "Spacious multi-purpose vehicle designed for comfortable group travel and luggage handling."
@@ -835,7 +835,7 @@ export const airportShuttles: AirportShuttle[] = [
     seats: 10,
     priceFrom: 350,
     suitableFor: ["Medium groups", "Golfing trips", "Corporate transfers"],
-    image: "/images/airport-shuttle/airport-shuttle-10-seater.webp",
+    image: "/images/airport-shuttle/10-seater.webp",
     notes: ["Luggage capacity: 6-8 large bags", "High roof van configuration", "Ideal for golfing equipment and luggage"],
     featured: true,
     description: "High-capacity executive vans ensuring smooth group logistics between airports and hotels."
@@ -848,7 +848,7 @@ export const airportShuttles: AirportShuttle[] = [
     seats: 18,
     priceFrom: 500,
     suitableFor: ["Large tour groups", "Wedding groups", "Corporate events"],
-    image: "/images/airport-shuttle/airport-shuttle-18-seater.webp",
+    image: "/images/airport-shuttle/18-seater.webp",
     notes: ["Luggage capacity: 15+ bags", "Full-sized minibus layout", "Comfortable air-conditioned cabin"],
     featured: true,
     description: "Ideal ground transport solution for large passenger groups traveling together across Malaysia."

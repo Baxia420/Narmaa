@@ -47,7 +47,7 @@ export default function HomestayPage() {
         accent="Your Home in Malaysia"
         title="Comfortable Homestays for Your Malaysia Trip"
         subtitle="Find practical and comfortable stays for families, groups, and travelers who want convenience during their visit."
-        backgroundImage="/images/general/homestay-hero.webp"
+        backgroundImage="/images/general/hero-malaysia.webp"
       />
 
       {/* Stay Benefits */}
