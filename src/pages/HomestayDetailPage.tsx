@@ -17,8 +17,7 @@ import {
   AlertCircle,
   Navigation,
   ArrowLeft,
-  MessageCircle,
-} from "lucide-react";
+  } from "lucide-react";
 
 export default function HomestayDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -37,8 +36,7 @@ export default function HomestayDetailPage() {
   const whatsappLink = generateWhatsAppLink({
     serviceType: "Homestay",
     itemName: homestay.name,
-    pageSource: `Homestay Detail - ${homestay.name}`,
-  });
+    pageSource: `Homestay Detail - ${homestay.name}`});
 
   const overviewItems = [
     { icon: MapPin, label: "Location", value: homestay.location },
@@ -46,13 +44,11 @@ export default function HomestayDetailPage() {
     {
       icon: BedDouble,
       label: "Bedrooms",
-      value: `${homestay.bedrooms} bedroom${homestay.bedrooms > 1 ? "s" : ""}`,
-    },
+      value: `${homestay.bedrooms} bedroom${homestay.bedrooms > 1 ? "s" : ""}`},
     {
       icon: Bath,
       label: "Bathrooms",
-      value: `${homestay.bathrooms} bathroom${homestay.bathrooms > 1 ? "s" : ""}`,
-    },
+      value: `${homestay.bathrooms} bathroom${homestay.bathrooms > 1 ? "s" : ""}`},
   ];
 
   return (
@@ -206,7 +202,7 @@ export default function HomestayDetailPage() {
                   variant="whatsapp"
                   size="lg"
                   className="w-full sm:w-auto"
-                  iconLeft={<MessageCircle className="h-5 w-5" />}
+                  iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
                 >
                   Request Booking on WhatsApp
                 </Button>

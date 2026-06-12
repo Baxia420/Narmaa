@@ -1,4 +1,4 @@
-import { MessageCircle, Plane, Car, Home, Compass } from "lucide-react";
+import { Plane, Car, Home, Compass } from "lucide-react";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 import Container from "@/components/ui/Container";
 
@@ -58,7 +58,7 @@ export default function LeadFormSection() {
                 id="enquiry-whatsapp-cta"
                 className="inline-flex items-center gap-2.5 self-start rounded-xl bg-[#25d366] px-5 py-3 text-sm font-jost font-semibold text-white shadow-sm transition-colors hover:bg-[#1fb855]"
               >
-                <MessageCircle className="h-4.5 w-4.5" aria-hidden="true" />
+                <img src="/images/general/whatsapp-logo.svg" className="h-4.5 w-4.5 shrink-0" alt="" />
                 Message on WhatsApp
               </a>
             </div>

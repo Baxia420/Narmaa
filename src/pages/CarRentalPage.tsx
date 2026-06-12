@@ -14,26 +14,22 @@ const rentalBenefits = [
     icon: ShieldCheck,
     title: "Clean & Well-Maintained",
     description:
-      "Every vehicle is thoroughly cleaned and inspected before your rental begins.",
-  },
+      "Every vehicle is thoroughly cleaned and inspected before your rental begins."},
   {
     icon: Clock,
     title: "Flexible Pickup & Return",
     description:
-      "Arrange pickup and drop-off at your convenience — airport, hotel, or any agreed location.",
-  },
+      "Arrange pickup and drop-off at your convenience — airport, hotel, or any agreed location."},
   {
     icon: Fuel,
     title: "Full Tank Policy",
     description:
-      "Vehicles are provided with a full tank of fuel so you can start your journey right away.",
-  },
+      "Vehicles are provided with a full tank of fuel so you can start your journey right away."},
   {
     icon: UserCheck,
     title: "Chauffeur Option Available",
     description:
-      "Prefer not to drive? Add a professional chauffeur to any rental for a stress-free experience.",
-  },
+      "Prefer not to drive? Add a professional chauffeur to any rental for a stress-free experience."},
 ];
 
 const carRentalFaqs = getFAQsByCategory("Car Rental");

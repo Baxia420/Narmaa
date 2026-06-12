@@ -10,8 +10,7 @@ const serviceCards = [
     chips: ["KLIA / KLIA2", "Flight tracking", "Meet & greet"],
     price: "from RM120",
     href: "/airport-shuttle",
-    headerBg: "bg-sky-500",
-  },
+    headerBg: "bg-sky-500"},
   {
     icon: Car,
     title: "Car Rental",
@@ -19,8 +18,7 @@ const serviceCards = [
     chips: ["5-seat sedan", "7-seat MPV", "Alphard"],
     price: "from RM120/day",
     href: "/car-rental",
-    headerBg: "bg-blue-600",
-  },
+    headerBg: "bg-blue-600"},
   {
     icon: Home,
     title: "Homestays",
@@ -28,8 +26,7 @@ const serviceCards = [
     chips: ["Bukit Bintang", "Pool & gym", "2BR available"],
     price: "from RM250/night",
     href: "/homestay",
-    headerBg: "bg-indigo-600",
-  },
+    headerBg: "bg-indigo-600"},
   {
     icon: Compass,
     title: "Private Tours",
@@ -37,8 +34,7 @@ const serviceCards = [
     chips: ["Malacca", "Cameron", "Genting"],
     price: "from RM300/trip",
     href: "/tours",
-    headerBg: "bg-violet-600",
-  },
+    headerBg: "bg-violet-600"},
 ];
 
 const trustBadges = [

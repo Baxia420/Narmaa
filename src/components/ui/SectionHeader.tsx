@@ -15,8 +15,7 @@ export default function SectionHeader({
   badge,
   centered = true,
   className,
-  accent,
-}: SectionHeaderProps) {
+  accent}: SectionHeaderProps) {
   return (
     <div className={cn("mb-10", centered && "text-center", className)}>
       {accent && (

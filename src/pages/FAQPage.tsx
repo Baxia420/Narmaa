@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageCircle, HelpCircle } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 import { SEO, pageSEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -91,7 +91,7 @@ export default function FAQPage() {
               external
               variant="whatsapp"
               size="lg"
-              iconLeft={<MessageCircle className="h-5 w-5" />}
+              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
             >
               Message Us on WhatsApp
             </Button>

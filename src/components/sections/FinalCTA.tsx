@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 import Container from "@/components/ui/Container";
 
@@ -15,8 +15,7 @@ export default function FinalCTA() {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `radial-gradient(circle at 25% 50%, white 1px, transparent 1px), radial-gradient(circle at 75% 50%, white 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
+          backgroundSize: "40px 40px"}}
         aria-hidden="true"
       />
 
@@ -40,7 +39,7 @@ export default function FinalCTA() {
               id="final-cta-whatsapp"
               className="inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-7 py-3.5 text-base font-jost font-semibold text-white shadow-lg shadow-green-900/30 transition-all hover:bg-[#1fb855] hover:shadow-green-900/50 focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-slate-950"
             >
-              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              <img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />
               Message us on WhatsApp
             </a>
 

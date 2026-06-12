@@ -15,14 +15,13 @@ const variantStyles = {
   ghost:
     "text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus-visible:ring-slate-400",
   whatsapp:
-    "bg-whatsapp text-white hover:bg-whatsapp-dark focus-visible:ring-whatsapp shadow-sm",
+    "bg-[#25d366] text-white hover:bg-[#128c7e] focus-visible:ring-[#25d366] shadow-sm",
 } as const;
 
 const sizeStyles = {
   sm: "px-3 py-1.5 text-sm gap-1.5",
   md: "px-5 py-2.5 text-sm gap-2",
-  lg: "px-7 py-3 text-base gap-2.5",
-} as const;
+  lg: "px-7 py-3 text-base gap-2.5"} as const;
 
 export type ButtonVariant = keyof typeof variantStyles;
 export type ButtonSize = keyof typeof sizeStyles;

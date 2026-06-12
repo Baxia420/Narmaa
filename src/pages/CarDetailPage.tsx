@@ -17,8 +17,7 @@ import {
   AlertCircle,
   Tag,
   ArrowLeft,
-  MessageCircle,
-} from "lucide-react";
+  } from "lucide-react";
 
 export default function CarDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -37,8 +36,7 @@ export default function CarDetailPage() {
   const whatsappLink = generateWhatsAppLink({
     serviceType: "Car Rental",
     itemName: car.name,
-    pageSource: `Car Detail - ${car.name}`,
-  });
+    pageSource: `Car Detail - ${car.name}`});
 
   const specs = [
     { icon: Users, label: "Seats", value: `${car.seats} seats` },
@@ -207,7 +205,7 @@ export default function CarDetailPage() {
                   variant="whatsapp"
                   size="lg"
                   className="w-full sm:w-auto"
-                  iconLeft={<MessageCircle className="h-5 w-5" />}
+                  iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
                 >
                   Check Availability on WhatsApp
                 </Button>

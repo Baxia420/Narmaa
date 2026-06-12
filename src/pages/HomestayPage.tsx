@@ -14,26 +14,22 @@ const stayBenefits = [
     icon: Home,
     title: "Comfortable & Practical",
     description:
-      "Our homestays are selected for comfort, cleanliness, and convenience — ideal for families and groups.",
-  },
+      "Our homestays are selected for comfort, cleanliness, and convenience — ideal for families and groups."},
   {
     icon: Wifi,
     title: "Modern Amenities",
     description:
-      "Enjoy WiFi, air conditioning, kitchens, washing machines, and more in every homestay.",
-  },
+      "Enjoy WiFi, air conditioning, kitchens, washing machines, and more in every homestay."},
   {
     icon: ShieldCheck,
     title: "Vetted Properties",
     description:
-      "Each property is checked to ensure quality and safety standards are met before listing.",
-  },
+      "Each property is checked to ensure quality and safety standards are met before listing."},
   {
     icon: MapPin,
     title: "Great Locations",
     description:
-      "Stay near public transport, shopping malls, and popular attractions across Kuala Lumpur.",
-  },
+      "Stay near public transport, shopping malls, and popular attractions across Kuala Lumpur."},
 ];
 
 const homestayFaqs = getFAQsByCategory("Homestay");

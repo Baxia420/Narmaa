@@ -13,8 +13,7 @@ export default function PageHero({
   subtitle,
   backgroundImage,
   className,
-  accent,
-}: PageHeroProps) {
+  accent}: PageHeroProps) {
   return (
     <section
       className={cn(

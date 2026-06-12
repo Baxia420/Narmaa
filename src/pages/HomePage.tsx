@@ -1,6 +1,5 @@
 import { SEO, pageSEO } from "@/lib/seo";
 import Hero from "@/components/sections/Hero";
-import TrustSection from "@/components/sections/TrustSection";
 import FeaturedFleet from "@/components/sections/FeaturedFleet";
 import FeaturedHomestays from "@/components/sections/FeaturedHomestays";
 import FeaturedTours from "@/components/sections/FeaturedTours";
@@ -35,8 +34,7 @@ const localBusinessJsonLd = {
     "Car Rental",
     "Homestay Accommodation",
     "Private Chauffeur Tours",
-  ],
-};
+  ]};
 
 export default function HomePage() {
   return (
@@ -49,7 +47,6 @@ export default function HomePage() {
       </Helmet>
 
       <Hero />
-      <TrustSection />
       <FeaturedFleet />
       <FeaturedHomestays />
       <FeaturedTours />

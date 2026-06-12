@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, ArrowLeft, Car, Home as HomeIcon, MapPin } from "lucide-react";
+import { ArrowLeft, Car, Home as HomeIcon, MapPin } from "lucide-react";
 import { SEO, pageSEO } from "@/lib/seo";
 import Button from "@/components/ui/Button";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
@@ -64,7 +64,7 @@ export default function NotFoundPage() {
               variant="whatsapp"
               size="lg"
               className="flex-1 sm:flex-none"
-              iconLeft={<MessageCircle className="h-5 w-5" />}
+              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
             >
               WhatsApp Support
             </Button>

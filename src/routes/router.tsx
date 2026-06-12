@@ -63,60 +63,46 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
-      },
+        element: <HomePage />},
       {
         path: "airport-shuttle",
-        element: <AirportShuttlePage />,
-      },
+        element: <AirportShuttlePage />},
       {
         path: "car-rental",
-        element: <CarRentalPage />,
-      },
+        element: <CarRentalPage />},
       {
         path: "car-rental/:slug",
-        element: <CarDetailPage />,
-      },
+        element: <CarDetailPage />},
       {
         path: "homestay",
-        element: <HomestayPage />,
-      },
+        element: <HomestayPage />},
       {
         path: "homestay/:slug",
-        element: <HomestayDetailPage />,
-      },
+        element: <HomestayDetailPage />},
       {
         path: "tours",
-        element: <ToursPage />,
-      },
+        element: <ToursPage />},
       {
         path: "tours/:slug",
-        element: <TourDetailPage />,
-      },
+        element: <TourDetailPage />},
       {
         path: "contact",
-        element: <ContactPage />,
-      },
+        element: <ContactPage />},
       {
         path: "faq",
-        element: <FAQPage />,
-      },
+        element: <FAQPage />},
       {
         path: "privacy-policy",
-        element: <PrivacyPolicyPage />,
-      },
+        element: <PrivacyPolicyPage />},
       {
         path: "terms",
-        element: <TermsPage />,
-      },
-    ],
-  },
+        element: <TermsPage />},
+    ]},
   {
     path: "*",
     element: (
       <Suspense fallback={<PageLoader />}>
         <NotFoundPage />
       </Suspense>
-    ),
-  },
+    )},
 ]);

@@ -11,8 +11,7 @@ export default function DetailHero({
   images,
   title,
   badges,
-  className,
-}: DetailHeroProps) {
+  className}: DetailHeroProps) {
   const mainImage = images[0];
   const thumbnails = images.slice(1, 5);
 

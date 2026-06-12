@@ -15,23 +15,21 @@ import {
   CheckCircle,
   AlertCircle,
   ArrowLeft,
-  MessageCircle,
+  ,
   Users,
   Calendar,
   Compass,
   Coffee,
   Anchor,
   Car,
-  ChevronRight,
-} from "lucide-react";
+  ChevronRight} from "lucide-react";
 
 // Feature Icon Mapping
 const featureIconMap: Record<string, any> = {
   "Private Chauffeur": Car,
   "Guided City Tour": Compass,
   "Lunch Included": Coffee,
-  "River Cruise": Anchor,
-};
+  "River Cruise": Anchor};
 
 export default function TourDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -60,8 +58,7 @@ export default function TourDetailPage() {
       itemName: tour.name,
       pageSource: `Tour Detail - ${tour.name}`,
       travelDate: tourDate || undefined,
-      pickupLocation: `Group size: ${guestCount} guests`,
-    });
+      pickupLocation: `Group size: ${guestCount} guests`});
   };
 
   return (
@@ -313,7 +310,7 @@ export default function TourDetailPage() {
                 variant="whatsapp"
                 size="lg"
                 className="w-full justify-center shadow-md font-bold"
-                iconLeft={<MessageCircle className="h-5 w-5" />}
+                iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
               >
                 Plan This Tour on WhatsApp
               </Button>

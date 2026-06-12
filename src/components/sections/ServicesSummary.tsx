@@ -12,8 +12,7 @@ const services = [
     cta: "View service",
     href: "/airport-shuttle",
     accentColor: "text-sky-600",
-    chipBg: "bg-sky-50 text-sky-700",
-  },
+    chipBg: "bg-sky-50 text-sky-700"},
   {
     icon: Home,
     title: "Homestays",
@@ -22,8 +21,7 @@ const services = [
     cta: "View stays",
     href: "/homestay",
     accentColor: "text-indigo-600",
-    chipBg: "bg-indigo-50 text-indigo-700",
-  },
+    chipBg: "bg-indigo-50 text-indigo-700"},
   {
     icon: MapPin,
     title: "Private Tours",
@@ -32,8 +30,7 @@ const services = [
     cta: "View trips",
     href: "/tours",
     accentColor: "text-violet-600",
-    chipBg: "bg-violet-50 text-violet-700",
-  },
+    chipBg: "bg-violet-50 text-violet-700"},
 ];
 
 export default function ServicesSummary() {

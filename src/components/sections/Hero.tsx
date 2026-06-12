@@ -7,20 +7,17 @@ const statCards = [
     icon: Plane,
     label: "KLIA Pickup",
     sub: "from RM120",
-    href: "/airport-shuttle",
-  },
+    href: "/airport-shuttle"},
   {
     icon: Car,
     label: "7-seat MPV",
     sub: "from RM280/day",
-    href: "/car-rental",
-  },
+    href: "/car-rental"},
   {
     icon: Home,
     label: "Bukit Bintang",
     sub: "from RM250/night",
-    href: "/homestay",
-  },
+    href: "/homestay"},
 ];
 
 export default function Hero() {
@@ -79,7 +76,7 @@ export default function Hero() {
                 id="hero-whatsapp-cta"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25d366] px-7 py-3.5 text-base font-jost font-semibold text-white shadow-lg shadow-green-900/30 transition-all hover:bg-[#1fb855] hover:shadow-green-900/50 focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-slate-950"
               >
-                <img src="/images/general/whatsapp-logo.svg" className="h-5 w-5" alt="WhatsApp" />
+                <img src="/images/general/whatsapp-logo.svg" className="h-7 w-7" alt="WhatsApp" />
                 Check availability
               </a>
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plane, Clock, ShieldCheck, User, CheckCircle, MessageCircle, HelpCircle, AlertCircle } from "lucide-react";
+import { Plane, Clock, ShieldCheck, User, CheckCircle, , HelpCircle, AlertCircle } from "lucide-react";
 import { SEO, pageSEO } from "@/lib/seo";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
@@ -21,8 +21,7 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
   const whatsappLink = generateWhatsAppLink({
     serviceType: "Airport Shuttle",
     itemName: shuttle.name,
-    pageSource: `Airport Shuttle - ${shuttle.name}`,
-  });
+    pageSource: `Airport Shuttle - ${shuttle.name}`});
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md">
@@ -86,7 +85,7 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
             variant="whatsapp"
             size="md"
             className="w-full justify-center"
-            iconLeft={<MessageCircle className="h-4 w-4" />}
+            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-4 w-4 shrink-0" alt="" />}
           >
             Check Availability
           </Button>

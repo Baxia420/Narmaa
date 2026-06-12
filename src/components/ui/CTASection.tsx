@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import Container from "@/components/ui/Container";
@@ -18,8 +18,7 @@ export default function CTASection({
   ctaText,
   ctaHref,
   variant = "link",
-  className,
-}: CTASectionProps) {
+  className}: CTASectionProps) {
   const isWhatsApp = variant === "whatsapp";
   const isExternal = ctaHref.startsWith("http");
 
@@ -32,7 +31,7 @@ export default function CTASection({
   );
 
   const icon = isWhatsApp ? (
-    <MessageCircle className="h-5 w-5" aria-hidden="true" />
+    <img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />
   ) : (
     <ArrowRight className="h-5 w-5" aria-hidden="true" />
   );

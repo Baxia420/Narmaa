@@ -14,26 +14,22 @@ const tourBenefits = [
     icon: Car,
     title: "Private Transport",
     description:
-      "Travel in your own comfortable vehicle with a dedicated driver — no sharing with strangers.",
-  },
+      "Travel in your own comfortable vehicle with a dedicated driver — no sharing with strangers."},
   {
     icon: Route,
     title: "Flexible Routes",
     description:
-      "Customise your itinerary to visit the places you want at your own pace.",
-  },
+      "Customise your itinerary to visit the places you want at your own pace."},
   {
     icon: Clock,
     title: "Door-to-Door Convenience",
     description:
-      "Pickup and drop-off included from your hotel or homestay — no taxi queues or navigation worries.",
-  },
+      "Pickup and drop-off included from your hotel or homestay — no taxi queues or navigation worries."},
   {
     icon: Compass,
     title: "Local Knowledge",
     description:
-      "Our drivers know Malaysia well and can recommend hidden gems, great food spots, and scenic routes.",
-  },
+      "Our drivers know Malaysia well and can recommend hidden gems, great food spots, and scenic routes."},
 ];
 
 const tourFaqs = getFAQsByCategory("Tours");

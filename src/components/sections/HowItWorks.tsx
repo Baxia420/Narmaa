@@ -10,8 +10,7 @@ const steps = [
     description: "Find a car, stay, or tour.",
     color: "bg-blue-600",
     lightColor: "bg-blue-50",
-    textColor: "text-blue-600",
-  },
+    textColor: "text-blue-600"},
   {
     number: 2,
     icon: MessageCircle,
@@ -20,8 +19,7 @@ const steps = [
     color: "bg-[#25d366]",
     lightColor: "bg-green-50",
     textColor: "text-[#25d366]",
-    whatsappPreview: true,
-  },
+    whatsappPreview: true},
   {
     number: 3,
     icon: CheckCircle,
@@ -29,8 +27,7 @@ const steps = [
     description: "We confirm price & details.",
     color: "bg-indigo-600",
     lightColor: "bg-indigo-50",
-    textColor: "text-indigo-600",
-  },
+    textColor: "text-indigo-600"},
   {
     number: 4,
     icon: Plane,
@@ -38,8 +35,7 @@ const steps = [
     description: "We handle the logistics.",
     color: "bg-violet-600",
     lightColor: "bg-violet-50",
-    textColor: "text-violet-600",
-  },
+    textColor: "text-violet-600"},
 ];
 
 export default function HowItWorks() {

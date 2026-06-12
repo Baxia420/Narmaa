@@ -9,8 +9,7 @@ type ImageGalleryPlaceholderProps = {
 export default function ImageGalleryPlaceholder({
   images,
   alt,
-  className,
-}: ImageGalleryPlaceholderProps) {
+  className}: ImageGalleryPlaceholderProps) {
   if (images.length === 0) {
     return (
       <div

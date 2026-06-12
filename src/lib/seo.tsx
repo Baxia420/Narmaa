@@ -43,53 +43,43 @@ export const pageSEO = {
     title: "Narmaa Transport | Car Rental, Homestays & Private Tours in Malaysia",
     description:
       "Narmaa Transport offers car rental, comfortable homestays, and private chauffeur tours in Malaysia. Plan your trip with one trusted local team via WhatsApp.",
-    canonical: "/",
-  },
+    canonical: "/"},
   carRental: {
     title: "Car Rental in Malaysia | Narmaa Transport",
     description:
       "Rent comfortable, clean vehicles for city travel, airport pickup, family trips, and private journeys across Malaysia with Narmaa Transport.",
-    canonical: "/car-rental",
-  },
+    canonical: "/car-rental"},
   homestay: {
     title: "Homestays in Malaysia | Narmaa Transport",
     description:
       "Find comfortable and practical homestays for families, groups, and travellers visiting Kuala Lumpur and Malaysia with Narmaa Transport.",
-    canonical: "/homestay",
-  },
+    canonical: "/homestay"},
   tours: {
     title: "Private Chauffeur Tours in Malaysia | Narmaa Transport",
     description:
       "Explore Malaysia with private transport, flexible routes, and local travel support. Day trips to Malacca, Cameron Highlands, Genting, and more.",
-    canonical: "/tours",
-  },
+    canonical: "/tours"},
   contact: {
     title: "Contact Narmaa Transport",
     description:
       "Get in touch with Narmaa Transport via WhatsApp or our contact form. We provide car rental, homestays, and private tours in Malaysia.",
-    canonical: "/contact",
-  },
+    canonical: "/contact"},
   faq: {
     title: "Frequently Asked Questions | Narmaa Transport",
     description:
       "Find answers to common questions about car rental, homestays, private tours, booking, and payment with Narmaa Transport in Malaysia.",
-    canonical: "/faq",
-  },
+    canonical: "/faq"},
   privacyPolicy: {
     title: "Privacy Policy | Narmaa Transport",
     description:
       "Read about how Narmaa Transport collects, uses, and protects your personal information.",
-    canonical: "/privacy-policy",
-  },
+    canonical: "/privacy-policy"},
   terms: {
     title: "Terms & Booking Policy | Narmaa Transport",
     description:
       "Read the booking terms, pricing policy, and important service information for Narmaa Transport.",
-    canonical: "/terms",
-  },
+    canonical: "/terms"},
   notFound: {
     title: "Page Not Found | Narmaa Transport",
     description: "The page you are looking for could not be found. Explore our services or contact us on WhatsApp.",
-    canonical: "",
-  },
-};
+    canonical: ""}};
