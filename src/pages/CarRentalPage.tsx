@@ -7,7 +7,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import CTASection from "@/components/ui/CTASection";
 import { cars, getFAQsByCategory } from "@/lib/data";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
-import { ShieldCheck, Clock, Fuel, UserCheck } from "lucide-react";
+import { ShieldCheck, Clock, CheckCircle, UserCheck } from "lucide-react";
 
 const rentalBenefits = [
   {
@@ -21,10 +21,10 @@ const rentalBenefits = [
     description:
       "Arrange pickup and drop-off at designated locations around KL."},
   {
-    icon: Fuel,
-    title: "Standard Fuel Policy",
+    icon: CheckCircle,
+    title: "Transparent Pricing",
     description:
-      "Return the vehicle with the same amount of fuel as when you picked it up."},
+      "No hidden fees or surprise charges. What you see is what you pay."},
   {
     icon: UserCheck,
     title: "Chauffeur Option Available",
@@ -39,8 +39,24 @@ export default function CarRentalPage() {
     <>
       <SEO {...pageSEO.carRental} />
 
-      {/* Rental Benefits */}
+      {/* Car Listing Grid */}
       <section className="py-16 md:py-20 bg-white">
+        <Container>
+          <SectionHeader
+            accent="Select Your Ride"
+            title="Our Fleet"
+            subtitle="Browse our range of vehicles for every type of journey."
+          />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {cars.map((car) => (
+              <CarCard key={car.id} car={car} hideFuelAndLuggage={true} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Rental Benefits */}
+      <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
             accent="The Premium Choice"
@@ -51,7 +67,7 @@ export default function CarRentalPage() {
             {rentalBenefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
+                className="rounded-2xl border border-slate-200 bg-white p-6 text-center"
               >
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                   <benefit.icon className="h-6 w-6" />
@@ -63,22 +79,6 @@ export default function CarRentalPage() {
                   {benefit.description}
                 </p>
               </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Car Listing Grid */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <Container>
-          <SectionHeader
-            accent="Select Your Ride"
-            title="Our Fleet"
-            subtitle="Browse our range of vehicles for every type of journey."
-          />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {cars.map((car) => (
-              <CarCard key={car.id} car={car} hideFuelAndLuggage={true} />
             ))}
           </div>
         </Container>

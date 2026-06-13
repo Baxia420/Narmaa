@@ -130,8 +130,24 @@ export default function AirportShuttlePage() {
         canonical="/airport-shuttle"
       />
 
-      {/* Shuttle Benefits */}
+      {/* Vehicles Grid */}
       <section className="py-16 md:py-20 bg-white">
+        <Container>
+          <SectionHeader
+            accent="Select Your Vehicle"
+            title="Choose Your Shuttle Vehicle"
+            subtitle="We offer options from budget hatchbacks to large executive passenger vans and minibuses."
+          />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {airportShuttles.map((shuttle) => (
+              <ShuttleCard key={shuttle.id} shuttle={shuttle} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Shuttle Benefits */}
+      <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
             accent="Stress-Free Travel"
@@ -142,7 +158,7 @@ export default function AirportShuttlePage() {
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 text-center shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
               >
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                   <benefit.icon className="h-6 w-6" />
@@ -150,22 +166,6 @@ export default function AirportShuttlePage() {
                 <h3 className="text-lg font-bold text-slate-900">{benefit.title}</h3>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">{benefit.description}</p>
               </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Vehicles Grid */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <Container>
-          <SectionHeader
-            accent="Select Your Vehicle"
-            title="Choose Your Shuttle Vehicle"
-            subtitle="We offer options from budget hatchbacks to large executive passenger vans and minibuses."
-          />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {airportShuttles.map((shuttle) => (
-              <ShuttleCard key={shuttle.id} shuttle={shuttle} />
             ))}
           </div>
         </Container>

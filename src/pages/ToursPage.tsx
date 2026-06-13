@@ -39,8 +39,24 @@ export default function ToursPage() {
     <>
       <SEO {...pageSEO.tours} />
 
-      {/* Tour Benefits */}
+      {/* Tour Listing Grid */}
       <section className="py-16 md:py-20 bg-white">
+        <Container>
+          <SectionHeader
+            accent="Popular Itineraries"
+            title="Our Tours & Day Trips"
+            subtitle="Popular destinations with private transport from Kuala Lumpur."
+          />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {tours.map((tour) => (
+              <TourCard key={tour.id} tour={tour} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Tour Benefits */}
+      <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
             accent="Tailored Experience"
@@ -51,7 +67,7 @@ export default function ToursPage() {
             {tourBenefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
+                className="rounded-2xl border border-slate-200 bg-white p-6 text-center"
               >
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                   <benefit.icon className="h-6 w-6" />
@@ -63,22 +79,6 @@ export default function ToursPage() {
                   {benefit.description}
                 </p>
               </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Tour Listing Grid */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <Container>
-          <SectionHeader
-            accent="Popular Itineraries"
-            title="Our Tours & Day Trips"
-            subtitle="Popular destinations with private transport from Kuala Lumpur."
-          />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {tours.map((tour) => (
-              <TourCard key={tour.id} tour={tour} />
             ))}
           </div>
         </Container>

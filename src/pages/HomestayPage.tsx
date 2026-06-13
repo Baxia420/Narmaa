@@ -39,37 +39,8 @@ export default function HomestayPage() {
     <>
       <SEO {...pageSEO.homestay} />
 
-      {/* Stay Benefits */}
-      <section className="py-16 md:py-20 bg-white">
-        <Container>
-          <SectionHeader
-            accent="Cozy & Convenient"
-            title="Why Stay With Narmaa Transport"
-            subtitle="We help you find the right place to stay - so you can enjoy your trip without worry."
-          />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stayBenefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
-              >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                  <benefit.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {benefit.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* Homestay Listing Grid */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
             accent="Select Your Stay"
@@ -83,6 +54,35 @@ export default function HomestayPage() {
                 homestay={homestay} 
                 className="w-full sm:w-[calc(50%-12px)] md:w-[calc(50%-16px)] max-w-md" 
               />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Stay Benefits */}
+      <section className="py-16 md:py-20 bg-slate-50">
+        <Container>
+          <SectionHeader
+            accent="Cozy & Convenient"
+            title="Why Stay With Damai Luxe Management"
+            subtitle="We help you find the right place to stay - so you can enjoy your trip without worry."
+          />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stayBenefits.map((benefit) => (
+              <div
+                key={benefit.title}
+                className="rounded-2xl border border-slate-200 bg-white p-6 text-center"
+              >
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+                  <benefit.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {benefit.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  {benefit.description}
+                </p>
+              </div>
             ))}
           </div>
         </Container>
