@@ -19,7 +19,7 @@ export default function SectionHeader({
   return (
     <div className={cn("mb-10", centered && "text-center", className)}>
       {accent && (
-        <span className="mb-2 block font-satisfy text-3xl sm:text-[36px] md:text-[40px] text-blue-500 font-medium leading-tight">
+        <span className="mb-2 block font-satisfy text-[40px] sm:text-[48px] md:text-[56px] text-blue-500 font-medium leading-tight">
           {accent}
         </span>
       )}
@@ -28,7 +28,7 @@ export default function SectionHeader({
           {badge}
         </span>
       )}
-      <h2 className="font-jost text-3xl font-bold tracking-tight text-slate-900 sm:text-[36px] md:text-[40px] leading-tight">
+      <h2 className="font-jost text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-[32px] leading-tight">
         {title}
       </h2>
       {subtitle && (
