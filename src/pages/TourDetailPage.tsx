@@ -67,10 +67,10 @@ export default function TourDetailPage() {
   return (
     <>
       <SEO
-        title={`${tour.name} — Private Tour | Narmaa Transport`}
+        title={`${tour.name} - Private Tour | Narmaa Transport`}
         description={
           tour.description ||
-          `${tour.name} — ${tour.duration}. Private chauffeur tour with pickup included from KL.`
+          `${tour.name} - ${tour.duration}. Private chauffeur tour with pickup included from KL.`
         }
         canonical={`/tours/${tour.slug}`}
       />

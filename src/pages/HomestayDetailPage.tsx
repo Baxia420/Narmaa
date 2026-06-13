@@ -54,7 +54,7 @@ export default function HomestayDetailPage() {
   return (
     <>
       <SEO
-        title={`${homestay.name} — Homestay | Narmaa Transport`}
+        title={`${homestay.name} - Homestay | Narmaa Transport`}
         description={
           homestay.description ||
           `Stay at ${homestay.name} in ${homestay.location}. Fits up to ${homestay.guests} guests with ${homestay.bedrooms} bedrooms.`

@@ -50,7 +50,7 @@ export default function CarDetailPage() {
   return (
     <>
       <SEO
-        title={`${car.name} — Car Rental | Narmaa Transport`}
+        title={`${car.name} - Car Rental | Narmaa Transport`}
         description={
           car.description ||
           `Rent a ${car.name} from Narmaa Transport. ${car.category} category, ${car.seats} seats, ${car.transmission} transmission.`

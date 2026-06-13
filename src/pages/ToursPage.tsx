@@ -1,5 +1,5 @@
 import { SEO, pageSEO } from "@/lib/seo";
-import PageHero from "@/components/ui/PageHero";
+
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TourCard from "@/components/cards/TourCard";
@@ -14,7 +14,7 @@ const tourBenefits = [
     icon: Car,
     title: "Private Transport",
     description:
-      "Travel in your own comfortable vehicle with a dedicated driver — no sharing with strangers."},
+      "Travel in your own comfortable vehicle with a dedicated driver - no sharing with strangers."},
   {
     icon: Route,
     title: "Flexible Routes",
@@ -24,7 +24,7 @@ const tourBenefits = [
     icon: Clock,
     title: "Door-to-Door Convenience",
     description:
-      "Pickup and drop-off included from your hotel or homestay — no taxi queues or navigation worries."},
+      "Pickup and drop-off included from your hotel or homestay - no taxi queues or navigation worries."},
   {
     icon: Compass,
     title: "Local Knowledge",
@@ -39,20 +39,13 @@ export default function ToursPage() {
     <>
       <SEO {...pageSEO.tours} />
 
-      <PageHero
-        accent="Unforgettable Journeys"
-        title="Private Chauffeur Tours in Malaysia"
-        subtitle="Explore Malaysia with private transport, flexible routes, and local travel support arranged around your schedule."
-        backgroundImage="/images/general/hero-malaysia.webp"
-      />
-
       {/* Tour Benefits */}
       <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
             accent="Tailored Experience"
             title="Why Choose a Private Tour"
-            subtitle="Skip the crowded buses and rigid schedules — travel Malaysia your way."
+            subtitle="Skip the crowded buses and rigid schedules - travel Malaysia your way."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {tourBenefits.map((benefit) => (
@@ -102,7 +95,7 @@ export default function ToursPage() {
               Don't see what you're looking for? We can create a custom tour
               tailored to your interests, group size, and schedule. Whether it's
               a multi-day trip, a specific destination, or a combination of
-              activities — just tell us what you have in mind.
+              activities - just tell us what you have in mind.
             </p>
             <p className="mt-3 text-slate-600 leading-relaxed">
               Message us on WhatsApp with your ideas and we'll put together a

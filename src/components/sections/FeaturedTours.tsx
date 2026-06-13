@@ -14,7 +14,7 @@ export default function FeaturedTours() {
         <SectionHeader
           accent="Explore Malaysia"
           title="Popular day trips"
-          subtitle="Private chauffeur tours to Malaysia's most loved destinations — starting from KL."
+          subtitle="Private chauffeur tours to Malaysia's most loved destinations - starting from KL."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

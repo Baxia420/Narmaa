@@ -27,7 +27,7 @@ export default function ImageGalleryPlaceholder({
 
   return (
     <div className={cn("space-y-3", className)}>
-      {/* Main image — full width */}
+      {/* Main image - full width */}
       <div className="aspect-video overflow-hidden rounded-xl bg-slate-100">
         <img
           src={mainImage}

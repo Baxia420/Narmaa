@@ -19,7 +19,7 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
         className
       )}
     >
-      {/* Image area — taller ratio */}
+      {/* Image area - taller ratio */}
       <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center">
         {!imgError && homestay.image ? (
           <img

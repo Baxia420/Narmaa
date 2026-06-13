@@ -120,7 +120,7 @@ export const cars: Car[] = [
     notes: [
       "Deposit amount to be confirmed before booking",
       "Valid driving license required",
-      "Mileage limits may apply — confirm with Narmaa Transport",
+      "Mileage limits may apply - confirm with Narmaa Transport",
     ],
     description: "Malaysia's favourite compact hatchback. The Perodua Myvi is fuel-efficient, easy to drive, and perfect for navigating city streets and short trips around KL and Selangor.",
   },
@@ -144,9 +144,9 @@ export const cars: Car[] = [
     notes: [
       "Deposit amount to be confirmed before booking",
       "Valid driving license required",
-      "Mileage limits may apply — confirm with Narmaa Transport",
+      "Mileage limits may apply - confirm with Narmaa Transport",
     ],
-    description: "A reliable and stylish sedan popular across Malaysia. The Toyota Vios offers a smooth, comfortable ride — ideal for airport transfers, business travel, and family outings around KL.",
+    description: "A reliable and stylish sedan popular across Malaysia. The Toyota Vios offers a smooth, comfortable ride - ideal for airport transfers, business travel, and family outings around KL.",
   },
   {
     id: "car-3",
@@ -169,9 +169,9 @@ export const cars: Car[] = [
     notes: [
       "Deposit amount to be confirmed before booking",
       "Valid driving license required",
-      "Mileage limits may apply — confirm with Narmaa Transport",
+      "Mileage limits may apply - confirm with Narmaa Transport",
     ],
-    description: "The Toyota Avanza is a versatile 7-seater MPV beloved by Malaysian families. Spacious, practical, and easy to drive — ideal for group airport pickups and outstation trips.",
+    description: "The Toyota Avanza is a versatile 7-seater MPV beloved by Malaysian families. Spacious, practical, and easy to drive - ideal for group airport pickups and outstation trips.",
   },
   {
     id: "car-4",
@@ -193,9 +193,9 @@ export const cars: Car[] = [
     notes: [
       "Deposit amount to be confirmed before booking",
       "Valid driving license required",
-      "Mileage limits may apply — confirm with Narmaa Transport",
+      "Mileage limits may apply - confirm with Narmaa Transport",
     ],
-    description: "A modern compact SUV packed with premium features. The Proton X50 offers a sporty look, comfortable cabin, and advanced tech — great for highway drives and family road trips across Malaysia.",
+    description: "A modern compact SUV packed with premium features. The Proton X50 offers a sporty look, comfortable cabin, and advanced tech - great for highway drives and family road trips across Malaysia.",
   },
   {
     id: "car-5",
@@ -244,7 +244,7 @@ export const cars: Car[] = [
       "Deposit amount to be confirmed before booking",
       "Advance booking recommended due to high demand",
     ],
-    description: "The sporty sibling of the Alphard. The Toyota Vellfire combines executive comfort with bold design — a popular choice for VIP transfers and premium family travel.",
+    description: "The sporty sibling of the Alphard. The Toyota Vellfire combines executive comfort with bold design - a popular choice for VIP transfers and premium family travel.",
   },
 ];
 
@@ -364,7 +364,7 @@ export const tours: Tour[] = [
     notes: [
       "Price is per vehicle, not per person",
       "Entrance fees, tickets, and meals are strictly not included",
-      "Itinerary can be customized — discuss with Narmaa Transport",
+      "Itinerary can be customized - discuss with Narmaa Transport",
       "Availability to be confirmed",
     ],
     description: "Discover the rich history and vibrant culture of Malacca with a private chauffeur. Explore UNESCO heritage sites, taste authentic Nyonya cuisine, and stroll through the famous Jonker Street.",
@@ -512,7 +512,7 @@ export const tours: Tour[] = [
       "Theme park tickets, cable car fees, and meals are strictly not included",
       "Availability to be confirmed",
     ],
-    description: "A fun-filled day trip to Malaysia's mountaintop entertainment city. Enjoy theme parks, cool weather, scenic cable car rides, and premium shopping — all just an hour from KL.",
+    description: "A fun-filled day trip to Malaysia's mountaintop entertainment city. Enjoy theme parks, cool weather, scenic cable car rides, and premium shopping - all just an hour from KL.",
   },
   {
     id: "tour-5",
@@ -774,7 +774,7 @@ export const trustPoints: TrustPoint[] = [
   {
     id: "trust-5",
     title: "Fast WhatsApp Response",
-    description: "Message us on WhatsApp and get a quick reply — no waiting on hold.",
+    description: "Message us on WhatsApp and get a quick reply - no waiting on hold.",
     icon: "MessageCircle",
   },
   {

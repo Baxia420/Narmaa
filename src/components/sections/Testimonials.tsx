@@ -18,7 +18,7 @@ export default function Testimonials() {
               key={testimonial.id}
               className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
             >
-              {/* Star rating — prominent */}
+              {/* Star rating - prominent */}
               <div className="flex gap-1" aria-label={`${testimonial.rating} out of 5 stars`}>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star

@@ -7,7 +7,7 @@ const services = [
   {
     icon: Plane,
     title: "Airport Shuttle",
-    description: "Reliable transfers at KLIA and KLIA2 — any hour, any flight.",
+    description: "Reliable transfers at KLIA and KLIA2 - any hour, any flight.",
     chips: ["KLIA / KLIA2", "Meet & Greet", "Group transfer"],
     cta: "View service",
     href: "/airport-shuttle",

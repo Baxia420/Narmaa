@@ -61,7 +61,7 @@ export default function TrustSection() {
               to={href}
               className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
             >
-              {/* Colored header band — white text throughout */}
+              {/* Colored header band - white text throughout */}
               <div className={`flex items-center gap-3 px-5 py-5 ${headerBg}`}>
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/20 text-white">
                   <Icon className="h-5 w-5" aria-hidden="true" />

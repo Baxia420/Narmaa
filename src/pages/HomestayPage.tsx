@@ -1,5 +1,5 @@
 import { SEO, pageSEO } from "@/lib/seo";
-import PageHero from "@/components/ui/PageHero";
+
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HomestayCard from "@/components/cards/HomestayCard";
@@ -14,7 +14,7 @@ const stayBenefits = [
     icon: Home,
     title: "Comfortable & Practical",
     description:
-      "Our homestays are selected for comfort, cleanliness, and convenience — ideal for families and groups."},
+      "Our homestays are selected for comfort, cleanliness, and convenience - ideal for families and groups."},
   {
     icon: Wifi,
     title: "Modern Amenities",
@@ -39,20 +39,13 @@ export default function HomestayPage() {
     <>
       <SEO {...pageSEO.homestay} />
 
-      <PageHero
-        accent="Your Home in Malaysia"
-        title="Comfortable Homestays for Your Malaysia Trip"
-        subtitle="Find practical and comfortable stays for families, groups, and travelers who want convenience during their visit."
-        backgroundImage="/images/general/hero-malaysia.webp"
-      />
-
       {/* Stay Benefits */}
       <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
             accent="Cozy & Convenient"
             title="Why Stay With Narmaa Transport"
-            subtitle="We help you find the right place to stay — so you can enjoy your trip without worry."
+            subtitle="We help you find the right place to stay - so you can enjoy your trip without worry."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stayBenefits.map((benefit) => (
@@ -141,7 +134,7 @@ export default function HomestayPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
-                Prices shown are starting prices — final pricing confirmed
+                Prices shown are starting prices - final pricing confirmed
                 before booking.
               </li>
             </ul>

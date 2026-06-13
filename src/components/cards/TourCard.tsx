@@ -19,7 +19,7 @@ export default function TourCard({ tour, className }: TourCardProps) {
         className
       )}
     >
-      {/* Image area — taller ratio */}
+      {/* Image area - taller ratio */}
       <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
         {!imgError && tour.image ? (
           <img
@@ -40,7 +40,7 @@ export default function TourCard({ tour, className }: TourCardProps) {
           </div>
         )}
 
-        {/* Duration badge — top right */}
+        {/* Duration badge - top right */}
         <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-slate-900/75 px-2.5 py-1 backdrop-blur-sm">
           <Clock className="h-3 w-3 text-white/80" aria-hidden="true" />
           <span className="text-[10px] font-semibold text-white">
@@ -48,7 +48,7 @@ export default function TourCard({ tour, className }: TourCardProps) {
           </span>
         </div>
 
-        {/* Pickup badge — top left */}
+        {/* Pickup badge - top left */}
         {tour.pickupIncluded && (
           <span className="absolute top-3 left-3 rounded-full bg-emerald-600/90 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
             Pickup included

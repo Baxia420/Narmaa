@@ -1,5 +1,5 @@
 import { SEO, pageSEO } from "@/lib/seo";
-import PageHero from "@/components/ui/PageHero";
+
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CarCard from "@/components/cards/CarCard";
@@ -17,14 +17,14 @@ const rentalBenefits = [
       "Every vehicle is thoroughly cleaned and inspected before your rental begins."},
   {
     icon: Clock,
-    title: "Flexible Pickup & Return",
+    title: "Convenient Pickup",
     description:
-      "Arrange pickup and drop-off at your convenience — airport, hotel, or any agreed location."},
+      "Arrange pickup and drop-off at designated locations around KL."},
   {
     icon: Fuel,
-    title: "Full Tank Policy",
+    title: "Standard Fuel Policy",
     description:
-      "Vehicles are provided with a full tank of fuel so you can start your journey right away."},
+      "Return the vehicle with the same amount of fuel as when you picked it up."},
   {
     icon: UserCheck,
     title: "Chauffeur Option Available",
@@ -39,20 +39,13 @@ export default function CarRentalPage() {
     <>
       <SEO {...pageSEO.carRental} />
 
-      <PageHero
-        accent="Premium Rental Fleet"
-        title="Car Rental in Malaysia"
-        subtitle="Choose from comfortable, clean, and practical vehicles for city travel, airport pickup, family trips, and private journeys."
-        backgroundImage="/images/general/hero-malaysia.webp"
-      />
-
       {/* Rental Benefits */}
       <section className="py-16 md:py-20 bg-white">
         <Container>
           <SectionHeader
             accent="The Premium Choice"
             title="Why Rent With Narmaa Transport"
-            subtitle="We keep things simple, clean, and reliable — so you can focus on your trip."
+            subtitle="We keep things simple, clean, and reliable - so you can focus on your trip."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {rentalBenefits.map((benefit) => (
@@ -85,7 +78,7 @@ export default function CarRentalPage() {
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {cars.map((car) => (
-              <CarCard key={car.id} car={car} />
+              <CarCard key={car.id} car={car} hideFuelAndLuggage={true} />
             ))}
           </div>
         </Container>

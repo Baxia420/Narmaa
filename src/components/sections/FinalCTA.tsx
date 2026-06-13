@@ -28,7 +28,7 @@ export default function FinalCTA() {
             Your trip. Your pace.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-blue-200 max-w-lg mx-auto">
-            Browse what we offer, then message us when you're ready. No pressure — just simple travel planning.
+            Browse what we offer, then message us when you're ready. No pressure - just simple travel planning.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

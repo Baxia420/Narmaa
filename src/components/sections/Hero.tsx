@@ -25,7 +25,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative flex min-h-[620px] items-center lg:min-h-[720px]"
+      className="relative flex h-[100vh] min-h-[620px] items-center pb-20"
       aria-label="Hero"
     >
       {/* Background image */}
@@ -37,16 +37,6 @@ export default function Hero() {
           loading="eager"
           fetchPriority="high"
         />
-        {/* Richer gradient for depth */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-900/40"
-          aria-hidden="true"
-        />
-        {/* Subtle bottom fade */}
-        <div
-          className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/40 to-transparent"
-          aria-hidden="true"
-        />
       </div>
 
       {/* Content */}
@@ -57,10 +47,10 @@ export default function Hero() {
             <span className="mb-4 block font-satisfy text-[26px] md:text-[30px] text-blue-300 font-medium leading-none">
               Malaysia made simple
             </span>
-            <h1 className="font-jost text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[66px]">
+            <h1 className="font-jost text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-[66px]">
               Transport, stays &amp;{" "}
-              <span className="text-blue-300">private tours</span>{" "}
-              — one easy plan.
+              <span className="text-blue-300 drop-shadow-md">private tours</span>{" "}
+              - one easy plan.
             </h1>
 
             <p className="mt-6 text-base md:text-lg leading-[1.8] text-slate-300 max-w-lg">
@@ -68,27 +58,7 @@ export default function Hero() {
               arranged through WhatsApp.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                id="hero-whatsapp-cta"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25d366] px-7 py-3.5 text-base font-jost font-semibold text-white shadow-lg shadow-green-900/30 transition-all hover:bg-[#1fb855] hover:shadow-green-900/50 focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:ring-offset-2 focus:ring-offset-slate-950"
-              >
-                <img src="/images/general/whatsapp-logo.svg" className="h-7 w-7" alt="WhatsApp" />
-                Check availability
-              </a>
 
-              <Link
-                to="/car-rental"
-                id="hero-explore-cta"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-base font-jost font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white/50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-950"
-              >
-                Explore options
-                <ArrowRight className="h-5 w-5" aria-hidden="true" />
-              </Link>
-            </div>
           </div>
 
 

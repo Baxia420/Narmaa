@@ -14,7 +14,7 @@ export default function FeaturedFleet() {
         <SectionHeader
           accent="Drive in comfort"
           title="Our fleet"
-          subtitle="Economy cars, spacious MPVs, and executive vehicles — browse and pick."
+          subtitle="Economy cars, spacious MPVs, and executive vehicles - browse and pick."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

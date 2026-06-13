@@ -52,7 +52,7 @@ export default function HowItWorks() {
 
         {/* Steps grid */}
         <div className="relative mt-10">
-          {/* Connector line — desktop only */}
+          {/* Connector line - desktop only */}
           <div
             className="absolute top-[2.125rem] left-[calc(12.5%+1.5rem)] right-[calc(12.5%+1.5rem)] hidden h-px bg-gradient-to-r from-blue-200 via-green-200 to-violet-200 lg:block"
             aria-hidden="true"
@@ -84,7 +84,7 @@ export default function HowItWorks() {
                     {step.description}
                   </p>
 
-                  {/* WhatsApp chat preview — step 2 */}
+                  {/* WhatsApp chat preview - step 2 */}
                   {step.whatsappPreview && (
                     <div className="mt-3 w-full max-w-[180px] rounded-xl border border-green-100 bg-green-50 p-3 text-left shadow-sm">
                       {/* Incoming message bubble */}

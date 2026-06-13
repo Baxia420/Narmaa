@@ -28,7 +28,7 @@ export default function LeadFormSection() {
                   Tell us what you need.
                 </h2>
                 <p className="mt-3 text-slate-500 leading-relaxed text-sm">
-                  Fill in the form and we&rsquo;ll get back with availability and pricing — or message us directly on WhatsApp for a faster reply.
+                  Fill in the form and we&rsquo;ll get back with availability and pricing - or message us directly on WhatsApp for a faster reply.
                 </p>
               </div>
 

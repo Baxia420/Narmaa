@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Plane, Clock, ShieldCheck, User, CheckCircle, HelpCircle, AlertCircle } from "lucide-react";
 import { SEO, pageSEO } from "@/lib/seo";
-import PageHero from "@/components/ui/PageHero";
+
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FAQAccordion from "@/components/ui/FAQAccordion";
@@ -128,13 +128,6 @@ export default function AirportShuttlePage() {
         title="Airport Shuttle Service in Malaysia | Narmaa Transport"
         description="Reliable airport pickup and drop-off services in Malaysia with vehicle options from economy cars to 18-seater minibuses. Starting from RM120."
         canonical="/airport-shuttle"
-      />
-
-      <PageHero
-        accent="Seamless Transfers"
-        title="Airport Shuttle Service in Malaysia"
-        subtitle="Reliable airport pickup and drop-off services with vehicle options for solo travelers, families, and groups — starting from RM120."
-        backgroundImage="/images/general/hero-malaysia.webp"
       />
 
       {/* Shuttle Benefits */}

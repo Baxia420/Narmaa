@@ -7,9 +7,10 @@ import { cn } from "@/lib/utils";
 type CarCardProps = {
   car: Car;
   className?: string;
+  hideFuelAndLuggage?: boolean;
 };
 
-export default function CarCard({ car, className }: CarCardProps) {
+export default function CarCard({ car, className, hideFuelAndLuggage }: CarCardProps) {
   const [imgError, setImgError] = useState(false);
 
   return (
@@ -19,7 +20,7 @@ export default function CarCard({ car, className }: CarCardProps) {
         className
       )}
     >
-      {/* Image area — taller ratio */}
+      {/* Image area - taller ratio */}
       <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
         {!imgError && car.image ? (
           <img
@@ -40,7 +41,7 @@ export default function CarCard({ car, className }: CarCardProps) {
           </div>
         )}
 
-        {/* Category badge — overlaid on image */}
+        {/* Category badge - overlaid on image */}
         <span className="absolute bottom-3 left-3 rounded-full bg-slate-900/70 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
           {car.category}
         </span>
@@ -69,11 +70,13 @@ export default function CarCard({ car, className }: CarCardProps) {
             <Cog className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
             {car.transmission}
           </span>
-          <span className="inline-flex items-center gap-1.5">
-            <Fuel className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
-            {car.fuel}
-          </span>
-          {car.luggage && (
+          {!hideFuelAndLuggage && (
+            <span className="inline-flex items-center gap-1.5">
+              <Fuel className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
+              {car.fuel}
+            </span>
+          )}
+          {!hideFuelAndLuggage && car.luggage && (
             <span className="inline-flex items-center gap-1.5">
               <Luggage className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
               {car.luggage}
