@@ -64,7 +64,7 @@ export default function NotFoundPage() {
               variant="whatsapp"
               size="lg"
               className="flex-1 sm:flex-none"
-              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
+              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
             >
               WhatsApp Support
             </Button>

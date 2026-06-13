@@ -79,7 +79,7 @@ export default function Navbar() {
             external
             variant="whatsapp"
             size="md"
-            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-4 w-4" alt="" />}
+            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6" alt="" />}
           >
             WhatsApp Us
           </Button>
@@ -129,7 +129,7 @@ export default function Navbar() {
               variant="whatsapp"
               size="lg"
               className="w-full justify-center"
-              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5" alt="" />}
+              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6" alt="" />}
             >
               Message us on WhatsApp
             </Button>

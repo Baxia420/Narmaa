@@ -47,7 +47,7 @@ export default function ContactPage() {
               <div className="mt-8 rounded-2xl border border-green-200 bg-green-50/50 p-6 shadow-sm">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#25d366] text-white">
-                    <img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />
+                    <img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />
                   </span>
                   Fast Response on WhatsApp
                 </h3>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                     variant="whatsapp"
                     size="md"
                     className="w-full sm:w-auto"
-                    iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-4 w-4 shrink-0" alt="" />}
+                    iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
                   >
                     Message Narmaa Transport
                   </Button>

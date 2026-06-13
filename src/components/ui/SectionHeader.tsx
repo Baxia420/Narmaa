@@ -19,7 +19,7 @@ export default function SectionHeader({
   return (
     <div className={cn("mb-10", centered && "text-center", className)}>
       {accent && (
-        <span className="mb-2 block font-satisfy text-xl md:text-2xl text-blue-500 font-medium">
+        <span className="mb-2 block font-satisfy text-3xl sm:text-[36px] md:text-[40px] text-blue-500 font-medium leading-tight">
           {accent}
         </span>
       )}

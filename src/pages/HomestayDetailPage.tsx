@@ -202,7 +202,7 @@ export default function HomestayDetailPage() {
                   variant="whatsapp"
                   size="lg"
                   className="w-full sm:w-auto"
-                  iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
+                  iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
                 >
                   Request Booking on WhatsApp
                 </Button>

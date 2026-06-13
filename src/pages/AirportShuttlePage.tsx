@@ -85,7 +85,7 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
             variant="whatsapp"
             size="md"
             className="w-full justify-center"
-            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-4 w-4 shrink-0" alt="" />}
+            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
           >
             Check Availability
           </Button>

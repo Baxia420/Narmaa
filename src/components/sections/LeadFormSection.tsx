@@ -58,7 +58,7 @@ export default function LeadFormSection() {
                 id="enquiry-whatsapp-cta"
                 className="inline-flex items-center gap-2.5 self-start rounded-xl bg-[#25d366] px-5 py-3 text-sm font-jost font-semibold text-white shadow-sm transition-colors hover:bg-[#1fb855]"
               >
-                <img src="/images/general/whatsapp-logo.svg" className="h-4.5 w-4.5 shrink-0" alt="" />
+                <img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />
                 Message on WhatsApp
               </a>
             </div>

@@ -91,7 +91,7 @@ export default function FAQPage() {
               external
               variant="whatsapp"
               size="lg"
-              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
+              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
             >
               Message Us on WhatsApp
             </Button>

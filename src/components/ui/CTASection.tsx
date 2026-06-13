@@ -31,7 +31,7 @@ export default function CTASection({
   );
 
   const icon = isWhatsApp ? (
-    <img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />
+    <img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />
   ) : (
     <ArrowRight className="h-5 w-5" aria-hidden="true" />
   );
