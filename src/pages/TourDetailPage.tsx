@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TourCard from "@/components/cards/TourCard";
+import ImageGalleryLightbox from "@/components/ui/ImageGalleryLightbox";
 import { getTourBySlug, getRelatedTours } from "@/lib/data";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 import {
@@ -33,6 +34,9 @@ const featureIconMap: Record<string, any> = {
 export default function TourDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+
   const tour = slug ? getTourBySlug(slug) : undefined;
 
   // Sticky booking card state
@@ -83,33 +87,64 @@ export default function TourDetailPage() {
           </Link>
 
           {/* Premium Image Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-3xl overflow-hidden aspect-[16/10] md:aspect-[21/9] bg-slate-100 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-3xl overflow-hidden aspect-[16/10] md:aspect-[21/9] bg-slate-100 shadow-sm relative group">
             {/* Main large image */}
-            <div className="md:col-span-2 relative h-full w-full overflow-hidden">
+            <div 
+              className="md:col-span-2 relative h-full w-full overflow-hidden cursor-pointer"
+              onClick={() => {
+                setGalleryIndex(0);
+                setIsGalleryOpen(true);
+              }}
+            >
               <img
                 src={galleryImages[0]}
                 alt={tour.name}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
             </div>
             {/* Stacked smaller images for desktop */}
             <div className="hidden md:flex flex-col gap-4 h-full">
-              <div className="flex-1 overflow-hidden relative">
+              <div 
+                className="flex-1 overflow-hidden relative cursor-pointer group/img2"
+                onClick={() => {
+                  setGalleryIndex(1);
+                  setIsGalleryOpen(true);
+                }}
+              >
                 <img
                   src={galleryImages[1] || galleryImages[0]}
                   alt={tour.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover/img2:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
               </div>
-              <div className="flex-1 overflow-hidden relative">
+              <div 
+                className="flex-1 overflow-hidden relative cursor-pointer group/img3"
+                onClick={() => {
+                  setGalleryIndex(2);
+                  setIsGalleryOpen(true);
+                }}
+              >
                 <img
                   src={galleryImages[2] || galleryImages[1] || galleryImages[0]}
                   alt={tour.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover/img3:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
+                <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur text-slate-900 text-sm font-semibold px-4 py-2 rounded-full shadow-lg border border-slate-200">
+                  View all photos
+                </div>
               </div>
             </div>
           </div>
+          
+          <ImageGalleryLightbox
+            images={galleryImages}
+            isOpen={isGalleryOpen}
+            initialIndex={galleryIndex}
+            onClose={() => setIsGalleryOpen(false)}
+          />
 
           {/* Gallery Metadata row */}
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-6">
@@ -119,13 +154,6 @@ export default function TourDetailPage() {
                   Pickup Included
                 </span>
               )}
-              <div className="flex items-center gap-1 text-sm text-slate-500">
-                <span className="flex items-center text-amber-500">
-                  <Star className="h-4 w-4 fill-amber-500" />
-                </span>
-                <span className="font-semibold text-slate-800">4.9</span>
-                <span>(45 Reviews - verified via customer logs)</span>
-              </div>
             </div>
             <div className="text-slate-500 text-sm font-medium">
               * Fully customizable private itineraries
