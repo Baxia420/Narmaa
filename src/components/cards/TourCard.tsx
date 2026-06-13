@@ -31,7 +31,7 @@ export default function TourCard({ tour, className }: TourCardProps) {
       <div className="h-1.5 w-full bg-gradient-to-r from-rose-500 to-orange-400" aria-hidden="true" />
 
       {/* Image */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-rose-50 to-orange-50 flex items-center justify-center">
+      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-50 to-orange-50 flex items-center justify-center">
         {!imgError && tour.image ? (
           <img
             src={tour.image}
@@ -51,30 +51,6 @@ export default function TourCard({ tour, className }: TourCardProps) {
           </div>
         )}
 
-        {/* Duration badge — top right */}
-        <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-gradient-to-r from-rose-600/85 to-orange-500/85 px-2.5 py-1 backdrop-blur-sm">
-          <Clock className="h-3 w-3 text-white/90" aria-hidden="true" />
-          <span className="text-[10px] font-bold text-white">
-            {tour.duration}
-          </span>
-        </div>
-
-        {/* Pickup badge */}
-        {tour.pickupIncluded && (
-          <span className="absolute top-3 left-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-2.5 py-1 text-[10px] font-bold text-white shadow-md">
-            ✓ Pickup included
-          </span>
-        )}
-
-        {/* Location label */}
-        {tour.location && (
-          <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-gradient-to-r from-slate-900/80 to-slate-800/80 px-3 py-1.5 backdrop-blur-sm">
-            <MapPin className="h-3 w-3 text-white/80" aria-hidden="true" />
-            <span className="text-[11px] font-bold text-white">
-              {tour.location}
-            </span>
-          </div>
-        )}
       </div>
 
       <div className="flex flex-1 flex-col p-5">
@@ -84,6 +60,15 @@ export default function TourCard({ tour, className }: TourCardProps) {
 
         {/* Highlights as coloured chips */}
         <div className="mt-3 flex flex-wrap gap-1.5">
+          <span className="inline-flex items-center gap-1 rounded-full bg-rose-100 px-2.5 py-0.5 text-[11px] font-semibold text-rose-700">
+            <Clock className="h-3 w-3" aria-hidden="true" />
+            {tour.duration}
+          </span>
+          {tour.pickupIncluded && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
+              ✓ Pickup included
+            </span>
+          )}
           {tour.highlights.slice(0, 4).map((highlight, i) => (
             <span
               key={highlight}

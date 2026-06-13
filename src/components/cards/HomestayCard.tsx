@@ -23,7 +23,7 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
       <div className="h-1.5 w-full bg-gradient-to-r from-violet-500 to-purple-500" aria-hidden="true" />
 
       {/* Image */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-violet-50 to-purple-50 flex items-center justify-center">
+      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-violet-50 to-purple-50 flex items-center justify-center">
         {!imgError && homestay.image ? (
           <img
             src={homestay.image}
