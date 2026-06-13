@@ -87,56 +87,81 @@ export default function TourDetailPage() {
           </Link>
 
           {/* Premium Image Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-3xl overflow-hidden aspect-[16/10] md:aspect-[21/9] bg-slate-100 shadow-sm relative group">
-            {/* Main large image */}
-            <div 
-              className="md:col-span-2 relative h-full w-full overflow-hidden cursor-pointer"
-              onClick={() => {
-                setGalleryIndex(0);
-                setIsGalleryOpen(true);
-              }}
-            >
-              <img
-                src={galleryImages[0]}
-                alt={tour.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
-            </div>
-            {/* Stacked smaller images for desktop */}
-            <div className="hidden md:flex flex-col gap-4 h-full">
-              <div 
-                className="flex-1 overflow-hidden relative cursor-pointer group/img2"
-                onClick={() => {
-                  setGalleryIndex(1);
-                  setIsGalleryOpen(true);
-                }}
-              >
-                <img
-                  src={galleryImages[1] || galleryImages[0]}
-                  alt={tour.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover/img2:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
-              </div>
-              <div 
-                className="flex-1 overflow-hidden relative cursor-pointer group/img3"
-                onClick={() => {
-                  setGalleryIndex(2);
-                  setIsGalleryOpen(true);
-                }}
-              >
-                <img
-                  src={galleryImages[2] || galleryImages[1] || galleryImages[0]}
-                  alt={tour.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover/img3:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
-                <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur text-slate-900 text-sm font-semibold px-4 py-2 rounded-full shadow-lg border border-slate-200">
-                  View all photos
+          <div className="h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden shadow-sm bg-slate-100">
+            {(() => {
+              const images = galleryImages;
+              if (images.length === 0) return null;
+              
+              const ImageOverlay = () => <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />;
+              
+              const ViewAllBtn = () => (
+                <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 bg-black/70 hover:bg-black/80 backdrop-blur-sm text-white text-xs md:text-sm font-semibold px-3 py-2 md:px-5 md:py-2.5 rounded-lg shadow-lg flex items-center gap-2 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                  <span className="hidden sm:inline">View all photos</span>
+                  <span className="sm:hidden">All</span>
                 </div>
-              </div>
-            </div>
+              );
+
+              if (images.length === 1) {
+                return (
+                  <div className="w-full h-full relative cursor-pointer group overflow-hidden" onClick={() => { setGalleryIndex(0); setIsGalleryOpen(true); }}>
+                    <img src={images[0]} alt={tour.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <ImageOverlay />
+                  </div>
+                );
+              }
+
+              if (images.length === 2) {
+                return (
+                  <div className="flex w-full h-full gap-2 md:gap-3">
+                    {[0, 1].map(i => (
+                      <div key={i} className="w-1/2 h-full relative cursor-pointer group overflow-hidden" onClick={() => { setGalleryIndex(i); setIsGalleryOpen(true); }}>
+                        <img src={images[i]} alt={tour.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <ImageOverlay />
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              if (images.length === 3 || images.length === 4) {
+                return (
+                  <div className="flex w-full h-full gap-2 md:gap-3">
+                    <div className="w-1/2 h-full relative cursor-pointer group overflow-hidden" onClick={() => { setGalleryIndex(0); setIsGalleryOpen(true); }}>
+                      <img src={images[0]} alt={tour.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <ImageOverlay />
+                    </div>
+                    <div className="w-1/2 h-full flex flex-col gap-2 md:gap-3">
+                      {[1, 2].map(i => (
+                        <div key={i} className="h-1/2 relative cursor-pointer group overflow-hidden" onClick={() => { setGalleryIndex(i); setIsGalleryOpen(true); }}>
+                          <img src={images[i]} alt={tour.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                          <ImageOverlay />
+                          {i === 2 && <ViewAllBtn />}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <div className="flex w-full h-full gap-2 md:gap-3">
+                  <div className="w-1/2 h-full relative cursor-pointer group overflow-hidden" onClick={() => { setGalleryIndex(0); setIsGalleryOpen(true); }}>
+                    <img src={images[0]} alt={tour.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <ImageOverlay />
+                  </div>
+                  <div className="w-1/2 h-full grid grid-cols-2 grid-rows-2 gap-2 md:gap-3">
+                    {[1, 2, 3, 4].map(i => (
+                      <div key={i} className="relative cursor-pointer group overflow-hidden" onClick={() => { setGalleryIndex(i); setIsGalleryOpen(true); }}>
+                        <img src={images[i]} alt={tour.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <ImageOverlay />
+                        {i === 4 && <ViewAllBtn />}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
           </div>
           
           <ImageGalleryLightbox

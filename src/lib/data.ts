@@ -397,8 +397,11 @@ export const tours: Tour[] = [
     gallery: [
       "/images/tours/kl-city-tour/kl-city-tour-3.webp",
       "/images/tours/kl-city-tour/kl-city-tour-1.webp",
+      "/images/tours/kl-city-tour/kl-city-tour-10.webp",
       "/images/tours/kl-city-tour/kl-city-tour-2.webp",
       "/images/tours/kl-city-tour/kl-city-tour-4.webp",
+      "/images/tours/kl-city-tour/kl-city-tour-11.webp",
+      "/images/tours/kl-city-tour/kl-city-tour-12.webp",
       "/images/tours/kl-city-tour/kl-city-tour-5.webp",
       "/images/tours/kl-city-tour/kl-city-tour-6.webp",
       "/images/tours/kl-city-tour/kl-city-tour-7.webp",
@@ -466,7 +469,7 @@ export const tours: Tour[] = [
   {
     id: "tour-4",
     slug: "genting-highlands-day-trip",
-    name: "Genting Highlands Day Trip",
+    name: "Genting Highlands & French Village Tour",
     duration: "Half day or full day (6–10 hours)",
     pickupIncluded: true,
     highlights: [
@@ -489,6 +492,7 @@ export const tours: Tour[] = [
     image: "/images/tours/genting-highlands/genting-highlands-1.webp",
     gallery: [
       "/images/tours/genting-highlands/genting-highlands-1.webp",
+      "/images/tours/genting-highlands/genting-highlands-11.webp",
       "/images/tours/genting-highlands/genting-highlands-2.webp",
       "/images/tours/genting-highlands/genting-highlands-3.webp",
       "/images/tours/genting-highlands/genting-highlands-4.webp",
