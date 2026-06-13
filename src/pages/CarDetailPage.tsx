@@ -198,17 +198,15 @@ export default function CarDetailPage() {
 
               {/* WhatsApp CTA */}
               <div className="mt-8">
-                <Button
-                  as="anchor"
+                <a
                   href={whatsappLink}
-                  external
-                  variant="whatsapp"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                  iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25d366] px-7 py-4 font-jost text-base font-bold text-white shadow-lg transition-all hover:bg-[#128c7e] sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] focus-visible:ring-offset-2"
                 >
+                  <img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />
                   Check Availability on WhatsApp
-                </Button>
+                </a>
               </div>
             </div>
           </div>

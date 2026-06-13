@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plane, Clock, ShieldCheck, User, CheckCircle, HelpCircle, AlertCircle } from "lucide-react";
+import { Plane, Clock, ShieldCheck, User, CheckCircle, HelpCircle, AlertCircle, Luggage } from "lucide-react";
 import { SEO, pageSEO } from "@/lib/seo";
 
 import Container from "@/components/ui/Container";
@@ -51,9 +51,17 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
         <h3 className="mt-1 font-jost text-xl lg:text-[22px] font-semibold text-slate-900 leading-snug">{shuttle.name}</h3>
 
         {/* Capacity / Seats */}
-        <div className="mt-3 flex items-center gap-1.5 text-sm text-slate-500">
-          <User className="h-4 w-4 text-slate-400" />
-          <span>Capacity: Up to {shuttle.seats} passengers</span>
+        <div className="mt-3 flex items-center gap-4 text-sm text-slate-500">
+          <div className="flex items-center gap-1.5">
+            <User className="h-4 w-4 text-slate-400" />
+            <span>Up to {shuttle.seats} pax</span>
+          </div>
+          {shuttle.luggage && (
+            <div className="flex items-center gap-1.5">
+              <Luggage className="h-4 w-4 text-slate-400" />
+              <span>{shuttle.luggage}</span>
+            </div>
+          )}
         </div>
 
         {/* Suitable For Tags */}

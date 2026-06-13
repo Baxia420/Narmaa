@@ -19,7 +19,7 @@ export default function FeaturedFleet() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featuredCars.map((car) => (
-            <CarCard key={car.id} car={car} />
+            <CarCard key={car.id} car={car} hideFuelAndLuggage={true} />
           ))}
         </div>
 

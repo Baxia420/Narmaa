@@ -64,6 +64,7 @@ export type AirportShuttle = {
   name: string;
   category: string;
   seats: number;
+  luggage?: string;
   priceFrom?: number;
   suitableFor: string[];
   image: string;
@@ -857,11 +858,12 @@ export const airportShuttles: AirportShuttle[] = [
     slug: "economy-airport-shuttle",
     name: "Economy Airport Shuttle",
     category: "Economy",
-    seats: 4,
+    seats: 5,
+    luggage: "2 medium bags",
     priceFrom: 120,
     suitableFor: ["Solo travelers", "Couples", "Light luggage", "Budget conscious"],
     image: "/images/fleet/perodua-myvi.webp",
-    notes: ["Luggage capacity: 2 medium bags", "Professional local driver", "Tolls & basic fees included"],
+    notes: ["Professional local driver", "Tolls & basic fees included"],
     featured: true,
     description: "Reliable and budget-friendly airport transport service for small parties."
   },
@@ -870,11 +872,12 @@ export const airportShuttles: AirportShuttle[] = [
     slug: "sedan-airport-shuttle",
     name: "Sedan Airport Shuttle",
     category: "Comfort Sedan",
-    seats: 4,
+    seats: 5,
+    luggage: "3 medium bags",
     priceFrom: 150,
     suitableFor: ["Business travelers", "Small families", "Comfort seekers"],
     image: "/images/airport-shuttle/toyota-vios.webp",
-    notes: ["Luggage capacity: 3 medium bags", "Spacious sedan boot", "Professional meet & greet"],
+    notes: ["Spacious sedan boot", "Professional meet & greet"],
     featured: true,
     description: "Upgrade your transfer experience with our premium sedans for enhanced comfort."
   },
@@ -883,11 +886,12 @@ export const airportShuttles: AirportShuttle[] = [
     slug: "6-seater-airport-shuttle",
     name: "6-Seater Airport Shuttle",
     category: "MPV",
-    seats: 6,
+    seats: 7,
+    luggage: "4 large bags",
     priceFrom: 250,
     suitableFor: ["Families", "Small groups", "Extra luggage"],
     image: "/images/fleet/toyota-avanza.webp",
-    notes: ["Luggage capacity: 4 large bags", "Flexible seating configurations", "Excellent family convenience"],
+    notes: ["Flexible seating configurations", "Excellent family convenience"],
     featured: true,
     description: "Spacious multi-purpose vehicle designed for comfortable group travel and luggage handling."
   },
@@ -897,10 +901,11 @@ export const airportShuttles: AirportShuttle[] = [
     name: "10-Seater Airport Shuttle",
     category: "Premium Van",
     seats: 10,
+    luggage: "6-8 large bags",
     priceFrom: 350,
     suitableFor: ["Medium groups", "Golfing trips", "Corporate transfers"],
     image: "/images/airport-shuttle/10-seater.webp",
-    notes: ["Luggage capacity: 6-8 large bags", "High roof van configuration", "Ideal for golfing equipment and luggage"],
+    notes: ["High roof van configuration", "Ideal for golfing equipment and luggage"],
     featured: true,
     description: "High-capacity executive vans ensuring smooth group logistics between airports and hotels."
   },
@@ -910,10 +915,11 @@ export const airportShuttles: AirportShuttle[] = [
     name: "18-Seater Airport Shuttle",
     category: "Mini Bus",
     seats: 18,
+    luggage: "15+ bags",
     priceFrom: 500,
     suitableFor: ["Large tour groups", "Wedding groups", "Corporate events"],
     image: "/images/airport-shuttle/18-seater.webp",
-    notes: ["Luggage capacity: 15+ bags", "Full-sized minibus layout", "Comfortable air-conditioned cabin"],
+    notes: ["Full-sized minibus layout", "Comfortable air-conditioned cabin"],
     featured: true,
     description: "Ideal ground transport solution for large passenger groups traveling together across Malaysia."
   }

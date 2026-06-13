@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Users, Fuel, Cog, Car as CarIcon, Luggage, ArrowRight } from "lucide-react";
+import { Users, Fuel, Cog, Car as CarIcon, Luggage, Snowflake, CheckCircle2, ArrowRight } from "lucide-react";
 import type { Car } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -70,6 +70,18 @@ export default function CarCard({ car, className, hideFuelAndLuggage }: CarCardP
             <Cog className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
             {car.transmission}
           </span>
+          {hideFuelAndLuggage && (
+            <>
+              <span className="inline-flex items-center gap-1.5">
+                <Snowflake className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
+                Air Conditioned
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
+                Well-maintained
+              </span>
+            </>
+          )}
           {!hideFuelAndLuggage && (
             <span className="inline-flex items-center gap-1.5">
               <Fuel className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
