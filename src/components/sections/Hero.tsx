@@ -11,7 +11,7 @@ const slides = [
         Malaysia <span className="text-blue-300 drop-shadow-md">Truly Asia</span>
       </>
     ),
-    description: "Your premier partner for seamless travel in Malaysia. We provide reliable airport shuttles, tailored private tours, flexible car rentals, and comfortable homestays—ensuring a stress-free experience from arrival to departure.",
+    description: "Seamless travel across beautiful Malaysia. We provide reliable airport shuttles, private tours, car rentals, and homestays for a perfect experience.",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -46,8 +46,10 @@ export default function Hero() {
         <div
           key={slide.id}
           className={cn(
-            "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-            index === currentSlide ? "opacity-100 z-0" : "opacity-0 -z-10"
+            "absolute inset-0 transition-opacity ease-in-out",
+            index === currentSlide 
+              ? "opacity-100 z-10 duration-1000" 
+              : "opacity-0 z-0 duration-[1500ms] delay-[500ms]"
           )}
         >
           <img
@@ -71,11 +73,13 @@ export default function Hero() {
               <div
                 key={`content-${slide.id}`}
                 className={cn(
-                  "absolute inset-0 transition-all duration-1000 ease-in-out flex flex-col justify-center",
-                  index === currentSlide ? "opacity-100 translate-y-0 z-10" : "opacity-0 translate-y-4 -z-10 pointer-events-none"
+                  "absolute inset-0 transition-all ease-in-out flex flex-col justify-center",
+                  index === currentSlide 
+                    ? "opacity-100 translate-y-0 z-10 duration-1000 delay-[200ms]" 
+                    : "opacity-0 translate-y-4 -z-10 duration-500"
                 )}
               >
-                <span className="mb-4 block font-satisfy text-[26px] md:text-[30px] text-blue-300 font-medium leading-none">
+                <span className="mb-4 block font-satisfy text-[32px] md:text-[42px] text-blue-300 font-medium leading-none drop-shadow-md">
                   {slide.topText}
                 </span>
                 <h1 className="font-jost text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-[66px]">
