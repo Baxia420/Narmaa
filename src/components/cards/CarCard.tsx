@@ -10,12 +10,7 @@ type CarCardProps = {
   hideFuelAndLuggage?: boolean;
 };
 
-// Cycle through vibrant chip colors
-const chipColors = [
-  "bg-blue-100 text-blue-700",
-  "bg-teal-100 text-teal-700",
-  "bg-amber-100 text-amber-700",
-];
+const chipClass = "bg-slate-100 text-slate-600";
 
 export default function CarCard({ car, className, hideFuelAndLuggage }: CarCardProps) {
   const [imgError, setImgError] = useState(false);
@@ -71,34 +66,34 @@ export default function CarCard({ car, className, hideFuelAndLuggage }: CarCardP
 
         {/* Specs row with varied chip colors */}
         <div className="mt-3 flex flex-wrap gap-1.5">
-          <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipColors[0]}`}>
+          <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipClass}`}>
             <Users className="h-3 w-3" aria-hidden="true" />
             {car.seats} seats
           </span>
-          <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipColors[1]}`}>
+          <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipClass}`}>
             <Cog className="h-3 w-3" aria-hidden="true" />
             {car.transmission}
           </span>
           {hideFuelAndLuggage && (
             <>
-              <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipColors[2]}`}>
+              <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipClass}`}>
                 <Sparkles className="h-3 w-3" aria-hidden="true" />
                 Clean & Sanitized
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700">
+              <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipClass}`}>
                 <ShieldCheck className="h-3 w-3" aria-hidden="true" />
                 No Hidden Fees
               </span>
             </>
           )}
           {!hideFuelAndLuggage && (
-            <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipColors[2]}`}>
+            <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipClass}`}>
               <Fuel className="h-3 w-3" aria-hidden="true" />
               {car.fuel}
             </span>
           )}
           {!hideFuelAndLuggage && car.luggage && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700">
+            <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${chipClass}`}>
               <Luggage className="h-3 w-3" aria-hidden="true" />
               {car.luggage}
             </span>

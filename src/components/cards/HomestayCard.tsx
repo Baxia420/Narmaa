@@ -59,15 +59,15 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
 
         {/* Specs chips */}
         <div className="mt-3 flex flex-wrap gap-1.5">
-          <span className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700">
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">
             <Users className="h-3 w-3" aria-hidden="true" />
             {homestay.guests} guests
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-blue-100 px-2.5 py-0.5 text-[11px] font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">
             <BedDouble className="h-3 w-3" aria-hidden="true" />
             {homestay.bedrooms} bed
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-teal-100 px-2.5 py-0.5 text-[11px] font-semibold text-teal-700">
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">
             <Bath className="h-3 w-3" aria-hidden="true" />
             {homestay.bathrooms} bath
           </span>
@@ -79,7 +79,7 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
             {homestay.nearby.slice(0, 3).map((place) => (
               <span
                 key={place}
-                className="inline-block rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-semibold text-amber-700"
+                className="inline-block rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600"
               >
                 {place}
               </span>
