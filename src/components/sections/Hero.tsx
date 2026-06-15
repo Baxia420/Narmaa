@@ -1,68 +1,111 @@
-import { ArrowRight, Plane, Car, Home } from "lucide-react";
-import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
-const statCards = [
+const slides = [
   {
-    icon: Plane,
-    label: "KLIA Pickup",
-    sub: "from RM120",
-    href: "/airport-shuttle"},
+    id: 1,
+    image: "/images/general/hero-malaysia.webp",
+    topText: "Malaysia made simple",
+    headline: (
+      <>
+        Malaysia <span className="text-blue-300 drop-shadow-md">Truly Asia</span>
+      </>
+    ),
+    description: "Airport shuttle, Private Tours, Car rentals, Homestays.",
+  },
   {
-    icon: Car,
-    label: "7-seat MPV",
-    sub: "from RM280/day",
-    href: "/car-rental"},
-  {
-    icon: Home,
-    label: "Bukit Bintang",
-    sub: "from RM250/night",
-    href: "/homestay"},
+    id: 2,
+    image: "/images/general/Narma_Main_2.webp",
+    topText: "Explore further",
+    headline: (
+      <>
+        Unforgettable <span className="text-blue-300 drop-shadow-md">Private Tours</span>
+      </>
+    ),
+    description: "Discover the hidden gems and iconic landmarks of Malaysia with our expert chauffeurs and tailored itineraries.",
+  },
 ];
 
 export default function Hero() {
-  const whatsappLink = getGeneralWhatsAppLink();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
-      className="relative flex h-[100vh] min-h-[620px] items-center pb-20"
-      aria-label="Hero"
+      className="relative flex h-[100vh] min-h-[620px] items-center pb-20 overflow-hidden"
+      aria-label="Hero Slideshow"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/general/hero-malaysia.webp"
-          alt=""
-          className="h-full w-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-        />
-      </div>
+      {/* Background images with crossfade */}
+      {slides.map((slide, index) => (
+        <div
+          key={slide.id}
+          className={cn(
+            "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+            index === currentSlide ? "opacity-100 z-0" : "opacity-0 -z-10"
+          )}
+        >
+          <img
+            src={slide.image}
+            alt=""
+            className="h-full w-full object-cover"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : "auto"}
+          />
+          {/* Optional dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+        </div>
+      ))}
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12">
-          {/* Left: Copy */}
-          <div className="max-w-xl">
-            <span className="mb-4 block font-satisfy text-[26px] md:text-[30px] text-blue-300 font-medium leading-none">
-              Malaysia made simple
-            </span>
-            <h1 className="font-jost text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-[66px]">
-              Transport, stays &amp;{" "}
-              <span className="text-blue-300 drop-shadow-md">private tours</span>{" "}
-              - one easy plan.
-            </h1>
-
-            <p className="mt-6 text-base md:text-lg leading-[1.8] text-slate-300 max-w-lg">
-              Airport pickup, car rental, homestays, and chauffeur trips
-              arranged through WhatsApp.
-            </p>
-
-
+          {/* Left: Copy with crossfade */}
+          <div className="max-w-xl relative min-h-[250px] w-full flex items-center">
+            {slides.map((slide, index) => (
+              <div
+                key={`content-${slide.id}`}
+                className={cn(
+                  "absolute inset-0 transition-all duration-1000 ease-in-out flex flex-col justify-center",
+                  index === currentSlide ? "opacity-100 translate-y-0 z-10" : "opacity-0 translate-y-4 -z-10 pointer-events-none"
+                )}
+              >
+                <span className="mb-4 block font-satisfy text-[26px] md:text-[30px] text-blue-300 font-medium leading-none">
+                  {slide.topText}
+                </span>
+                <h1 className="font-jost text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-[66px]">
+                  {slide.headline}
+                </h1>
+                <p className="mt-6 text-base md:text-lg leading-[1.8] text-slate-200 max-w-lg drop-shadow-sm">
+                  {slide.description}
+                </p>
+              </div>
+            ))}
           </div>
-
-
         </div>
+      </div>
+
+      {/* Right side navigation dots */}
+      <div className="absolute right-6 sm:right-10 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={cn(
+              "w-3.5 h-3.5 rounded-full border-2 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2",
+              index === currentSlide
+                ? "bg-blue-400 border-blue-400 scale-125"
+                : "bg-transparent border-white/70 hover:border-white hover:bg-white/30"
+            )}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={index === currentSlide ? "true" : "false"}
+          />
+        ))}
       </div>
     </section>
   );
