@@ -11,7 +11,7 @@ const slides = [
         Malaysia <span className="text-blue-300 drop-shadow-md">Truly Asia</span>
       </>
     ),
-    description: "Airport shuttle, Private Tours, Car rentals, Homestays.",
+    description: "Your premier partner for seamless travel in Malaysia. We provide reliable airport shuttles, tailored private tours, flexible car rentals, and comfortable homestays—ensuring a stress-free experience from arrival to departure.",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative flex h-[100vh] min-h-[620px] items-center pb-20 overflow-hidden"
+      className="relative flex h-[100vh] min-h-[620px] items-center pb-20 overflow-hidden bg-slate-950"
       aria-label="Hero Slideshow"
     >
       {/* Background images with crossfade */}
