@@ -105,10 +105,10 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
             href={homestay.bookingUrl || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto inline-flex items-center gap-2 rounded-xl bg-blue-50 px-5 py-2.5 text-[15px] font-jost font-bold text-blue-900 shadow-sm border border-blue-100 transition-all hover:bg-blue-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-blue-50 px-4 py-2 text-[14px] font-jost font-bold text-blue-900 shadow-sm border border-blue-100 transition-all hover:bg-blue-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             View on
-            <img src={bookingSvg} alt="Booking.com" className="w-24 sm:w-28 h-auto" />
+            <img src={bookingSvg} alt="Booking.com" className="h-[22px] w-auto" />
           </a>
         </div>
       </div>
