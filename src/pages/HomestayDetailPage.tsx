@@ -198,7 +198,7 @@ export default function HomestayDetailPage() {
                   className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-blue-50 border border-blue-100 hover:bg-blue-100 px-8 py-4 text-lg font-bold text-blue-900 shadow-sm transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
                   View on
-                  <img src={bookingSvg} alt="Booking.com" className="h-8 w-auto" />
+                  <img src={bookingSvg} alt="Booking.com" className="w-32 sm:w-36 h-auto" />
                 </a>
               </div>
             </div>

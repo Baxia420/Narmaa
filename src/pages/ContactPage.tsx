@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 import { serviceAreas } from "@/lib/data";
+import facebookSvg from "@/assets/facebook-official.svg";
 
 export default function ContactPage() {
   const whatsappLink = getGeneralWhatsAppLink();
@@ -121,7 +122,7 @@ export default function ContactPage() {
 
                 <div className="flex gap-4 sm:gap-4">
                   <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 sm:h-6 sm:w-6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    <img src={facebookSvg} alt="Facebook" className="h-6 w-6 sm:h-7 sm:w-7" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <h4 className="text-[13px] sm:text-sm font-semibold uppercase tracking-wider text-slate-500">

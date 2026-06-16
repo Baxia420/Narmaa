@@ -108,7 +108,7 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
             className="ml-auto inline-flex items-center gap-2 rounded-xl bg-blue-50 px-5 py-2.5 text-[15px] font-jost font-bold text-blue-900 shadow-sm border border-blue-100 transition-all hover:bg-blue-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             View on
-            <img src={bookingSvg} alt="Booking.com" className="h-6 w-auto" />
+            <img src={bookingSvg} alt="Booking.com" className="w-24 sm:w-28 h-auto" />
           </a>
         </div>
       </div>
