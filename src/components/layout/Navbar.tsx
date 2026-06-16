@@ -102,7 +102,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           id="mobile-menu"
-          className="fixed inset-x-0 top-20 z-50 h-[calc(100vh-5rem)] w-full border-t border-slate-200 bg-white px-4 py-6 shadow-xl transition-all duration-300 md:hidden flex flex-col justify-between"
+          className="fixed inset-x-0 top-20 z-50 h-[calc(100vh-5rem)] w-full border-t border-slate-200 bg-white px-4 py-6 shadow-xl transition-all duration-300 md:hidden flex flex-col"
         >
           <div className="flex flex-col gap-5">
             {navLinks.map((link) => {
@@ -119,20 +119,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-          </div>
-
-          <div className="pb-8">
-            <Button
-              as="anchor"
-              href={getGeneralWhatsAppLink()}
-              external
-              variant="whatsapp"
-              size="lg"
-              className="w-full justify-center"
-              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6" alt="" />}
-            >
-              Message us on WhatsApp
-            </Button>
           </div>
         </div>
       )}

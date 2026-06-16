@@ -79,7 +79,7 @@ export default function TourCard({ tour, className }: TourCardProps) {
           ))}
         </div>
 
-        <div className="mt-auto pt-4 flex items-center justify-between">
+        <div className="mt-auto pt-4 flex flex-wrap items-center justify-between gap-3">
           {tour.priceFrom && (
             <p className="text-sm text-slate-500">
               From{" "}

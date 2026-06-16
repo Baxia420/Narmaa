@@ -7,7 +7,7 @@ import ImageGalleryPlaceholder from "@/components/ui/ImageGalleryPlaceholder";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HomestayCard from "@/components/cards/HomestayCard";
 import { getHomestayBySlug, getRelatedHomestays } from "@/lib/data";
-import { generateWhatsAppLink } from "@/lib/whatsapp";
+import bookingSvg from "@/assets/booking-ar21.svg";
 import {
   MapPin,
   Users,
@@ -33,10 +33,6 @@ export default function HomestayDetailPage() {
   if (!homestay) return null;
 
   const relatedHomestays = getRelatedHomestays(homestay.slug);
-  const whatsappLink = generateWhatsAppLink({
-    serviceType: "Homestay",
-    itemName: homestay.name,
-    pageSource: `Homestay Detail - ${homestay.name}`});
 
   const overviewItems = [
     { icon: MapPin, label: "Location", value: homestay.location },
@@ -193,19 +189,17 @@ export default function HomestayDetailPage() {
                 </div>
               )}
 
-              {/* WhatsApp CTA */}
+              {/* Booking CTA */}
               <div className="mt-8">
-                <Button
-                  as="anchor"
-                  href={whatsappLink}
-                  external
-                  variant="whatsapp"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                  iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
+                <a
+                  href={homestay.bookingUrl || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#003580] hover:bg-[#002255] px-6 py-3.5 text-base font-bold text-white shadow-md shadow-[#003580]/30 transition-all hover:shadow-[#003580]/50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#003580] focus:ring-offset-2"
                 >
-                  Request Booking on WhatsApp
-                </Button>
+                  View on
+                  <img src={bookingSvg} alt="Booking.com" className="h-5 w-auto" />
+                </a>
               </div>
             </div>
           </div>

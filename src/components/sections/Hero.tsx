@@ -79,13 +79,13 @@ export default function Hero() {
                     : "opacity-0 translate-y-4 -z-10 duration-500"
                 )}
               >
-                <span className="mb-4 block font-satisfy text-[38px] md:text-[50px] text-blue-300 font-medium leading-none drop-shadow-md">
+                <span className="mb-2 sm:mb-4 block font-satisfy text-[32px] sm:text-[38px] md:text-[50px] text-blue-300 font-medium leading-none drop-shadow-md">
                   {slide.topText}
                 </span>
                 <h1 className="font-jost text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-[66px]">
                   {slide.headline}
                 </h1>
-                <p className="mt-6 text-base md:text-lg leading-[1.8] text-slate-200 max-w-lg drop-shadow-sm">
+                <p className="mt-4 md:mt-6 text-[15px] sm:text-base md:text-lg leading-[1.6] md:leading-[1.8] text-slate-200 max-w-[280px] sm:max-w-md md:max-w-lg drop-shadow-sm pr-2">
                   {slide.description}
                 </p>
               </div>

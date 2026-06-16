@@ -36,6 +36,7 @@ export type Homestay = {
   nearby?: string[];
   notes?: string[];
   description?: string;
+  bookingUrl?: string;
 };
 
 export type Tour = {

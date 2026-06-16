@@ -71,49 +71,49 @@ export default function ContactPage() {
 
               {/* Contact Info List */}
               <div className="mt-10 space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                    <Phone className="h-6 w-6" />
+                <div className="flex gap-4 sm:gap-4">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-[13px] sm:text-sm font-semibold uppercase tracking-wider text-slate-500">
                       Phone Number
                     </h4>
                     <a
                       href="tel:+60REPLACE_WITH_REAL_NUMBER"
-                      className="mt-1 block text-base font-medium text-slate-900 hover:text-blue-600 transition-colors"
+                      className="mt-1 block text-[15px] sm:text-base font-medium text-slate-900 hover:text-blue-600 transition-colors break-all sm:break-words"
                     >
                       +60 REPLACE_WITH_REAL_NUMBER
                     </a>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                    <Mail className="h-6 w-6" />
+                <div className="flex gap-4 sm:gap-4">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+                    <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-[13px] sm:text-sm font-semibold uppercase tracking-wider text-slate-500">
                       Email Address
                     </h4>
                     <a
                       href="mailto:REPLACE_WITH_REAL_EMAIL"
-                      className="mt-1 block text-base font-medium text-slate-900 hover:text-blue-600 transition-colors"
+                      className="mt-1 block text-[15px] sm:text-base font-medium text-slate-900 hover:text-blue-600 transition-colors break-all sm:break-words"
                     >
                       REPLACE_WITH_REAL_EMAIL
                     </a>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                    <Clock className="h-6 w-6" />
+                <div className="flex gap-4 sm:gap-4">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+                    <Clock className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-[13px] sm:text-sm font-semibold uppercase tracking-wider text-slate-500">
                       Operating Hours
                     </h4>
-                    <p className="mt-1 text-base font-medium text-slate-900">
+                    <p className="mt-1 text-[15px] sm:text-base font-medium text-slate-900 break-words">
                       REPLACE_WITH_REAL_HOURS
                     </p>
                   </div>
