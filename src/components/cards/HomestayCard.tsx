@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Users, BedDouble, Bath, Home as HomeIcon } from "lucide-react";
 import type { Homestay } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import bookingSvg from "@/assets/booking-ar21.svg";
+
 
 type HomestayCardProps = {
   homestay: Homestay;
@@ -105,10 +105,12 @@ export default function HomestayCard({ homestay, className }: HomestayCardProps)
             href={homestay.bookingUrl || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-blue-50 px-4 py-2 text-xs font-medium text-blue-800 shadow-sm border border-blue-100 transition-all hover:bg-blue-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-blue-50 px-4 py-2 text-xs shadow-sm border border-blue-100 transition-all hover:bg-blue-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            View on
-            <img src={bookingSvg} alt="Booking.com" className="h-[22px] w-auto" />
+            <span className="text-[11px] font-medium text-slate-500">View on</span>
+            <span className="font-bold text-[13px] tracking-tight">
+              <span style={{ color: "#003b95" }}>Booking</span><span style={{ color: "#499fdd" }}>.com</span>
+            </span>
           </a>
         </div>
       </div>

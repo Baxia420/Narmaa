@@ -7,7 +7,7 @@ import ImageGalleryPlaceholder from "@/components/ui/ImageGalleryPlaceholder";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HomestayCard from "@/components/cards/HomestayCard";
 import { getHomestayBySlug, getRelatedHomestays } from "@/lib/data";
-import bookingSvg from "@/assets/booking-ar21.svg";
+
 import {
   MapPin,
   Users,
@@ -195,10 +195,12 @@ export default function HomestayDetailPage() {
                   href={homestay.bookingUrl || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-blue-50 border border-blue-100 hover:bg-blue-100 px-6 py-3 text-sm font-medium text-blue-800 shadow-sm transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-blue-50 border border-blue-100 hover:bg-blue-100 px-6 py-3 shadow-sm transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
-                  View on
-                  <img src={bookingSvg} alt="Booking.com" className="h-6 w-auto" />
+                  <span className="text-sm font-medium text-slate-500">View on</span>
+                  <span className="font-bold text-[16px] tracking-tight">
+                    <span style={{ color: "#003b95" }}>Booking</span><span style={{ color: "#499fdd" }}>.com</span>
+                  </span>
                 </a>
               </div>
             </div>
