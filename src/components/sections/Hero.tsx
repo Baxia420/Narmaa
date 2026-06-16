@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 const slides = [
   {
     id: 1,
-    image: "/images/general/hero-malaysia.webp",
+    image: "/images/general/New_Narma_Main.webp",
     topText: "Malaysia made simple",
     headline: (
       <>
