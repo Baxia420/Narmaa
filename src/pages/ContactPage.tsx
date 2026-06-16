@@ -80,10 +80,10 @@ export default function ContactPage() {
                       Phone Number
                     </h4>
                     <a
-                      href="tel:+60REPLACE_WITH_REAL_NUMBER"
+                      href="tel:+60102113245"
                       className="mt-1 block text-[15px] sm:text-base font-medium text-slate-900 hover:text-blue-600 transition-colors break-all sm:break-words"
                     >
-                      +60 REPLACE_WITH_REAL_NUMBER
+                      +60 10-211 3245
                     </a>
                   </div>
                 </div>
@@ -97,10 +97,10 @@ export default function ContactPage() {
                       Email Address
                     </h4>
                     <a
-                      href="mailto:REPLACE_WITH_REAL_EMAIL"
+                      href="mailto:narmaa.transports@yahoo.com"
                       className="mt-1 block text-[15px] sm:text-base font-medium text-slate-900 hover:text-blue-600 transition-colors break-all sm:break-words"
                     >
-                      REPLACE_WITH_REAL_EMAIL
+                      narmaa.transports@yahoo.com
                     </a>
                   </div>
                 </div>
@@ -114,8 +114,27 @@ export default function ContactPage() {
                       Operating Hours
                     </h4>
                     <p className="mt-1 text-[15px] sm:text-base font-medium text-slate-900 break-words">
-                      REPLACE_WITH_REAL_HOURS
+                      Available 24/7 on WhatsApp
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 sm:gap-4">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 sm:h-6 sm:w-6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-[13px] sm:text-sm font-semibold uppercase tracking-wider text-slate-500">
+                      Facebook
+                    </h4>
+                    <a
+                      href="https://www.facebook.com/narmaa.tranports.solution"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 block text-[15px] sm:text-base font-medium text-slate-900 hover:text-blue-600 transition-colors break-all sm:break-words"
+                    >
+                      Follow us on Facebook
+                    </a>
                   </div>
                 </div>
               </div>

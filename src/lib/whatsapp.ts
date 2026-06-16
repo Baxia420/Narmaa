@@ -6,7 +6,7 @@ export type WhatsAppLinkOptions = {
   pickupLocation?: string;
 };
 
-const WHATSAPP_PHONE = "60143224693";
+const WHATSAPP_PHONE = "60163092782";
 
 export const generateWhatsAppLink = ({
   serviceType,

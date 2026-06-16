@@ -66,16 +66,16 @@ export default function Footer() {
               <span className="block text-xs font-semibold uppercase text-slate-500 mb-1">
                 Phone Support
               </span>
-              <a href="tel:+60REPLACE_WITH_REAL_NUMBER" className="hover:text-white transition-colors">
-                +60 REPLACE_WITH_REAL_NUMBER
+              <a href="tel:+60102113245" className="hover:text-white transition-colors">
+                +60 10-211 3245
               </a>
             </li>
             <li className="text-slate-400">
               <span className="block text-xs font-semibold uppercase text-slate-500 mb-1">
                 Email Support
               </span>
-              <a href="mailto:REPLACE_WITH_REAL_EMAIL" className="hover:text-white transition-colors">
-                REPLACE_WITH_REAL_EMAIL
+              <a href="mailto:narmaa.transports@yahoo.com" className="hover:text-white transition-colors">
+                narmaa.transports@yahoo.com
               </a>
             </li>
           </ul>
