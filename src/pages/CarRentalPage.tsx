@@ -19,7 +19,7 @@ const rentalBenefits = [
     icon: Clock,
     title: "Convenient Pickup",
     description:
-      "Arrange pickup and drop-off at designated locations around KL."},
+      "Arrange pickup and drop-off at designated locations around Kuala Lumpur with fees, or enjoy self-pickup at our base for added flexibility."},
   {
     icon: CheckCircle,
     title: "Transparent Pricing",

@@ -44,7 +44,7 @@ export default function HomestayPage() {
         <Container>
           <SectionHeader
             accent="Select Your Stay"
-            title="Our Homestays"
+            title="Our Accommodation"
             subtitle="Browse our curated selection of comfortable stays in Kuala Lumpur."
           />
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6 md:gap-8 max-w-4xl mx-auto">
@@ -64,7 +64,7 @@ export default function HomestayPage() {
         <Container>
           <SectionHeader
             accent="Cozy & Convenient"
-            title="Why Stay With Damai Luxe Management"
+            title="Why Stay With Us"
             subtitle="We help you find the right place to stay - so you can enjoy your trip without worry."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -121,7 +121,7 @@ export default function HomestayPage() {
             <ul className="mt-4 space-y-3 text-slate-600">
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
-                Check-in and check-out times will be confirmed after booking.
+                Check-in from <strong>3:00 PM</strong> · Check-out by <strong>11:00 AM</strong>.
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />

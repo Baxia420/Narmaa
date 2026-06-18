@@ -54,7 +54,7 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
         <div className="mt-3 flex items-center gap-4 text-sm text-slate-500">
           <div className="flex items-center gap-1.5">
             <User className="h-4 w-4 text-slate-400" />
-            <span>Up to {shuttle.seats} pax</span>
+            <span>Up to {shuttle.seatsLabel ?? `${shuttle.seats} pax`}</span>
           </div>
           {shuttle.luggage && (
             <div className="flex items-center gap-1.5">
@@ -192,7 +192,7 @@ export default function AirportShuttlePage() {
                 <strong>Pre-Booking Required:</strong> Shuttle transfer requests should be submitted at least 24 hours prior to travel. For last-minute bookings, please contact us directly on WhatsApp to confirm immediate availability.
               </p>
               <p>
-                <strong>Meet & Greet:</strong> For arrivals, your driver will be waiting at the designated arrivals exit holding a nameboard. Complete driver coordinates and vehicle registration number will be sent to you via WhatsApp prior to departure.
+                <strong>Meet &amp; Greet:</strong> For arrivals, your driver will be waiting at the designated arrivals exit. Complete driver coordinates and vehicle registration number will be sent to you via WhatsApp prior to departure.
               </p>
               <p>
                 <strong>Pricing & Inclusions:</strong> Rates shown are starting prices for standard KLIA/KLIA2 transfers. Final quotes are confirmed before booking and are inclusive of toll charges and baseline parking. Surcharges may apply for travel during peak holiday seasons or midnight slots (11:30 PM – 6:00 AM).
