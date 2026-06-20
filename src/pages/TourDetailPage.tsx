@@ -222,48 +222,7 @@ export default function TourDetailPage() {
                 </div>
               )}
 
-              {/* Feature Cards Row */}
-              {tour.features && tour.features.length > 0 && (
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-4">Tour Features</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    {tour.features.map((feat) => {
-                      const IconComponent = featureIconMap[feat] || Star;
-                      return (
-                        <div
-                          key={feat}
-                          className="flex flex-col items-center justify-center text-center p-5 rounded-2xl border border-slate-200 bg-slate-50/50 shadow-sm"
-                        >
-                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 mb-3">
-                            <IconComponent className="h-5 w-5" />
-                          </div>
-                          <span className="text-sm font-semibold text-slate-800 leading-snug">
-                            {feat}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
 
-              {/* Itinerary Section */}
-              {tour.itinerary && tour.itinerary.length > 0 && (
-                <div className="bg-slate-50/50 rounded-3xl border border-slate-200 p-6 md:p-8">
-                  <h2 className="text-2xl font-bold text-slate-950 mb-6">Suggested Itinerary</h2>
-                  <div className="border-l-2 border-blue-100 pl-6 space-y-8 relative ml-3">
-                    {tour.itinerary.map((step, index) => (
-                      <div key={index} className="relative">
-                        <span className="absolute -left-[35px] top-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-white text-xs font-bold ring-4 ring-white">
-                          {index + 1}
-                        </span>
-                        <h4 className="text-base font-bold text-slate-900">{step}</h4>
-                        <p className="text-xs text-slate-400 mt-0.5">Flexible scheduling</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               {/* Suitable For Tags */}
               {tour.suitableFor.length > 0 && (

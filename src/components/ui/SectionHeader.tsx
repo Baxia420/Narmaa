@@ -7,6 +7,7 @@ type SectionHeaderProps = {
   centered?: boolean;
   className?: string;
   accent?: string;
+  accentFont?: string;
 };
 
 export default function SectionHeader({
@@ -15,11 +16,15 @@ export default function SectionHeader({
   badge,
   centered = true,
   className,
-  accent}: SectionHeaderProps) {
+  accent,
+  accentFont}: SectionHeaderProps) {
   return (
     <div className={cn("mb-10", centered && "text-center", className)}>
       {accent && (
-        <span className="mb-2 block font-satisfy text-[40px] sm:text-[48px] md:text-[56px] text-blue-500 font-medium leading-tight">
+        <span className={cn(
+          "mb-2 block text-[40px] sm:text-[48px] md:text-[56px] text-blue-500 font-medium leading-tight",
+          accentFont || "font-faustina"
+        )}>
           {accent}
         </span>
       )}

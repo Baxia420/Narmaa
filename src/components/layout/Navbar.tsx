@@ -44,11 +44,7 @@ export default function Navbar() {
       <Container className="flex h-20 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5" aria-label="Narmaa Transport Home">
-          <img
-            src="/images/brand/logo.svg"
-            alt="Narmaa Transport"
-            className="h-10 w-auto object-contain"
-          />
+          <span className="font-jost text-2xl font-bold text-slate-800">Placeholder</span>
         </Link>
 
         {/* Desktop Navigation */}

@@ -475,7 +475,7 @@ export const tours: Tour[] = [
   {
     id: "tour-1",
     slug: "kl-city-highlights-tour",
-    name: "KL City Highlights Tour",
+    name: "Kuala Lumpur City Highlights Tour",
     duration: "Half day (5–6 hours)",
     pickupIncluded: true,
     highlights: [
