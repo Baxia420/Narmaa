@@ -26,9 +26,9 @@ export default function NotFoundPage() {
         <header className="relative z-10 w-full max-w-7xl mx-auto px-6 py-8 flex justify-center sm:justify-start">
           <Link to="/">
             <img
-              src="/images/brand/logo.svg"
+              src="/images/brand/logo.png"
               alt="Narmaa Transport Logo"
-              className="h-9 w-auto brightness-0 invert"
+              className="h-16 w-auto object-contain brightness-0 invert"
             />
           </Link>
         </header>

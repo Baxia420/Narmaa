@@ -11,9 +11,9 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <Link to="/" aria-label="Narmaa Transport Home">
             <img
-              src="/images/brand/logo.svg"
+              src="/images/brand/logo.png"
               alt="Narmaa Transport Logo"
-              className="h-10 w-auto brightness-0 invert"
+              className="h-16 w-auto object-contain brightness-0 invert"
             />
           </Link>
           <p className="text-slate-400 text-sm leading-relaxed mt-2">
