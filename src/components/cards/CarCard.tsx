@@ -25,8 +25,11 @@ export default function CarCard({ car, className, hideFuelAndLuggage }: CarCardP
       {/* Gradient top accent stripe */}
       <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 to-cyan-500" aria-hidden="true" />
 
-      {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center">
+      {/* Image - Clickable */}
+      <Link
+        to={`/car-rental/${car.slug}`}
+        className="block relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center"
+      >
         {!imgError && car.image ? (
           <img
             src={car.image}
@@ -57,12 +60,14 @@ export default function CarCard({ car, className, hideFuelAndLuggage }: CarCardP
             ✦ Popular
           </span>
         )}
-      </div>
+      </Link>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-jost text-[19px] font-bold text-slate-900 leading-snug">
-          {car.name}
-        </h3>
+        <Link to={`/car-rental/${car.slug}`} className="hover:text-blue-600 transition-colors">
+          <h3 className="font-jost text-[19px] font-bold text-slate-900 leading-snug">
+            {car.name}
+          </h3>
+        </Link>
 
         {/* Specs row with varied chip colors */}
         <div className="mt-3 flex flex-wrap gap-1.5">

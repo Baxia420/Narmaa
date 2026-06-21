@@ -54,7 +54,7 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
         <div className="mt-3 flex items-center gap-4 text-sm text-slate-500">
           <div className="flex items-center gap-1.5">
             <User className="h-4 w-4 text-slate-400" />
-            <span>Up to {shuttle.seatsLabel ?? `${shuttle.seats} pax`}</span>
+            <span>{shuttle.seatsLabel ? shuttle.seatsLabel : `Up to ${shuttle.seats} pax`}</span>
           </div>
           {shuttle.luggage && (
             <div className="flex items-center gap-1.5">
@@ -83,6 +83,9 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
               <span className="text-xs text-slate-400 block">Starting from</span>
               <span className="text-xl font-extrabold text-slate-950">RM {shuttle.priceFrom}</span>
               <span className="text-xs text-slate-500 font-normal"> / trip</span>
+              <span className="text-[11.5px] text-emerald-600 font-medium block mt-1 leading-snug">
+                Inclusive of Highway tolls, 1hr free waiting time
+              </span>
             </div>
           )}
           

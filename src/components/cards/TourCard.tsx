@@ -30,8 +30,11 @@ export default function TourCard({ tour, className }: TourCardProps) {
       {/* Gradient top accent stripe */}
       <div className="h-1.5 w-full bg-gradient-to-r from-rose-500 to-orange-400" aria-hidden="true" />
 
-      {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-50 to-orange-50 flex items-center justify-center">
+      {/* Image - Clickable */}
+      <Link
+        to={`/tours/${tour.slug}`}
+        className="block relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-50 to-orange-50 flex items-center justify-center"
+      >
         {!imgError && tour.image ? (
           <img
             src={tour.image}
@@ -50,13 +53,14 @@ export default function TourCard({ tour, className }: TourCardProps) {
             </span>
           </div>
         )}
-
-      </div>
+      </Link>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-jost text-[19px] font-bold text-slate-900 leading-snug">
-          {tour.name}
-        </h3>
+        <Link to={`/tours/${tour.slug}`} className="hover:text-rose-500 transition-colors">
+          <h3 className="font-jost text-[19px] font-bold text-slate-900 leading-snug">
+            {tour.name}
+          </h3>
+        </Link>
 
         {/* Highlights as coloured chips */}
         <div className="mt-3 flex flex-wrap gap-1.5">
