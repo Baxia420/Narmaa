@@ -73,10 +73,22 @@ export default function PrivacyPolicyPage() {
 
               <div>
                 <h2 className="text-lg font-bold text-slate-900 md:text-xl">
-                  5. Contact for Enquiries
+                  5. Cookies
                 </h2>
                 <p className="mt-2">
-                  If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at <strong>REPLACE_WITH_REAL_EMAIL</strong> or via our WhatsApp contact link.
+                  We use cookies and similar tracking technologies to improve your browsing experience on our website. Analytics cookies (Google Analytics) are only activated after you give your consent via the cookie banner shown on your first visit. For full details on which cookies we use and how to manage them, please read our{" "}
+                  <a href="/cookie-policy" className="text-brand-600 underline underline-offset-2 hover:text-brand-700">
+                    Cookie Policy
+                  </a>.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-bold text-slate-900 md:text-xl">
+                  6. Contact for Enquiries
+                </h2>
+                <p className="mt-2">
+                  If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at <strong>narmaa.transports@yahoo.com</strong> or via our WhatsApp contact link.
                 </p>
               </div>
             </div>

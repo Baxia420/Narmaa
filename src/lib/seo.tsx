@@ -79,6 +79,11 @@ export const pageSEO = {
     description:
       "Read the booking terms, pricing policy, and important service information for Narmaa Transport.",
     canonical: "/terms"},
+  cookiePolicy: {
+    title: "Cookie Policy | Narmaa Transport",
+    description:
+      "Learn how Narmaa Transport uses cookies on our website, what data is collected, and how you can manage or opt out of cookies.",
+    canonical: "/cookie-policy"},
   notFound: {
     title: "Page Not Found | Narmaa Transport",
     description: "The page you are looking for could not be found. Explore our services or contact us on WhatsApp.",

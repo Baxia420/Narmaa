@@ -95,6 +95,11 @@ export default function Footer() {
                 Terms & Conditions
               </Link>
             </li>
+            <li>
+              <Link to="/cookie-policy" className="hover:text-white transition-colors">
+                Cookie Policy
+              </Link>
+            </li>
             <li className="text-slate-400 mt-2 text-xs leading-relaxed">
               * Rates shown are starting prices and subject to season, duration, and availability. Final pricing confirmed via WhatsApp before booking.
             </li>

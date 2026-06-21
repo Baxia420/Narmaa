@@ -33,8 +33,8 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Airport Shuttle", path: "/airport-shuttle" },
     { name: "Car Rental", path: "/car-rental" },
-    { name: "Homestay", path: "/homestay" },
     { name: "Tours", path: "/tours" },
+    { name: "Homestay", path: "/homestay" },
     { name: "FAQ", path: "/faq" },
     { name: "Contact", path: "/contact" },
   ];

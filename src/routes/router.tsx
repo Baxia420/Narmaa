@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, useLocation } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsAppButton from "@/components/layout/FloatingWhatsAppButton";
+import CookieBanner from "@/components/layout/CookieBanner";
 
 // Lazy loaded pages
 const HomePage = lazy(() => import("@/pages/HomePage"));
@@ -17,6 +18,7 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const FAQPage = lazy(() => import("@/pages/FAQPage"));
 const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsPage = lazy(() => import("@/pages/TermsPage"));
+const CookiePolicyPage = lazy(() => import("@/pages/CookiePolicyPage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
 // Loading fallback component
@@ -51,6 +53,8 @@ function Layout() {
       </main>
       <Footer />
       <FloatingWhatsAppButton />
+      {/* CookieBanner disabled until Google Analytics is set up — re-enable by uncommenting */}
+      {/* <CookieBanner /> */}
     </div>
   );
 }
@@ -97,6 +101,9 @@ export const router = createBrowserRouter([
       {
         path: "terms",
         element: <TermsPage />},
+      {
+        path: "cookie-policy",
+        element: <CookiePolicyPage />},
     ]},
   {
     path: "*",

@@ -22,7 +22,81 @@ import {
   Coffee,
   Anchor,
   Car,
+  ChevronLeft,
   ChevronRight} from "lucide-react";
+
+// ─── Highlight Slider ────────────────────────────────────────────────────────
+function HighlightSlider({ photos }: { photos: { image: string; caption: string }[] }) {
+  const [page, setPage] = useState(0);
+  const ITEMS = 3;
+  const totalPages = Math.ceil(photos.length / ITEMS);
+  const showNav = photos.length > ITEMS;
+  const visible = photos.slice(page * ITEMS, (page + 1) * ITEMS);
+
+  return (
+    <div>
+      <div className="relative">
+        {/* Prev Arrow */}
+        {showNav && (
+          <button
+            onClick={() => setPage(p => Math.max(0, p - 1))}
+            disabled={page === 0}
+            aria-label="Previous highlights"
+            className="absolute -left-5 top-[44%] -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-lg transition-all disabled:opacity-25 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+        )}
+
+        {/* Photo Grid — 3 per page */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {visible.map((item, idx) => (
+            <div key={`${page}-${idx}`} className="group flex flex-col gap-3">
+              <div className="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100">
+                <img
+                  src={item.image}
+                  alt={item.caption}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <p className="text-sm font-semibold text-slate-800 leading-snug">
+                {item.caption}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Next Arrow */}
+        {showNav && (
+          <button
+            onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
+            disabled={page === totalPages - 1}
+            aria-label="Next highlights"
+            className="absolute -right-5 top-[44%] -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-lg transition-all disabled:opacity-25 disabled:cursor-not-allowed"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        )}
+      </div>
+
+      {/* Dot Indicators */}
+      {showNav && (
+        <div className="flex justify-center items-center gap-2 mt-6">
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setPage(i)}
+              aria-label={`Go to page ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === page ? "w-6 bg-blue-600" : "w-2 bg-slate-300 hover:bg-slate-400"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 // Feature Icon Mapping
 const featureIconMap: Record<string, any> = {
@@ -208,6 +282,14 @@ export default function TourDetailPage() {
             </div>
           </div>
 
+          {/* Tour Highlights — Full-Width Slider */}
+          {tour.highlightPhotos && tour.highlightPhotos.length > 0 && (
+            <div className="mt-10 border-t border-slate-100 pt-10 px-5">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Tour Highlights</h2>
+              <HighlightSlider photos={tour.highlightPhotos} />
+            </div>
+          )}
+
           {/* Main Grid: Info columns vs Sidebar booking card */}
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column (8 cols): Content */}
@@ -221,7 +303,6 @@ export default function TourDetailPage() {
                   </p>
                 </div>
               )}
-
 
 
               {/* Suitable For Tags */}

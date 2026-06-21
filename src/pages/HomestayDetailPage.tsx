@@ -1,9 +1,9 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { SEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import ImageGalleryPlaceholder from "@/components/ui/ImageGalleryPlaceholder";
+import ImageGalleryLightbox from "@/components/ui/ImageGalleryLightbox";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HomestayCard from "@/components/cards/HomestayCard";
 import { getHomestayBySlug, getRelatedHomestays } from "@/lib/data";
@@ -22,6 +22,8 @@ import {
 export default function HomestayDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const homestay = slug ? getHomestayBySlug(slug) : undefined;
 
   useEffect(() => {
@@ -33,6 +35,21 @@ export default function HomestayDetailPage() {
   if (!homestay) return null;
 
   const relatedHomestays = getRelatedHomestays(homestay.slug);
+
+  // Build gallery: pinned main images first, then rest shuffled randomly each page load
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const shuffledGallery = useMemo(() => {
+    const all = homestay.gallery || [homestay.image];
+    const pinned = homestay.mainImages || [];
+    const rest = all.filter((img) => !pinned.includes(img));
+    // Fisher-Yates shuffle
+    const shuffled = [...rest];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return [...pinned, ...shuffled];
+  }, [homestay.slug]); // re-shuffles when property changes, stable within a session
 
   const overviewItems = [
     { icon: MapPin, label: "Location", value: homestay.location },
@@ -71,9 +88,57 @@ export default function HomestayDetailPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
             {/* Gallery */}
-            <ImageGalleryPlaceholder
-              images={homestay.gallery || [homestay.image]}
-              alt={homestay.name}
+            <div
+              className="relative cursor-pointer"
+              onClick={() => { setLightboxIndex(0); setLightboxOpen(true); }}
+            >
+              {/* Main image */}
+              <div className="aspect-video overflow-hidden rounded-2xl bg-slate-100 shadow-sm">
+                <img
+                  src={shuffledGallery[0] || homestay.image}
+                  alt={homestay.name}
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+                {shuffledGallery.length > 1 && (
+                  <div className="absolute bottom-3 right-3 bg-black/70 hover:bg-black/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    View all {shuffledGallery.length} photos
+                  </div>
+                )}
+              </div>
+
+              {/* Thumbnail strip (up to 4 thumbnails) */}
+              {shuffledGallery.length > 1 && (
+                <div className="mt-2 grid grid-cols-4 gap-2">
+                  {shuffledGallery.slice(1, 5).map((src, idx) => (
+                    <div
+                      key={src}
+                      className="aspect-[4/3] overflow-hidden rounded-xl bg-slate-100 relative group"
+                      onClick={(e) => { e.stopPropagation(); setLightboxIndex(idx + 1); setLightboxOpen(true); }}
+                    >
+                      <img
+                        src={src}
+                        alt={`${homestay.name} - view ${idx + 2}`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      {/* "+N more" overlay on last visible thumbnail */}
+                      {idx === 3 && shuffledGallery.length > 5 && (
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-sm font-bold">
+                          +{shuffledGallery.length - 5} more
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <ImageGalleryLightbox
+              images={shuffledGallery}
+              isOpen={lightboxOpen}
+              initialIndex={lightboxIndex}
+              onClose={() => setLightboxOpen(false)}
             />
 
             {/* Details */}

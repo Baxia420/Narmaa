@@ -32,6 +32,7 @@ export type Homestay = {
   priceFrom?: number;
   image: string;
   gallery?: string[];
+  mainImages?: string[];
   featured?: boolean;
   nearby?: string[];
   notes?: string[];
@@ -46,6 +47,7 @@ export type Tour = {
   duration: string;
   pickupIncluded: boolean;
   highlights: string[];
+  highlightPhotos?: { image: string; caption: string }[];
   itinerary?: string[];
   suitableFor: string[];
   priceFrom?: number;
@@ -417,11 +419,25 @@ export const homestays: Homestay[] = [
       "Security",
     ],
     priceFrom: 350,
-    image: "/images/homestays/axon-residence.webp",
+    image: "/images/homestays/axon/axon-cover.webp",
+    // mainImages are always pinned first; the rest are shuffled per session
+    mainImages: [
+      "/images/homestays/axon/axon-main-1.webp",
+      "/images/homestays/axon/axon-main-2.webp",
+    ],
     gallery: [
-      "/images/homestays/axon-residence.webp",
-      "/images/homestays/axon-residence-pool.webp",
-      "/images/homestays/axon-residence-bedroom.webp",
+      "/images/homestays/axon/axon-main-1.webp",
+      "/images/homestays/axon/axon-main-2.webp",
+      "/images/homestays/axon/axon-3.webp",
+      "/images/homestays/axon/axon-4.webp",
+      "/images/homestays/axon/axon-5.webp",
+      "/images/homestays/axon/axon-6.webp",
+      "/images/homestays/axon/axon-7.webp",
+      "/images/homestays/axon/axon-8.webp",
+      "/images/homestays/axon/axon-9.webp",
+      "/images/homestays/axon/axon-11.webp",
+      "/images/homestays/axon/axon-12.webp",
+      "/images/homestays/axon/axon-13.webp",
     ],
     featured: true,
     nearby: ["Pavilion KL", "Bukit Bintang", "KLCC", "Jalan Alor food street"],
@@ -452,10 +468,25 @@ export const homestays: Homestay[] = [
       "Parking",
     ],
     priceFrom: 250,
-    image: "/images/homestays/reizz-residence.webp",
+    image: "/images/homestays/reizz/reizz-cover.webp",
+    // mainImages are always pinned first; the rest are shuffled per session
+    mainImages: [
+      "/images/homestays/reizz/reizz-main-1.webp",
+      "/images/homestays/reizz/reizz-main-2.webp",
+    ],
     gallery: [
-      "/images/homestays/reizz-residence.webp",
-      "/images/homestays/reizz-residence-2.webp",
+      "/images/homestays/reizz/reizz-main-1.webp",
+      "/images/homestays/reizz/reizz-main-2.webp",
+      "/images/homestays/reizz/reizz-1.webp",
+      "/images/homestays/reizz/reizz-2.webp",
+      "/images/homestays/reizz/reizz-3.webp",
+      "/images/homestays/reizz/reizz-5.webp",
+      "/images/homestays/reizz/reizz-6.webp",
+      "/images/homestays/reizz/reizz-7.webp",
+      "/images/homestays/reizz/reizz-8.webp",
+      "/images/homestays/reizz/reizz-9.webp",
+      "/images/homestays/reizz/reizz-10.webp",
+      "/images/homestays/reizz/reizz-11.webp",
     ],
     featured: true,
     nearby: ["TRX Exchange", "Pavilion Bukit Jalil", "KL city centre", "Public transport links"],
@@ -485,6 +516,12 @@ export const tours: Tour[] = [
       "National Mosque",
       "Merdeka Square",
       "Central Market",
+    ],
+    highlightPhotos: [
+      { image: "/images/tours/kl-city-tour/kl-city-tour-3.webp", caption: "KL City at Night" },
+      { image: "/images/tours/kl-city-tour/kl-city-tour-1.webp", caption: "Petronas Twin Towers" },
+      { image: "/images/tours/kl-city-tour/kl-city-tour-2.webp", caption: "Petaling Street" },
+      { image: "/images/tours/kl-city-tour/kl-city-tour-10.webp", caption: "Batu Caves" },
     ],
     itinerary: [
       "Pickup from your hotel or homestay",
@@ -586,6 +623,12 @@ export const tours: Tour[] = [
       "Malacca River cruise",
       "Local Nyonya cuisine",
     ],
+    highlightPhotos: [
+      { image: "/images/tours/malacca-tour/malacca-tour-1.webp", caption: "Malacca Straits Mosque" },
+      { image: "/images/tours/malacca-tour/malacca-tour-2.webp", caption: "Jonker Street" },
+      { image: "/images/tours/malacca-tour/malacca-tour-4.webp", caption: "Malacca River" },
+      { image: "/images/tours/malacca-tour/malacca-tour-5.webp", caption: "Heritage Street" },
+    ],
     itinerary: [
       "Pick-up from Kuala Lumpur",
       "Stadthuys & Christ Church",
@@ -631,6 +674,12 @@ export const tours: Tour[] = [
       "Fresh market",
       "Cool highland climate",
     ],
+    highlightPhotos: [
+      { image: "/images/tours/cameron-highlands/cameron-highlands-1.webp", caption: "Test1" },
+      { image: "/images/tours/cameron-highlands/cameron-highlands-2.webp", caption: "Test2" },
+      { image: "/images/tours/cameron-highlands/cameron-highlands-3.webp", caption: "Test3" },
+      { image: "/images/tours/cameron-highlands/cameron-highlands-4.webp", caption: "Test4" },
+    ],
     itinerary: [
       "Early morning pickup from KL",
       "Scenic drive through Tapah (approximately 3 hours)",
@@ -674,6 +723,10 @@ export const tours: Tour[] = [
       "Fireflies Boat Tour",
       "Bukit Melawati (Silvered Leaf Monkeys)",
       "Seafood Dinner (Optional)",
+    ],
+    highlightPhotos: [
+      { image: "/images/tours/kuala-selangor/kuala-selangor-1.webp", caption: "Eagle Feeding at the River" },
+      { image: "/images/tours/kuala-selangor/kuala-selangor-2.webp", caption: "Silvered Leaf Monkeys" },
     ],
     itinerary: [
       "Afternoon pickup from KL",
@@ -783,6 +836,9 @@ export const tours: Tour[] = [
       "Prime Minister's Office",
       "Putrajaya Bridge",
       "Cyberjaya smart city",
+    ],
+    highlightPhotos: [
+      { image: "/images/tours/putrajaya-tour.webp", caption: "Putra Mosque" },
     ],
     itinerary: [
       "Pickup from your hotel or homestay",
