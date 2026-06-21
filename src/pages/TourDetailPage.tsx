@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -138,6 +139,33 @@ export default function TourDetailPage() {
       pickupLocation: `Group size: ${guestCount} guests`});
   };
 
+  const tourSchema = {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: tour.name,
+    description: tour.description,
+    image: tour.image ? `https://narmaatransport.com${tour.image}` : undefined,
+    touristType: tour.suitableFor,
+    ...(tour.priceFrom && {
+      offers: {
+        "@type": "Offer",
+        price: tour.priceFrom,
+        priceCurrency: "MYR",
+        seller: { "@type": "Organization", name: "Narmaa Transport" },
+      },
+    }),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://narmaatransport.com" },
+      { "@type": "ListItem", position: 2, name: "Tours", item: "https://narmaatransport.com/tours" },
+      { "@type": "ListItem", position: 3, name: tour.name },
+    ],
+  };
+
   return (
     <>
       <SEO
@@ -148,6 +176,10 @@ export default function TourDetailPage() {
         }
         canonical={`/tours/${tour.slug}`}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(tourSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      </Helmet>
 
       <section className="pt-24 pb-16 md:pt-28 md:pb-24 bg-white">
         <Container>

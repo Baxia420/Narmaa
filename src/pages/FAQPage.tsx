@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HelpCircle } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { SEO, pageSEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -7,6 +8,16 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import Button from "@/components/ui/Button";
 import { faqs, faqCategories } from "@/lib/data";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
+
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
 
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState<typeof faqCategories[number]>("General");
@@ -17,6 +28,9 @@ export default function FAQPage() {
   return (
     <>
       <SEO {...pageSEO.faq} />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqPageSchema)}</script>
+      </Helmet>
 
       {/* Header */}
       <section className="text-white py-20 text-center relative overflow-hidden">

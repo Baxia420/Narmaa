@@ -135,11 +135,7 @@ export default function AirportShuttlePage() {
 
   return (
     <>
-      <SEO
-        title="Airport Shuttle Service in Malaysia | Narmaa Transport"
-        description="Reliable airport pickup and drop-off services in Malaysia with vehicle options from economy cars to 18-seater minibuses. Starting from RM120."
-        canonical="/airport-shuttle"
-      />
+      <SEO {...pageSEO.airportShuttle} />
 
       {/* Vehicles Grid */}
       <section className="py-16 md:py-20 bg-white">

@@ -84,6 +84,11 @@ export const pageSEO = {
     description:
       "Learn how Narmaa Transport uses cookies on our website, what data is collected, and how you can manage or opt out of cookies.",
     canonical: "/cookie-policy"},
+  airportShuttle: {
+    title: "Airport Shuttle Malaysia | KLIA & KLIA2 Transfer | Narmaa Transport",
+    description:
+      "Book affordable airport shuttle transfers at KLIA and KLIA2. Professional drivers, private vehicles for solo travellers, families and groups. Rates from RM120.",
+    canonical: "/airport-shuttle"},
   notFound: {
     title: "Page Not Found | Narmaa Transport",
     description: "The page you are looking for could not be found. Explore our services or contact us on WhatsApp.",

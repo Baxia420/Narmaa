@@ -12,14 +12,12 @@ import { Helmet } from "react-helmet-async";
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "TravelAgency"],
   name: "Narmaa Transport",
   description:
     "Car rental, comfortable homestays, and private chauffeur tours in Malaysia. Plan your trip with one trusted local team via WhatsApp.",
   url: "https://narmaatransport.com",
   image: "https://narmaatransport.com/images/general/og-image.jpg",
-  telephone: "+60-REPLACE-WITH-REAL-NUMBER",
-  email: "REPLACE_WITH_REAL_EMAIL",
   areaServed: [
     "Kuala Lumpur",
     "Selangor",
@@ -30,11 +28,17 @@ const localBusinessJsonLd = {
     "Cameron Highlands",
     "Genting Highlands",
   ],
-  serviceType: [
-    "Car Rental",
-    "Homestay Accommodation",
-    "Private Chauffeur Tours",
-  ]};
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Travel Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Car Rental" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Airport Shuttle" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Homestay Accommodation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Private Chauffeur Tours" } },
+    ],
+  },
+};
 
 export default function HomePage() {
   return (

@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -64,6 +65,43 @@ export default function HomestayDetailPage() {
       value: `${homestay.bathrooms} bathroom${homestay.bathrooms > 1 ? "s" : ""}`},
   ];
 
+  const homestaySchema = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: homestay.name,
+    description: homestay.description,
+    image: homestay.image ? `https://narmaatransport.com${homestay.image}` : undefined,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: homestay.location,
+      addressCountry: "MY",
+    },
+    numberOfRooms: homestay.bedrooms,
+    amenityFeature: homestay.amenities.map((a) => ({
+      "@type": "LocationFeatureSpecification",
+      name: a,
+      value: true,
+    })),
+    ...(homestay.priceFrom && {
+      offers: {
+        "@type": "Offer",
+        price: homestay.priceFrom,
+        priceCurrency: "MYR",
+        seller: { "@type": "Organization", name: "Narmaa Transport" },
+      },
+    }),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://narmaatransport.com" },
+      { "@type": "ListItem", position: 2, name: "Homestays", item: "https://narmaatransport.com/homestay" },
+      { "@type": "ListItem", position: 3, name: homestay.name },
+    ],
+  };
+
   return (
     <>
       <SEO
@@ -74,6 +112,10 @@ export default function HomestayDetailPage() {
         }
         canonical={`/homestay/${homestay.slug}`}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(homestaySchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      </Helmet>
 
       <section className="pt-24 pb-16 md:pt-28 md:pb-20 bg-white">
         <Container>

@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -47,6 +48,34 @@ export default function CarDetailPage() {
       : []),
   ];
 
+  const carSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: car.name,
+    description: car.description,
+    image: car.image ? `https://narmaatransport.com${car.image}` : undefined,
+    brand: { "@type": "Brand", name: car.name.split(" ")[0] },
+    ...(car.priceFrom && {
+      offers: {
+        "@type": "Offer",
+        price: car.priceFrom,
+        priceCurrency: "MYR",
+        availability: "https://schema.org/InStock",
+        seller: { "@type": "Organization", name: "Narmaa Transport" },
+      },
+    }),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://narmaatransport.com" },
+      { "@type": "ListItem", position: 2, name: "Car Rental", item: "https://narmaatransport.com/car-rental" },
+      { "@type": "ListItem", position: 3, name: car.name },
+    ],
+  };
+
   return (
     <>
       <SEO
@@ -57,6 +86,10 @@ export default function CarDetailPage() {
         }
         canonical={`/car-rental/${car.slug}`}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(carSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      </Helmet>
 
       <section className="pt-24 pb-16 md:pt-28 md:pb-20 bg-white">
         <Container>

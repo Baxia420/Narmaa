@@ -55,6 +55,8 @@ export default function Hero() {
           <img
             src={slide.image}
             alt=""
+            width={1920}
+            height={1080}
             className="h-full w-full object-cover"
             loading={index === 0 ? "eager" : "lazy"}
             fetchPriority={index === 0 ? "high" : "auto"}
