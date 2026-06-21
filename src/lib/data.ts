@@ -84,16 +84,6 @@ export type FAQ = {
   category: "General" | "Car Rental" | "Homestay" | "Tours" | "Booking & Payment" | "Airport Shuttle";
 };
 
-export type Testimonial = {
-  id: string;
-  name: string;
-  location: string;
-  text: string;
-  rating: number;
-  service: string;
-  isPlaceholder: boolean;
-};
-
 export type TrustPoint = {
   id: string;
   title: string;
@@ -978,38 +968,6 @@ export const faqs: FAQ[] = [
     question: "What is included in the airport shuttle price?",
     answer: "Our quoted rates start from RM120 and include the vehicle rental, professional driver, toll charges, and airport parking fees. There are no hidden charges. Please note that midnight charges may apply for transfers between 11:30 PM and 6:00 AM.",
     category: "Airport Shuttle",
-  },
-];
-
-// ─── Testimonials ────────────────────────────────────────────────────────────
-
-export const testimonials: Testimonial[] = [
-  {
-    id: "testimonial-1",
-    name: "Customer from KL",
-    location: "Kuala Lumpur",
-    text: "Easy to arrange everything through WhatsApp. The car was clean and ready on time. Would recommend for anyone visiting Malaysia.",
-    rating: 5,
-    service: "Car Rental",
-    isPlaceholder: true,
-  },
-  {
-    id: "testimonial-2",
-    name: "Tourist Family",
-    location: "Visiting from Singapore",
-    text: "We booked a homestay and a Malacca day trip together. Everything was well coordinated and the driver was very friendly and knowledgeable.",
-    rating: 5,
-    service: "Tour + Homestay",
-    isPlaceholder: true,
-  },
-  {
-    id: "testimonial-3",
-    name: "Business Traveller",
-    location: "Kuala Lumpur",
-    text: "Used the Alphard for airport pickup and a series of meetings. Smooth, comfortable, and professional service throughout.",
-    rating: 5,
-    service: "Car Rental",
-    isPlaceholder: true,
   },
 ];
 

@@ -4,7 +4,6 @@ import FeaturedFleet from "@/components/sections/FeaturedFleet";
 import FeaturedHomestays from "@/components/sections/FeaturedHomestays";
 import FeaturedTours from "@/components/sections/FeaturedTours";
 import HowItWorks from "@/components/sections/HowItWorks";
-import Testimonials from "@/components/sections/Testimonials";
 import FAQPreview from "@/components/sections/FAQPreview";
 import LeadFormSection from "@/components/sections/LeadFormSection";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -55,7 +54,6 @@ export default function HomePage() {
       <FeaturedHomestays />
       <FeaturedTours />
       <HowItWorks />
-      <Testimonials />
       <FAQPreview />
       <LeadFormSection />
       <FinalCTA />

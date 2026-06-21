@@ -57,6 +57,7 @@ function HighlightSlider({ photos }: { photos: { image: string; caption: string 
                 <img
                   src={item.image}
                   alt={item.caption}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
