@@ -17,7 +17,7 @@ const variantStyles = {
   whatsapp:
     "bg-[#25d366] text-white hover:bg-[#128c7e] focus-visible:ring-[#25d366] shadow-sm",
   whatsappOutline:
-    "bg-white border-2 border-[#25d366] text-[#128c7e] hover:bg-[#25d366] hover:text-white focus-visible:ring-[#25d366]",
+    "bg-emerald-50 border border-emerald-200 text-emerald-700 hover:bg-[#25d366] hover:border-[#25d366] hover:text-white focus-visible:ring-[#25d366]",
 } as const;
 
 const sizeStyles = {

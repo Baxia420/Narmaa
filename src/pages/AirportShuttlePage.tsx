@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plane, User, CheckCircle, AlertCircle, Luggage, Minus, Plus } from "lucide-react";
+import { Plane, User, CheckCircle, AlertCircle, Luggage, Minus } from "lucide-react";
 import { SEO } from "@/lib/seo";
 import { pageSEO } from "@/lib/pageSEO";
 
@@ -97,9 +97,9 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
             variant="whatsappOutline"
             size="md"
             className="w-full justify-center rounded-full min-h-[44px]"
-            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
+            iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-5 w-5 shrink-0" alt="" />}
           >
-            Check on WhatsApp
+            Ask on WhatsApp
           </Button>
         </div>
       </div>
@@ -110,34 +110,26 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
 const policyInclusions = [
   "Vehicle for the confirmed route",
   "Highway tolls for standard KLIA/KLIA2 transfers",
-  "Airport parking (standard KLIA/KLIA2 allowance)",
+  "Airport parking within the standard KLIA/KLIA2 allowance",
   "1 hour free waiting time after scheduled pickup",
   "Driver coordination and updates via WhatsApp",
-  "Pre-journey confirmation with driver name, contact, and vehicle plate",
+  "Pre-journey confirmation with driver name, contact, and vehicle plate when available",
 ];
 
 const policyExclusions = [
-  "Waiting time beyond the 1-hour free allowance",
   "Attraction tickets, entrance fees, or meals",
   "Extra stops not confirmed before booking",
-  "Midnight slot surcharge (11:30 PM – 6:00 AM) or public holiday premium",
+  "Route changes not confirmed before booking",
   "Passengers or luggage exceeding the booked vehicle's capacity",
-];
-
-const policyExtras = [
-  "Additional waiting time (charged per 30-minute block)",
-  "Route changes or extra stopovers confirmed after booking",
-  "Vehicle upgrade if actual headcount or luggage exceeds the booked vehicle",
-  "Special handling for oversized or fragile items (must be confirmed in advance)",
-  "Last-minute bookings under 24 hours' notice may carry a premium",
+  "Special items, pets, or unusual luggage unless confirmed in advance",
 ];
 
 const policyScenarios = [
-  "Flight delay: share your flight number early so pickup timing can be adjusted via WhatsApp",
-  "No-show: driver waits through the free allowance; charges apply after that period",
-  "Advance booking required: please book at least 24 hours before travel; contact us for urgent last-minute rides",
+  "Flight delay: share your flight number early so pickup timing can be coordinated via WhatsApp",
+  "No-show: driver waits through the free allowance; next steps will be confirmed via WhatsApp",
+  "Advance booking is recommended; contact us on WhatsApp for urgent last-minute rides",
   "Driver may decline pickup if booking details do not match the actual trip",
-  "Pets or unusual items must be confirmed before booking — not all vehicles are suitable",
+  "Final fare, route, vehicle, and any special conditions will be confirmed on WhatsApp before booking",
 ];
 
 // Main Page Component
@@ -170,9 +162,9 @@ export default function AirportShuttlePage() {
           <SectionHeader
             accent="Before You Book"
             title="Airport Shuttle Policy"
-            subtitle="Know what's included, what may cost extra, and what to confirm before your ride."
+            subtitle="Know what's included, what's not included, and what to confirm before your ride."
           />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
 
             {/* Inclusions */}
             <div className="rounded-2xl border border-green-200 bg-white p-6 shadow-sm">
@@ -210,26 +202,8 @@ export default function AirportShuttlePage() {
               </ul>
             </div>
 
-            {/* Charged Extras */}
-            <div className="rounded-2xl border border-amber-100 bg-white p-6 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 shrink-0">
-                  <Plus className="h-5 w-5 text-amber-600" />
-                </div>
-                <h3 className="text-base font-bold text-slate-900">Charged Extras</h3>
-              </div>
-              <ul className="space-y-2">
-                {policyExtras.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-snug">
-                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-400 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* Good to Know */}
-            <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 shrink-0">
                   <AlertCircle className="h-5 w-5 text-blue-600" />
@@ -250,7 +224,7 @@ export default function AirportShuttlePage() {
 
           {/* Reassurance note */}
           <p className="mt-8 text-center text-sm text-slate-500 bg-white rounded-xl border border-slate-200 inline-block px-5 py-3 w-full sm:w-auto">
-            Final price and any extra charges will be confirmed with you on WhatsApp before booking.
+            Final fare, route, vehicle, and any special conditions will be confirmed with you on WhatsApp before booking.
           </p>
         </Container>
       </section>

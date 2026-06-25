@@ -730,11 +730,11 @@ export const tours: Tour[] = [
     ],
     suitableFor: ["Families", "Nature lovers", "Couples", "Photographers"],
     priceFrom: 350,
-    image: "/images/tours/kuala-selangor/kuala-selangor-monkeys-steps.webp",
+    image: "/images/tours/kuala-selangor/kuala-selangor-monkeys-feeding.webp",
     gallery: [
+      "/images/tours/kuala-selangor/kuala-selangor-monkeys-feeding.webp",
       "/images/tours/kuala-selangor/kuala-selangor-monkeys-steps.webp",
       "/images/tours/kuala-selangor/kuala-selangor-monkey-close.webp",
-      "/images/tours/kuala-selangor/kuala-selangor-monkeys-feeding.webp",
       "/images/tours/kuala-selangor/kuala-selangor-1.webp",
       "/images/tours/kuala-selangor/kuala-selangor-2.webp",
     ],
