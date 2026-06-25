@@ -108,7 +108,8 @@ export default function Footer() {
       </Container>
 
       {/* Bottom Copyright */}
-      <Container className="border-t border-brand-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      {/* pb-24 on mobile ensures the floating WhatsApp button doesn't cover the copyright text */}
+      <Container className="border-t border-brand-900 mt-12 pt-8 pb-24 md:pb-0 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
         <p>&copy; {currentYear} Narmaa Transport. Premium Malaysian Hospitality. All rights reserved.</p>
         <p>Managed by Narmaa Group</p>
       </Container>

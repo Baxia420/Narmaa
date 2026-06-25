@@ -1,4 +1,5 @@
-import { SEO, pageSEO } from "@/lib/seo";
+import { SEO } from "@/lib/seo";
+import { pageSEO } from "@/lib/pageSEO";
 import Hero from "@/components/sections/Hero";
 import FeaturedFleet from "@/components/sections/FeaturedFleet";
 import FeaturedHomestays from "@/components/sections/FeaturedHomestays";
@@ -8,6 +9,7 @@ import FAQPreview from "@/components/sections/FAQPreview";
 import LeadFormSection from "@/components/sections/LeadFormSection";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { Helmet } from "react-helmet-async";
+import { featureFlags } from "@/lib/featureFlags";
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
@@ -55,7 +57,10 @@ export default function HomePage() {
       <FeaturedTours />
       <HowItWorks />
       <FAQPreview />
-      <LeadFormSection />
+      {/* TODO: Post-launch: enable lead form once Formspree endpoint and form flow are finalized. */}
+      {featureFlags.leadForms && (
+        <LeadFormSection />
+      )}
       <FinalCTA />
     </>
   );

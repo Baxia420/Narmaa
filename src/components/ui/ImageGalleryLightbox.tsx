@@ -16,17 +16,19 @@ export default function ImageGalleryLightbox({
 }: ImageGalleryLightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
+  // Derived state: when isOpen transitions to true, reset to the requested index without an effect
+  const [lastIsOpen, setLastIsOpen] = useState(false);
+  if (lastIsOpen !== isOpen) {
+    setLastIsOpen(isOpen);
+    if (isOpen) setCurrentIndex(initialIndex);
+  }
+
   useEffect(() => {
-    if (isOpen) {
-      setCurrentIndex(initialIndex);
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [isOpen, initialIndex]);
+  }, [isOpen]);
 
   if (!isOpen || images.length === 0) return null;
 

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { SEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
 import ImageGalleryPlaceholder from "@/components/ui/ImageGalleryPlaceholder";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CarCard from "@/components/cards/CarCard";

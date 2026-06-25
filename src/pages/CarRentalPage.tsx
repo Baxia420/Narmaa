@@ -1,4 +1,5 @@
-import { SEO, pageSEO } from "@/lib/seo";
+import { SEO } from "@/lib/seo";
+import { pageSEO } from "@/lib/pageSEO";
 
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";

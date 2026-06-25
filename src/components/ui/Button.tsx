@@ -78,7 +78,6 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       iconRight,
       className,
       children,
-      ...rest
     } = props;
 
     const baseClasses = cn(

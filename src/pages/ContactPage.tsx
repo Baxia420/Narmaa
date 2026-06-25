@@ -1,9 +1,11 @@
 import { Mail, Phone, Clock, MapPin} from "lucide-react";
-import { SEO, pageSEO } from "@/lib/seo";
+import { SEO } from "@/lib/seo";
+import { pageSEO } from "@/lib/pageSEO";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 import { serviceAreas } from "@/lib/data";
+import { featureFlags } from "@/lib/featureFlags";
 import facebookSvg from "@/assets/facebook-official.svg";
 
 export default function ContactPage() {
@@ -41,7 +43,7 @@ export default function ContactPage() {
                 Get in touch
               </h2>
               <p className="mt-3 text-slate-600 leading-relaxed">
-                We are a local Malaysian hospitality team dedicated to providing stress-free ground transport and accommodation. Reach out via WhatsApp for the fastest reply, or use our enquiry form.
+                We are a local Malaysian hospitality team dedicated to providing stress-free ground transport and accommodation. Reach out via WhatsApp for the fastest reply.
               </p>
 
               {/* Direct WhatsApp Callout */}
@@ -161,133 +163,183 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right Column: Lead Form */}
-          <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-8 md:p-10 shadow-sm">
-            <span className="block font-satisfy text-lg text-blue-500 mb-1">Ready when you are</span>
-            <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
-              Send an enquiry
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Provide your details and we will review vehicle/stay availability for your dates.
-            </p>
+          {/* Right Column: WhatsApp card (lead form deferred post-launch) */}
+          <div className="lg:col-span-7">
+            {featureFlags.leadForms ? (
+              <div className="bg-white rounded-3xl border border-slate-200 p-8 md:p-10 shadow-sm">
+                <span className="block font-satisfy text-lg text-blue-500 mb-1">Ready when you are</span>
+                <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
+                  Send an enquiry
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  Provide your details and we will review vehicle/stay availability for your dates.
+                </p>
 
-            <form
-              action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID"
-              method="POST"
-              className="mt-8 space-y-6"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700">
-                    Your Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                    placeholder="Enter your name"
-                  />
-                </div>
+                <form
+                  action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID"
+                  method="POST"
+                  className="mt-8 space-y-6"
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-slate-700">
+                        Your Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                        placeholder="Enter your name"
+                      />
+                    </div>
 
-                <div>
-                  <label htmlFor="whatsapp" className="block text-sm font-medium text-slate-700">
-                    WhatsApp Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    id="whatsapp"
-                    name="whatsapp"
-                    required
-                    className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                    placeholder="e.g. +60 12-345 6789"
-                  />
-                </div>
-              </div>
+                    <div>
+                      <label htmlFor="whatsapp" className="block text-sm font-medium text-slate-700">
+                        WhatsApp Number <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="whatsapp"
+                        name="whatsapp"
+                        required
+                        className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                        placeholder="e.g. +60 12-345 6789"
+                      />
+                    </div>
+                  </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                  placeholder="name@example.com"
-                />
-              </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                      placeholder="name@example.com"
+                    />
+                  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-slate-700">
-                    Service Needed <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    required
-                    defaultValue=""
-                    className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="service" className="block text-sm font-medium text-slate-700">
+                        Service Needed <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        id="service"
+                        name="service"
+                        required
+                        defaultValue=""
+                        className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                      >
+                        <option value="" disabled>Select a service</option>
+                        <option value="Car Rental">Car Rental</option>
+                        <option value="Homestay">Homestay Accommodation</option>
+                        <option value="Private Tour">Private Chauffeur Tour</option>
+                        <option value="Combo Package">Combo Package (Stay + Transport)</option>
+                        <option value="Airport Pickup">Airport Pickup / Drop-off</option>
+                        <option value="Other">Other Enquiry</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="travel-date" className="block text-sm font-medium text-slate-700">
+                        Preferred Travel Date
+                      </label>
+                      <input
+                        type="date"
+                        id="travel-date"
+                        name="travel_date"
+                        className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="pickup-location" className="block text-sm font-medium text-slate-700">
+                      Pickup Location / Homestay Area
+                    </label>
+                    <input
+                      type="text"
+                      id="pickup-location"
+                      name="pickup_location"
+                      className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                      placeholder="e.g. KLIA, Bukit Bintang, Cheras"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-slate-700">
+                      Your Requirements / Message <span className="text-red-500">*</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={4}
+                      className="mt-1.5 block w-full resize-y rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                      placeholder="Describe what you need: specific car choice, duration of rental, number of guests for stay, or customized tour points..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full rounded-xl bg-blue-600 px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-md"
                   >
-                    <option value="" disabled>Select a service</option>
-                    <option value="Car Rental">Car Rental</option>
-                    <option value="Homestay">Homestay Accommodation</option>
-                    <option value="Private Tour">Private Chauffeur Tour</option>
-                    <option value="Combo Package">Combo Package (Stay + Transport)</option>
-                    <option value="Airport Pickup">Airport Pickup / Drop-off</option>
-                    <option value="Other">Other Enquiry</option>
-                  </select>
+                    Send Enquiry
+                  </button>
+                </form>
+              </div>
+            ) : (
+              /* WhatsApp-first card shown when lead form is deferred */
+              <div className="bg-white rounded-3xl border border-green-200 p-8 md:p-10 shadow-sm">
+                <span className="block font-satisfy text-lg text-blue-500 mb-1">Quickest way to reach us</span>
+                <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
+                  Prefer WhatsApp?
+                </h3>
+                <p className="mt-3 text-slate-600 leading-relaxed">
+                  Send your travel dates, pickup area, number of guests, and service needed. We'll confirm availability and pricing directly.
+                </p>
+
+                <div className="mt-6 rounded-2xl bg-slate-50 border border-slate-200 p-5 space-y-3">
+                  <p className="text-sm font-semibold text-slate-700">Include in your message:</p>
+                  <ul className="space-y-2">
+                    {[
+                      "Your travel dates",
+                      "Pickup area or hotel",
+                      "Number of guests",
+                      "Service needed (car rental, tour, homestay, airport transfer)",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <div>
-                  <label htmlFor="travel-date" className="block text-sm font-medium text-slate-700">
-                    Preferred Travel Date
-                  </label>
-                  <input
-                    type="date"
-                    id="travel-date"
-                    name="travel_date"
-                    className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                  />
+                <div className="mt-8">
+                  <Button
+                    as="anchor"
+                    href={whatsappLink}
+                    external
+                    variant="whatsapp"
+                    size="lg"
+                    className="w-full justify-center min-h-[44px] sm:w-auto"
+                    iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
+                  >
+                    Message Narmaa Transport on WhatsApp
+                  </Button>
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="pickup-location" className="block text-sm font-medium text-slate-700">
-                  Pickup Location / Homestay Area
-                </label>
-                <input
-                  type="text"
-                  id="pickup-location"
-                  name="pickup_location"
-                  className="mt-1.5 block w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                  placeholder="e.g. KLIA, Bukit Bintang, Cheras"
-                />
+                <p className="mt-4 text-xs text-slate-400 text-center">
+                  We typically reply within a few hours during operating hours.
+                </p>
               </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700">
-                  Your Requirements / Message <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  className="mt-1.5 block w-full resize-y rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                  placeholder="Describe what you need: specific car choice, duration of rental, number of guests for stay, or customized tour points..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full rounded-xl bg-blue-600 px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-md"
-              >
-                Send Enquiry
-              </button>
-            </form>
+            )}
           </div>
         </Container>
       </section>

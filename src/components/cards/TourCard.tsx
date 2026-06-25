@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Clock, Compass, ArrowRight, MapPin } from "lucide-react";
+import { Clock, Compass, ArrowRight } from "lucide-react";
 import type { Tour } from "@/lib/data";
 import { cn } from "@/lib/utils";
 

@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { SEO } from "@/lib/seo";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
 import ImageGalleryLightbox from "@/components/ui/ImageGalleryLightbox";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HomestayCard from "@/components/cards/HomestayCard";
@@ -20,6 +19,21 @@ import {
   ArrowLeft,
   } from "lucide-react";
 
+// LCG-seeded shuffle: deterministic for a given slug, different per property, pure (no Math.random)
+function seededShuffle<T>(arr: T[], seed: string): T[] {
+  let s = seed.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  const rand = () => {
+    s = (s * 1664525 + 1013904223) & 0xffffffff;
+    return (s >>> 0) / 0x100000000;
+  };
+  const result = [...arr];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
 export default function HomestayDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -33,24 +47,18 @@ export default function HomestayDetailPage() {
     }
   }, [homestay, navigate]);
 
-  if (!homestay) return null;
-
-  const relatedHomestays = getRelatedHomestays(homestay.slug);
-
-  // Build gallery: pinned main images first, then rest shuffled randomly each page load
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  // All hooks must run on every render — guard inside the memo instead of returning early first
   const shuffledGallery = useMemo(() => {
+    if (!homestay) return [];
     const all = homestay.gallery || [homestay.image];
     const pinned = homestay.mainImages || [];
     const rest = all.filter((img) => !pinned.includes(img));
-    // Fisher-Yates shuffle
-    const shuffled = [...rest];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return [...pinned, ...shuffled];
-  }, [homestay.slug]); // re-shuffles when property changes, stable within a session
+    return [...pinned, ...seededShuffle(rest, homestay.slug)];
+  }, [homestay]); // re-shuffles when property changes, stable per slug
+
+  if (!homestay) return null;
+
+  const relatedHomestays = getRelatedHomestays(homestay.slug);
 
   const overviewItems = [
     { icon: MapPin, label: "Location", value: homestay.location },

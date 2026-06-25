@@ -573,8 +573,7 @@ export const tours: Tour[] = [
     ],
     suitableFor: ["Families with children", "Thrill seekers", "Shoppers", "Couples"],
     priceFrom: 300,
-    // Cover photo placeholder — will be updated with cable car photo
-    image: "",
+    image: "/images/tours/genting-highlands/genting-highlands-1.webp",
     gallery: [
       "/images/tours/genting-highlands/genting-highlands-1.webp",
       "/images/tours/genting-highlands/genting-highlands-11.webp",
@@ -628,8 +627,9 @@ export const tours: Tour[] = [
     ],
     suitableFor: ["Families", "Couples", "History lovers", "Food enthusiasts", "First-time visitors"],
     priceFrom: 450,
-    image: "/images/tours/malacca-tour/malacca-tour-3.webp",
+    image: "/images/tours/malacca-tour/malacca-tour-night-trishaws.webp",
     gallery: [
+      "/images/tours/malacca-tour/malacca-tour-night-trishaws.webp",
       "/images/tours/malacca-tour/malacca-tour-3.webp",
       "/images/tours/malacca-tour/malacca-tour-1.webp",
       "/images/tours/malacca-tour/malacca-tour-2.webp",
@@ -688,6 +688,8 @@ export const tours: Tour[] = [
       "/images/tours/cameron-highlands/cameron-highlands-3.webp",
       "/images/tours/cameron-highlands/cameron-highlands-4.webp",
       "/images/tours/cameron-highlands/cameron-highlands-5.webp",
+      "/images/tours/cameron-highlands/cameron-highlands-waterfall-bridge.webp",
+      "/images/tours/cameron-highlands/cameron-highlands-waterfall.webp",
     ],
     featured: true,
     location: "Cameron Highlands",
@@ -728,9 +730,11 @@ export const tours: Tour[] = [
     ],
     suitableFor: ["Families", "Nature lovers", "Couples", "Photographers"],
     priceFrom: 350,
-    // Cover photo placeholder — will be updated with silver monkey photo
-    image: "",
+    image: "/images/tours/kuala-selangor/kuala-selangor-monkeys-steps.webp",
     gallery: [
+      "/images/tours/kuala-selangor/kuala-selangor-monkeys-steps.webp",
+      "/images/tours/kuala-selangor/kuala-selangor-monkey-close.webp",
+      "/images/tours/kuala-selangor/kuala-selangor-monkeys-feeding.webp",
       "/images/tours/kuala-selangor/kuala-selangor-1.webp",
       "/images/tours/kuala-selangor/kuala-selangor-2.webp",
     ],

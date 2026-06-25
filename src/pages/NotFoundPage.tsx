@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Car, Home as HomeIcon, MapPin } from "lucide-react";
-import { SEO, pageSEO } from "@/lib/seo";
+import { SEO } from "@/lib/seo";
+import { pageSEO } from "@/lib/pageSEO";
 import Button from "@/components/ui/Button";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 

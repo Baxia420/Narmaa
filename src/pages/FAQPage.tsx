@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { HelpCircle } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { SEO, pageSEO } from "@/lib/seo";
+import { SEO } from "@/lib/seo";
+import { pageSEO } from "@/lib/pageSEO";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FAQAccordion from "@/components/ui/FAQAccordion";

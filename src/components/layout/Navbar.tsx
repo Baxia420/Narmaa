@@ -6,19 +6,16 @@ import Container from "@/components/ui/Container";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  // Track the pathname when the menu was opened; menu is derived as open when it matches current path
+  const [openedAtPath, setOpenedAtPath] = useState<string | null>(null);
   const location = useLocation();
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
+  const isOpen = openedAtPath === location.pathname;
 
   // Handle Escape key to close mobile menu
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setIsOpen(false);
+        setOpenedAtPath(null);
       }
     };
     if (isOpen) {
@@ -85,11 +82,11 @@ export default function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu button — min 44px tap target */}
         <button
           type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900 md:hidden"
+          onClick={() => setOpenedAtPath(isOpen ? null : location.pathname)}
+          className="inline-flex items-center justify-center rounded-lg p-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-900 md:hidden"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           aria-label="Toggle navigation menu"
@@ -102,7 +99,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           id="mobile-menu"
-          className="fixed inset-x-0 top-20 z-50 h-[calc(100vh-5rem)] w-full border-t border-slate-200 bg-white px-4 py-6 shadow-xl transition-all duration-300 md:hidden flex flex-col"
+          className="fixed inset-x-0 top-20 z-50 h-[calc(100vh-5rem)] w-full border-t border-slate-200 bg-white px-4 py-6 shadow-xl transition-all duration-300 md:hidden flex flex-col justify-between"
         >
           <div className="flex flex-col gap-5">
             {navLinks.map((link) => {
@@ -119,6 +116,21 @@ export default function Navbar() {
                 </Link>
               );
             })}
+          </div>
+
+          {/* WhatsApp CTA at bottom of mobile menu */}
+          <div className="pb-4">
+            <Button
+              as="anchor"
+              href={getGeneralWhatsAppLink()}
+              external
+              variant="whatsapp"
+              size="lg"
+              className="w-full justify-center min-h-[44px]"
+              iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6" alt="" />}
+            >
+              WhatsApp Us
+            </Button>
           </div>
         </div>
       )}

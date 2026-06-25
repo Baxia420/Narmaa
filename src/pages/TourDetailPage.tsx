@@ -1,3 +1,4 @@
+import { featureFlags } from "@/lib/featureFlags";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -12,17 +13,11 @@ import { generateWhatsAppLink } from "@/lib/whatsapp";
 import {
   Clock,
   MapPin,
-  Star,
   Tag,
   CheckCircle,
   AlertCircle,
   ArrowLeft,
   Users,
-  Calendar,
-  Compass,
-  Coffee,
-  Anchor,
-  Car,
   ChevronLeft,
   ChevronRight} from "lucide-react";
 
@@ -100,12 +95,19 @@ function HighlightSlider({ photos }: { photos: { image: string; caption: string 
   );
 }
 
-// Feature Icon Mapping
-const featureIconMap: Record<string, any> = {
-  "Private Chauffeur": Car,
-  "Guided City Tour": Compass,
-  "Lunch Included": Coffee,
-  "River Cruise": Anchor};
+function ImageOverlay() {
+  return <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />;
+}
+
+function ViewAllBtn() {
+  return (
+    <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 bg-black/70 hover:bg-black/80 backdrop-blur-sm text-white text-xs md:text-sm font-semibold px-3 py-2 md:px-5 md:py-2.5 rounded-lg shadow-lg flex items-center gap-2 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      <span className="hidden sm:inline">View all photos</span>
+      <span className="sm:hidden">All</span>
+    </div>
+  );
+}
 
 export default function TourDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -199,16 +201,6 @@ export default function TourDetailPage() {
               const images = galleryImages;
               if (images.length === 0) return null;
               
-              const ImageOverlay = () => <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />;
-              
-              const ViewAllBtn = () => (
-                <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 bg-black/70 hover:bg-black/80 backdrop-blur-sm text-white text-xs md:text-sm font-semibold px-3 py-2 md:px-5 md:py-2.5 rounded-lg shadow-lg flex items-center gap-2 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                  <span className="hidden sm:inline">View all photos</span>
-                  <span className="sm:hidden">All</span>
-                </div>
-              );
-
               if (images.length === 1) {
                 return (
                   <div className="w-full h-full relative cursor-pointer group overflow-hidden" onClick={() => { setGalleryIndex(0); setIsGalleryOpen(true); }}>
@@ -315,8 +307,10 @@ export default function TourDetailPage() {
             </div>
           </div>
 
-          {/* Tour Highlights — Full-Width Slider */}
-          {tour.highlightPhotos && tour.highlightPhotos.length > 0 && (
+          {/* TODO: Post-launch: re-enable Tour Highlights slider after all captions and images are finalized. */}
+          {featureFlags.tourHighlightSlider &&
+            tour.highlightPhotos &&
+            tour.highlightPhotos.length > 0 && (
             <div className="mt-10 border-t border-slate-100 pt-10 px-5">
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Tour Highlights</h2>
               <HighlightSlider photos={tour.highlightPhotos} />

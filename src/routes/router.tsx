@@ -1,9 +1,9 @@
+/* eslint-disable react-refresh/only-export-components */
 import { lazy, Suspense, useEffect } from "react";
 import { createBrowserRouter, Outlet, useLocation } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsAppButton from "@/components/layout/FloatingWhatsAppButton";
-import CookieBanner from "@/components/layout/CookieBanner";
 
 // Lazy loaded pages
 const HomePage = lazy(() => import("@/pages/HomePage"));
@@ -43,7 +43,7 @@ function ScrollToTop() {
 // Layout Wrapper Component
 function Layout() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-white">
+    <div className="relative flex min-h-screen flex-col bg-white overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
