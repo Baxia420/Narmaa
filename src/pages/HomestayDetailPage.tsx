@@ -137,34 +137,39 @@ export default function HomestayDetailPage() {
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
-            {/* Gallery */}
-            <div
-              className="relative cursor-pointer"
-              onClick={() => { setLightboxIndex(0); setLightboxOpen(true); }}
-            >
-              {/* Main image */}
-              <div className="aspect-video overflow-hidden rounded-2xl bg-slate-100 shadow-sm">
+            {/* Gallery — outer div is a plain layout container, no click */}
+            <div>
+              {/* Main image — clicking opens lightbox at index 0 */}
+              <div
+                className="relative aspect-video overflow-hidden rounded-2xl bg-slate-100 shadow-sm cursor-pointer"
+                onClick={() => { setLightboxIndex(0); setLightboxOpen(true); }}
+              >
                 <img
                   src={shuffledGallery[0] || homestay.image}
                   alt={homestay.name}
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 {shuffledGallery.length > 1 && (
-                  <div className="absolute bottom-3 right-3 bg-black/70 hover:bg-black/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    aria-label={`View all photos of ${homestay.name}`}
+                    onClick={(e) => { e.stopPropagation(); setLightboxIndex(0); setLightboxOpen(true); }}
+                    className="absolute bottom-3 right-3 bg-black/70 hover:bg-black/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5"
+                  >
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                     View all {shuffledGallery.length} photos
-                  </div>
+                  </button>
                 )}
               </div>
 
-              {/* Thumbnail strip (up to 4 thumbnails) */}
+              {/* Thumbnail strip (up to 4 thumbnails) — each thumb is independently clickable */}
               {shuffledGallery.length > 1 && (
                 <div className="mt-2 grid grid-cols-4 gap-2">
                   {shuffledGallery.slice(1, 5).map((src, idx) => (
                     <div
                       key={src}
-                      className="aspect-[4/3] overflow-hidden rounded-xl bg-slate-100 relative group"
-                      onClick={(e) => { e.stopPropagation(); setLightboxIndex(idx + 1); setLightboxOpen(true); }}
+                      className="aspect-[4/3] overflow-hidden rounded-xl bg-slate-100 relative group cursor-pointer"
+                      onClick={() => { setLightboxIndex(idx + 1); setLightboxOpen(true); }}
                     >
                       <img
                         src={src}

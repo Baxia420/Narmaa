@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plane, Clock, ShieldCheck, User, CheckCircle, AlertCircle, Luggage } from "lucide-react";
+import { Plane, User, CheckCircle, AlertCircle, Luggage, Minus, Plus } from "lucide-react";
 import { SEO } from "@/lib/seo";
 import { pageSEO } from "@/lib/pageSEO";
 
@@ -94,12 +94,12 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
             as="anchor"
             href={whatsappLink}
             external
-            variant="whatsapp"
+            variant="whatsappOutline"
             size="md"
-            className="w-full justify-center"
+            className="w-full justify-center rounded-full min-h-[44px]"
             iconLeft={<img src="/images/general/whatsapp-logo.svg" className="h-6 w-6 shrink-0" alt="" />}
           >
-            Check Availability
+            Check on WhatsApp
           </Button>
         </div>
       </div>
@@ -107,32 +107,42 @@ function ShuttleCard({ shuttle }: ShuttleCardProps) {
   );
 }
 
+const policyInclusions = [
+  "Vehicle for the confirmed route",
+  "Highway tolls for standard KLIA/KLIA2 transfers",
+  "Airport parking (standard KLIA/KLIA2 allowance)",
+  "1 hour free waiting time after scheduled pickup",
+  "Driver coordination and updates via WhatsApp",
+  "Pre-journey confirmation with driver name, contact, and vehicle plate",
+];
+
+const policyExclusions = [
+  "Waiting time beyond the 1-hour free allowance",
+  "Attraction tickets, entrance fees, or meals",
+  "Extra stops not confirmed before booking",
+  "Midnight slot surcharge (11:30 PM – 6:00 AM) or public holiday premium",
+  "Passengers or luggage exceeding the booked vehicle's capacity",
+];
+
+const policyExtras = [
+  "Additional waiting time (charged per 30-minute block)",
+  "Route changes or extra stopovers confirmed after booking",
+  "Vehicle upgrade if actual headcount or luggage exceeds the booked vehicle",
+  "Special handling for oversized or fragile items (must be confirmed in advance)",
+  "Last-minute bookings under 24 hours' notice may carry a premium",
+];
+
+const policyScenarios = [
+  "Flight delay: share your flight number early so pickup timing can be adjusted via WhatsApp",
+  "No-show: driver waits through the free allowance; charges apply after that period",
+  "Advance booking required: please book at least 24 hours before travel; contact us for urgent last-minute rides",
+  "Driver may decline pickup if booking details do not match the actual trip",
+  "Pets or unusual items must be confirmed before booking — not all vehicles are suitable",
+];
+
 // Main Page Component
 export default function AirportShuttlePage() {
   const airportFaqs = getFAQsByCategory("Airport Shuttle");
-  
-  const benefits = [
-    {
-      icon: Clock,
-      title: "24/7 Availability",
-      description: "Flight at 3:00 AM? No problem. We arrange pickup and drop-off services around the clock."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Real-Time Flight Tracking",
-      description: "We monitor flight details dynamically. If your landing is delayed, your chauffeur will adjust automatically."
-    },
-    {
-      icon: User,
-      title: "Professional Chauffeurs",
-      description: "Expect welcoming local drivers who will assist with luggage and ensure a safe, smooth journey."
-    },
-    {
-      icon: CheckCircle,
-      title: "Transparent, Fixed Rates",
-      description: "Pricing starts from RM120. Quotes include tolls and parking fees. Final price confirmed before you book."
-    }
-  ];
 
   return (
     <>
@@ -154,51 +164,94 @@ export default function AirportShuttlePage() {
         </Container>
       </section>
 
-      {/* Shuttle Benefits */}
+      {/* Airport Shuttle Policy */}
       <section className="py-16 md:py-20 bg-slate-50">
         <Container>
           <SectionHeader
-            accent="Stress-Free Travel"
-            title="Convenient Ground Transfers"
-            subtitle="Let Narmaa Transport take care of the logistics between KLIA/KLIA2 and your hotel or homestay."
+            accent="Before You Book"
+            title="Airport Shuttle Policy"
+            subtitle="Know what's included, what may cost extra, and what to confirm before your ride."
           />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
-              >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                  <benefit.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">{benefit.title}</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
 
-      {/* Airport Transfer Notes */}
-      <section className="py-16 md:py-20 bg-white">
-        <Container>
-          <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-8 md:p-10 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-950 md:text-2xl flex items-center gap-2">
-              <AlertCircle className="h-6 w-6 text-blue-600 shrink-0" />
-              Shuttle Transfer Notes
-            </h2>
-            <div className="mt-4 border-t border-slate-200 pt-4 space-y-3.5 text-sm text-slate-600 leading-relaxed">
-              <p>
-                <strong>Pre-Booking Required:</strong> Shuttle transfer requests should be submitted at least 24 hours prior to travel. For last-minute bookings, please contact us directly on WhatsApp to confirm immediate availability.
-              </p>
-              <p>
-                <strong>Meet &amp; Greet:</strong> For arrivals, your driver will be waiting at the designated arrivals exit. Complete driver coordinates and vehicle registration number will be sent to you via WhatsApp prior to departure.
-              </p>
-              <p>
-                <strong>Pricing & Inclusions:</strong> Rates shown are starting prices for standard KLIA/KLIA2 transfers. Final quotes are confirmed before booking and are inclusive of toll charges and baseline parking. Surcharges may apply for travel during peak holiday seasons or midnight slots (11:30 PM – 6:00 AM).
-              </p>
+            {/* Inclusions */}
+            <div className="rounded-2xl border border-green-200 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 shrink-0">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                </div>
+                <h3 className="text-base font-bold text-slate-900">What's Included</h3>
+              </div>
+              <ul className="space-y-2">
+                {policyInclusions.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-snug">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            {/* Not Included */}
+            <div className="rounded-2xl border border-red-100 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 shrink-0">
+                  <Minus className="h-5 w-5 text-red-500" />
+                </div>
+                <h3 className="text-base font-bold text-slate-900">Not Included</h3>
+              </div>
+              <ul className="space-y-2">
+                {policyExclusions.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-snug">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Charged Extras */}
+            <div className="rounded-2xl border border-amber-100 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 shrink-0">
+                  <Plus className="h-5 w-5 text-amber-600" />
+                </div>
+                <h3 className="text-base font-bold text-slate-900">Charged Extras</h3>
+              </div>
+              <ul className="space-y-2">
+                {policyExtras.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-snug">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Good to Know */}
+            <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 shrink-0">
+                  <AlertCircle className="h-5 w-5 text-blue-600" />
+                </div>
+                <h3 className="text-base font-bold text-slate-900">Good to Know</h3>
+              </div>
+              <ul className="space-y-2">
+                {policyScenarios.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-snug">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
+
+          {/* Reassurance note */}
+          <p className="mt-8 text-center text-sm text-slate-500 bg-white rounded-xl border border-slate-200 inline-block px-5 py-3 w-full sm:w-auto">
+            Final price and any extra charges will be confirmed with you on WhatsApp before booking.
+          </p>
         </Container>
       </section>
 

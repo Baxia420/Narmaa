@@ -1,10 +1,9 @@
-import { Mail, Phone, Clock, MapPin} from "lucide-react";
+import { Mail, Phone, Clock } from "lucide-react";
 import { SEO } from "@/lib/seo";
 import { pageSEO } from "@/lib/pageSEO";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { getGeneralWhatsAppLink } from "@/lib/whatsapp";
-import { serviceAreas } from "@/lib/data";
 import { featureFlags } from "@/lib/featureFlags";
 import facebookSvg from "@/assets/facebook-official.svg";
 
@@ -143,24 +142,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Service Areas */}
-            <div className="border-t border-slate-200 pt-8">
-              <h3 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-blue-600" />
-                Service Areas Covered
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">
-                We provide car delivery, pickup, stays, and tour departures in:
-              </p>
-              <div className="mt-4 grid grid-cols-2 gap-2">
-                {serviceAreas.map((area) => (
-                  <div key={area} className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-                    <div className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-                    {area}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right Column: WhatsApp card (lead form deferred post-launch) */}
